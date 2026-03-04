@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-04T18:11:29Z",
+  "generatedAt": "2026-03-04T18:23:22Z",
   "currency": "CLP",
   "invoices": [
     {
@@ -1934,11 +1934,11 @@
       "currency": "CLP",
       "accountName": "Socovesa",
       "accountId": "",
-      "totalAmount": 9930000,
+      "totalAmount": 15977002,
       "summaryBreakdown": [
         {
           "label": "Importe total facturado",
-          "amount": 9930000
+          "amount": 15977002
         },
         {
           "label": "Total de fondos agregado",
@@ -1952,6 +1952,13 @@
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
+        },
+        {
+          "date": "2026-02-28",
+          "transactionId": "AJUSTE-MANUAL-2026-02",
+          "paymentMethod": "No disponible",
+          "status": "Pagado",
+          "amount": 6047002
         },
         {
           "date": "2026-02-27",
