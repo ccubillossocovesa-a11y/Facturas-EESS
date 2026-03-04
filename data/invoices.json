@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-04T16:47:05Z",
+  "generatedAt": "2026-03-04T17:18:15Z",
   "currency": "CLP",
   "invoices": [
     {
@@ -17,11 +17,27 @@
       "currency": "CLP",
       "accountName": "Línea de Crédito Zeppelin",
       "accountId": "12346",
-      "totalAmount": 22640561,
+      "totalAmount": 27481113,
       "summaryBreakdown": [
         {
           "label": "Inversión",
           "amount": 22640561
+        },
+        {
+          "label": "Fee (2%)",
+          "amount": 452811
+        },
+        {
+          "label": "Subtotal + Fee",
+          "amount": 23093372
+        },
+        {
+          "label": "IVA (19%)",
+          "amount": 4387741
+        },
+        {
+          "label": "Total Bruto",
+          "amount": 27481113
         }
       ],
       "details": [
@@ -51,11 +67,27 @@
       "currency": "CLP",
       "accountName": "Línea de Crédito Zeppelin",
       "accountId": "12344",
-      "totalAmount": 5758602,
+      "totalAmount": 6989791,
       "summaryBreakdown": [
         {
           "label": "Inversión",
           "amount": 5758602
+        },
+        {
+          "label": "Fee (2%)",
+          "amount": 115172
+        },
+        {
+          "label": "Subtotal + Fee",
+          "amount": 5873774
+        },
+        {
+          "label": "IVA (19%)",
+          "amount": 1116017
+        },
+        {
+          "label": "Total Bruto",
+          "amount": 6989791
         }
       ],
       "details": [
@@ -83,11 +115,27 @@
       "currency": "CLP",
       "accountName": "Línea de Crédito Zeppelin",
       "accountId": "12345",
-      "totalAmount": 16214054,
+      "totalAmount": 19680619,
       "summaryBreakdown": [
         {
           "label": "Inversión",
           "amount": 16214054
+        },
+        {
+          "label": "Fee (2%)",
+          "amount": 324281
+        },
+        {
+          "label": "Subtotal + Fee",
+          "amount": 16538335
+        },
+        {
+          "label": "IVA (19%)",
+          "amount": 3142284
+        },
+        {
+          "label": "Total Bruto",
+          "amount": 19680619
         }
       ],
       "details": [
@@ -1922,11 +1970,11 @@
       "currency": "CLP",
       "accountName": "Socovesa",
       "accountId": "",
-      "totalAmount": 9270000,
+      "totalAmount": 9930000,
       "summaryBreakdown": [
         {
           "label": "Importe total facturado",
-          "amount": 9270000
+          "amount": 9930000
         },
         {
           "label": "Total de fondos agregado",
@@ -1949,7 +1997,7 @@
           "amount": 600000
         },
         {
-          "date": "2026-02-26",
+          "date": "2026-02-25",
           "transactionId": "FBADS-789-105578628",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
@@ -1963,7 +2011,7 @@
           "amount": 600000
         },
         {
-          "date": "2026-02-24",
+          "date": "2026-02-23",
           "transactionId": "FBADS-789-105569765",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
@@ -1978,13 +2026,20 @@
         },
         {
           "date": "2026-02-21",
-          "transactionId": "FBADS-789-105558632",
+          "transactionId": "FBADS-789-105561900",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-21",
+          "transactionId": "FBADS-789-105558632",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-20",
           "transactionId": "FBADS-789-105554618",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
@@ -1992,7 +2047,7 @@
         },
         {
           "date": "2026-02-20",
-          "transactionId": "FBADS-789-105560712",
+          "transactionId": "FBADS-789-105550712",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
@@ -2019,7 +2074,7 @@
           "amount": 600000
         },
         {
-          "date": "2026-02-16",
+          "date": "2026-02-15",
           "transactionId": "FBADS-789-105535796",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
@@ -2027,7 +2082,7 @@
         },
         {
           "date": "2026-02-15",
-          "transactionId": "FBADS-789-105581618",
+          "transactionId": "FBADS-789-105531618",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
@@ -2038,6 +2093,13 @@
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
+        },
+        {
+          "date": "2026-02-14",
+          "transactionId": "FBADS-789-105523479",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
         },
         {
           "date": "2026-02-13",
@@ -2132,7 +2194,28 @@
         },
         {
           "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522677",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522552",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
           "transactionId": "FBADS-789-105522462",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522384",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
@@ -2147,6 +2230,13 @@
         {
           "date": "2026-02-13",
           "transactionId": "FBADS-789-105522269",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522197",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
@@ -2217,6 +2307,13 @@
         {
           "date": "2026-02-13",
           "transactionId": "FBADS-789-105521703",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105521670",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000

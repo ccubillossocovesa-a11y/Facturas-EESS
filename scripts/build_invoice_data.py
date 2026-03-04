@@ -150,7 +150,7 @@ def parse_meta_invoice_ocr_fallback(path: Path, warnings: list[ParseWarning]) ->
         with tempfile.TemporaryDirectory(prefix="meta-ocr-") as tmp_dir:
             prefix = Path(tmp_dir) / "meta_page"
             subprocess.run(
-                ["pdftoppm", "-png", "-r", "220", str(path), str(prefix)],
+                ["pdftoppm", "-png", "-r", "300", str(path), str(prefix)],
                 check=True,
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
@@ -160,7 +160,7 @@ def parse_meta_invoice_ocr_fallback(path: Path, warnings: list[ParseWarning]) ->
                 warnings.append(ParseWarning(source=filename, message="OCR fallback did not produce page images."))
                 return None
             ocr_text = subprocess.check_output(
-                ["tesseract", str(first_page), "stdout", "-l", "spa+eng", "--psm", "6"],
+                ["tesseract", str(first_page), "stdout", "-l", "spa+eng", "--psm", "11"],
                 stderr=subprocess.DEVNULL,
                 text=True,
             )
@@ -176,40 +176,61 @@ def parse_meta_invoice_ocr_fallback(path: Path, warnings: list[ParseWarning]) ->
         warnings.append(ParseWarning(source=filename, message=f"OCR fallback failed: {exc}"))
         return None
 
-    details: list[dict[str, Any]] = []
+    lines = [ln.strip() for ln in ocr_text.splitlines() if ln.strip()]
     date_re = re.compile(r"(\d{1,2})\s+([a-zA-Z]{3,10})\s+(\d{4})", re.IGNORECASE)
     amount_re = re.compile(r"\$\s*([\d\.,]+)")
     fbads_re = re.compile(r"(FBADS-\d+-\d+)", re.IGNORECASE)
 
-    for raw_line in ocr_text.splitlines():
-        line = raw_line.strip()
-        if not line:
+    details: list[dict[str, Any]] = []
+    seen_fbads: set[str] = set()
+    for idx, line in enumerate(lines):
+        fb_match = fbads_re.search(line)
+        if not fb_match:
+            continue
+        tx_id = fb_match.group(1).upper()
+        if tx_id in seen_fbads:
             continue
 
-        dm = date_re.search(line)
-        am = amount_re.search(line)
-        if not dm or not am:
+        date_iso = ""
+        amount = None
+        start = max(0, idx - 45)
+        end = min(len(lines), idx + 46)
+
+        date_candidates: list[tuple[int, str]] = []
+        amount_candidates: list[tuple[int, int]] = []
+        for near in range(start, end):
+            if near == idx:
+                continue
+            distance = abs(near - idx)
+
+            dm = date_re.search(lines[near])
+            if dm:
+                day = int(dm.group(1))
+                month_txt = dm.group(2).lower()
+                year = int(dm.group(3))
+                month_num = SPANISH_MONTHS.get(month_txt)
+                if month_num:
+                    date_candidates.append((distance, f"{year:04d}-{month_num:02d}-{day:02d}"))
+
+            am = amount_re.search(lines[near])
+            if am:
+                parsed = clp_to_int(am.group(1))
+                # OCR correction for common 600.000/10.000 recognition issues.
+                if parsed == 60000:
+                    parsed = 600000
+                if parsed == 1000:
+                    parsed = 10000
+                amount_candidates.append((distance, parsed))
+
+        if date_candidates:
+            date_iso = sorted(date_candidates, key=lambda item: item[0])[0][1]
+        if amount_candidates:
+            amount = sorted(amount_candidates, key=lambda item: item[0])[0][1]
+
+        if not date_iso or amount is None:
             continue
 
-        day = int(dm.group(1))
-        month_txt = dm.group(2).lower()
-        year = int(dm.group(3))
-        if month_txt not in SPANISH_MONTHS:
-            continue
-
-        month_num = SPANISH_MONTHS[month_txt]
-        date_iso = f"{year:04d}-{month_num:02d}-{day:02d}"
-
-        amount = clp_to_int(am.group(1))
-        # OCR correction for common 600.000/10.000 recognition issues.
-        if amount == 60000:
-            amount = 600000
-        if amount == 1000:
-            amount = 10000
-
-        fbads = fbads_re.search(line)
-        tx_id = fbads.group(1) if fbads else f"ocr-{len(details) + 1:03d}"
-
+        seen_fbads.add(tx_id)
         details.append(
             {
                 "date": date_iso,
@@ -630,7 +651,11 @@ def parse_zeppelin_excel(path: Path, warnings: list[ParseWarning], document_file
 
         po_number = excel_number_to_str(po_raw) if po_raw else ""
         supplier_invoice = excel_number_to_str(invoice_raw) if invoice_raw else ""
-        amount = int(round(float(amount_raw)))
+        investment = int(round(float(amount_raw)))
+        fee_amount = int(round(investment * 0.02))
+        subtotal_with_fee = investment + fee_amount
+        iva_amount = int(round(subtotal_with_fee * 0.19))
+        total_bruto = subtotal_with_fee + iva_amount
 
         invoices.append(
             {
@@ -648,16 +673,20 @@ def parse_zeppelin_excel(path: Path, warnings: list[ParseWarning], document_file
                 "currency": "CLP",
                 "accountName": "Línea de Crédito Zeppelin",
                 "accountId": po_number,
-                "totalAmount": amount,
+                "totalAmount": total_bruto,
                 "summaryBreakdown": [
-                    {"label": "Inversión", "amount": amount},
+                    {"label": "Inversión", "amount": investment},
+                    {"label": "Fee (2%)", "amount": fee_amount},
+                    {"label": "Subtotal + Fee", "amount": subtotal_with_fee},
+                    {"label": "IVA (19%)", "amount": iva_amount},
+                    {"label": "Total Bruto", "amount": total_bruto},
                 ],
                 "details": [
                     {
                         "concept": "Línea de Crédito Zeppelin",
                         "purchaseOrder": po_number,
                         "supplierInvoice": supplier_invoice,
-                        "amount": amount,
+                        "amount": investment,
                     }
                 ],
                 "notes": notes,
