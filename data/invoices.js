@@ -1,5 +1,5 @@
 window.INVOICE_DATA = {
-  "generatedAt": "2026-03-04T03:23:52Z",
+  "generatedAt": "2026-03-04T16:47:05Z",
   "currency": "CLP",
   "invoices": [
     {
@@ -1903,6 +1903,330 @@ window.INVOICE_DATA = {
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 25207
+        }
+      ],
+      "notes": []
+    },
+    {
+      "id": "meta-socovesa-2026-02",
+      "sourceFile": "Resumen_Facturacion_Socovesa_Meta_Febrero2026.pdf",
+      "pdfFile": "pdfs/Resumen_Facturacion_Socovesa_Meta_Febrero2026.pdf",
+      "documentFile": "pdfs/Resumen_Facturacion_Socovesa_Meta_Febrero2026.pdf",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "month": "2026-02",
+      "invoiceDate": "2026-02-28",
+      "periodStart": "2026-02-01",
+      "periodEnd": "2026-03-01",
+      "dueDate": "",
+      "currency": "CLP",
+      "accountName": "Socovesa",
+      "accountId": "",
+      "totalAmount": 9270000,
+      "summaryBreakdown": [
+        {
+          "label": "Importe total facturado",
+          "amount": 9270000
+        },
+        {
+          "label": "Total de fondos agregado",
+          "amount": 0
+        }
+      ],
+      "details": [
+        {
+          "date": "2026-02-28",
+          "transactionId": "FBADS-789-105590144",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-27",
+          "transactionId": "FBADS-789-105584116",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-26",
+          "transactionId": "FBADS-789-105578628",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-25",
+          "transactionId": "FBADS-789-105573818",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-24",
+          "transactionId": "FBADS-789-105569765",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-23",
+          "transactionId": "FBADS-789-105565676",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-21",
+          "transactionId": "FBADS-789-105558632",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-21",
+          "transactionId": "FBADS-789-105554618",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-20",
+          "transactionId": "FBADS-789-105560712",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-19",
+          "transactionId": "FBADS-789-105547336",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-18",
+          "transactionId": "FBADS-789-105543551",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-17",
+          "transactionId": "FBADS-789-105539709",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-16",
+          "transactionId": "FBADS-789-105535796",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-15",
+          "transactionId": "FBADS-789-105581618",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-14",
+          "transactionId": "FBADS-789-105527663",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105523441",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105523428",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105523402",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105523375",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105523362",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105523336",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105523321",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105523202",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105523058",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522945",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522830",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522811",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522761",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522462",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522323",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522269",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522165",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522122",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522099",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105522037",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105521896",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105521847",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105521828",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105521774",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105521734",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105521703",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "FBADS-789-105521623",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
         }
       ],
       "notes": []

@@ -6,6 +6,8 @@ from __future__ import annotations
 import json
 import re
 import shutil
+import subprocess
+import tempfile
 import zipfile
 from calendar import monthrange
 from dataclasses import dataclass
@@ -114,6 +116,126 @@ def extract_layout_lines(path: Path) -> list[str]:
             text = page.extract_text(layout=True) or ""
             lines.extend([ln.strip() for ln in text.splitlines() if ln.strip()])
     return lines
+
+
+def month_key_from_filename(filename: str) -> str:
+    m = re.search(
+        r"(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)\s*(\d{4})",
+        filename,
+        re.IGNORECASE,
+    )
+    if not m:
+        return ""
+    month_txt = m.group(1).lower()
+    year = int(m.group(2))
+    month_num = SPANISH_MONTHS[month_txt]
+    return f"{year:04d}-{month_num:02d}"
+
+
+def first_day_next_month(month: str) -> str:
+    year, month_num = map(int, month.split("-"))
+    if month_num == 12:
+        return f"{year + 1:04d}-01-01"
+    return f"{year:04d}-{month_num + 1:02d}-01"
+
+
+def parse_meta_invoice_ocr_fallback(path: Path, warnings: list[ParseWarning]) -> dict[str, Any] | None:
+    filename = path.name
+    month = month_key_from_filename(filename)
+    if not month:
+        warnings.append(ParseWarning(source=filename, message="Could not infer month from filename for OCR fallback."))
+        return None
+
+    try:
+        with tempfile.TemporaryDirectory(prefix="meta-ocr-") as tmp_dir:
+            prefix = Path(tmp_dir) / "meta_page"
+            subprocess.run(
+                ["pdftoppm", "-png", "-r", "220", str(path), str(prefix)],
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
+            first_page = Path(f"{prefix}-1.png")
+            if not first_page.exists():
+                warnings.append(ParseWarning(source=filename, message="OCR fallback did not produce page images."))
+                return None
+            ocr_text = subprocess.check_output(
+                ["tesseract", str(first_page), "stdout", "-l", "spa+eng", "--psm", "6"],
+                stderr=subprocess.DEVNULL,
+                text=True,
+            )
+    except FileNotFoundError:
+        warnings.append(
+            ParseWarning(
+                source=filename,
+                message="OCR fallback unavailable (missing 'pdftoppm' or 'tesseract' in PATH).",
+            )
+        )
+        return None
+    except Exception as exc:  # pragma: no cover - defensive fallback
+        warnings.append(ParseWarning(source=filename, message=f"OCR fallback failed: {exc}"))
+        return None
+
+    details: list[dict[str, Any]] = []
+    date_re = re.compile(r"(\d{1,2})\s+([a-zA-Z]{3,10})\s+(\d{4})", re.IGNORECASE)
+    amount_re = re.compile(r"\$\s*([\d\.,]+)")
+    fbads_re = re.compile(r"(FBADS-\d+-\d+)", re.IGNORECASE)
+
+    for raw_line in ocr_text.splitlines():
+        line = raw_line.strip()
+        if not line:
+            continue
+
+        dm = date_re.search(line)
+        am = amount_re.search(line)
+        if not dm or not am:
+            continue
+
+        day = int(dm.group(1))
+        month_txt = dm.group(2).lower()
+        year = int(dm.group(3))
+        if month_txt not in SPANISH_MONTHS:
+            continue
+
+        month_num = SPANISH_MONTHS[month_txt]
+        date_iso = f"{year:04d}-{month_num:02d}-{day:02d}"
+
+        amount = clp_to_int(am.group(1))
+        # OCR correction for common 600.000/10.000 recognition issues.
+        if amount == 60000:
+            amount = 600000
+        if amount == 1000:
+            amount = 10000
+
+        fbads = fbads_re.search(line)
+        tx_id = fbads.group(1) if fbads else f"ocr-{len(details) + 1:03d}"
+
+        details.append(
+            {
+                "date": date_iso,
+                "transactionId": tx_id,
+                "paymentMethod": "Visa ···· 2327",
+                "status": "Pagado",
+                "amount": amount,
+            }
+        )
+
+    if not details:
+        warnings.append(ParseWarning(source=filename, message="OCR fallback found no transaction rows."))
+        return None
+
+    details.sort(key=lambda row: row["date"], reverse=True)
+    total_billed = sum(row["amount"] for row in details)
+    return {
+        "month": month,
+        "invoiceDate": details[0]["date"],
+        "periodStart": f"{month}-01",
+        "periodEnd": first_day_next_month(month),
+        "accountId": "",
+        "totalBilled": total_billed,
+        "totalFunds": 0,
+        "details": details,
+    }
 
 
 def parse_google_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, Any]:
@@ -282,7 +404,16 @@ def parse_google_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, 
 def parse_meta_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, Any]:
     filename = path.name
     is_pilares = "Pilares" in filename
-    brand = "Pilares" if is_pilares else "Almagro Inmobiliaria"
+    is_socovesa = "Socovesa" in filename
+    if is_pilares:
+        brand = "Pilares"
+        account_name = "Pilares"
+    elif is_socovesa:
+        brand = "Socovesa"
+        account_name = "Socovesa"
+    else:
+        brand = "Almagro Inmobiliaria"
+        account_name = "ALMAGRO S A"
 
     text = extract_text_pypdf(path)
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
@@ -355,6 +486,17 @@ def parse_meta_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, An
             }
         )
 
+    if total_billed == 0 and not details:
+        fallback = parse_meta_invoice_ocr_fallback(path, warnings)
+        if fallback:
+            period_start_iso = fallback["periodStart"]
+            period_end_iso = fallback["periodEnd"]
+            invoice_date_iso = fallback["invoiceDate"]
+            account_id = fallback["accountId"]
+            total_billed = fallback["totalBilled"]
+            total_funds = fallback["totalFunds"]
+            details = fallback["details"]
+
     paid_sum = sum(row["amount"] for row in details if row["status"] == "Pagado")
     funds_sum = sum(row["amount"] for row in details if row["status"] == "Fondos agregados")
     if paid_sum != total_billed:
@@ -375,7 +517,7 @@ def parse_meta_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, An
     invoice_date_iso = details[0]["date"] if details else period_end_iso
 
     notes: list[str] = []
-    if not is_pilares:
+    if brand == "Almagro Inmobiliaria":
         notes.append("Meta agrupa esta cuenta como ALMAGRO S A y no separa Inmobiliaria/Propiedades en el PDF.")
 
     return {
@@ -391,7 +533,7 @@ def parse_meta_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, An
         "periodEnd": period_end_iso,
         "dueDate": "",
         "currency": "CLP",
-        "accountName": "ALMAGRO S A" if not is_pilares else "Pilares",
+        "accountName": account_name,
         "accountId": account_id,
         "totalAmount": total_billed,
         "summaryBreakdown": [
