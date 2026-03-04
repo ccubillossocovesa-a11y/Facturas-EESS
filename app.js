@@ -109,7 +109,7 @@ function getInvoiceMonthNumber(invoice) {
 function monthNumberLabel(monthNumber) {
   const month = Number(monthNumber);
   if (!Number.isInteger(month) || month < 1 || month > 12) return monthNumber;
-  const date = new Date(Date.UTC(2000, month - 1, 1));
+  const date = new Date(2000, month - 1, 1);
   return monthNameFormatter.format(date);
 }
 
@@ -118,7 +118,7 @@ function toMonthLabel(monthKey) {
   if (!normalized) return normalizeText(monthKey) || "-";
 
   const [year, month] = normalized.split("-").map(Number);
-  const date = new Date(Date.UTC(year, month - 1, 1));
+  const date = new Date(year, month - 1, 1);
   return monthFormatter.format(date);
 }
 
