@@ -653,9 +653,7 @@ def parse_zeppelin_excel(path: Path, warnings: list[ParseWarning], document_file
         supplier_invoice = excel_number_to_str(invoice_raw) if invoice_raw else ""
         investment = int(round(float(amount_raw)))
         fee_amount = int(round(investment * 0.02))
-        subtotal_with_fee = investment + fee_amount
-        iva_amount = int(round(subtotal_with_fee * 0.19))
-        total_bruto = subtotal_with_fee + iva_amount
+        total_with_fee = investment + fee_amount
 
         invoices.append(
             {
@@ -673,13 +671,10 @@ def parse_zeppelin_excel(path: Path, warnings: list[ParseWarning], document_file
                 "currency": "CLP",
                 "accountName": "Línea de Crédito Zeppelin",
                 "accountId": po_number,
-                "totalAmount": total_bruto,
+                "totalAmount": total_with_fee,
                 "summaryBreakdown": [
-                    {"label": "Inversión", "amount": investment},
-                    {"label": "Fee (2%)", "amount": fee_amount},
-                    {"label": "Subtotal + Fee", "amount": subtotal_with_fee},
-                    {"label": "IVA (19%)", "amount": iva_amount},
-                    {"label": "Total Bruto", "amount": total_bruto},
+                    {"label": "Total", "amount": investment},
+                    {"label": "Total + Fee (2%)", "amount": total_with_fee},
                 ],
                 "details": [
                     {

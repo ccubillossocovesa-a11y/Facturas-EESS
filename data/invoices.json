@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-04T17:18:15Z",
+  "generatedAt": "2026-03-04T18:11:29Z",
   "currency": "CLP",
   "invoices": [
     {
@@ -17,27 +17,15 @@
       "currency": "CLP",
       "accountName": "Línea de Crédito Zeppelin",
       "accountId": "12346",
-      "totalAmount": 27481113,
+      "totalAmount": 23093372,
       "summaryBreakdown": [
         {
-          "label": "Inversión",
+          "label": "Total",
           "amount": 22640561
         },
         {
-          "label": "Fee (2%)",
-          "amount": 452811
-        },
-        {
-          "label": "Subtotal + Fee",
+          "label": "Total + Fee (2%)",
           "amount": 23093372
-        },
-        {
-          "label": "IVA (19%)",
-          "amount": 4387741
-        },
-        {
-          "label": "Total Bruto",
-          "amount": 27481113
         }
       ],
       "details": [
@@ -67,27 +55,15 @@
       "currency": "CLP",
       "accountName": "Línea de Crédito Zeppelin",
       "accountId": "12344",
-      "totalAmount": 6989791,
+      "totalAmount": 5873774,
       "summaryBreakdown": [
         {
-          "label": "Inversión",
+          "label": "Total",
           "amount": 5758602
         },
         {
-          "label": "Fee (2%)",
-          "amount": 115172
-        },
-        {
-          "label": "Subtotal + Fee",
+          "label": "Total + Fee (2%)",
           "amount": 5873774
-        },
-        {
-          "label": "IVA (19%)",
-          "amount": 1116017
-        },
-        {
-          "label": "Total Bruto",
-          "amount": 6989791
         }
       ],
       "details": [
@@ -115,27 +91,15 @@
       "currency": "CLP",
       "accountName": "Línea de Crédito Zeppelin",
       "accountId": "12345",
-      "totalAmount": 19680619,
+      "totalAmount": 16538335,
       "summaryBreakdown": [
         {
-          "label": "Inversión",
+          "label": "Total",
           "amount": 16214054
         },
         {
-          "label": "Fee (2%)",
-          "amount": 324281
-        },
-        {
-          "label": "Subtotal + Fee",
+          "label": "Total + Fee (2%)",
           "amount": 16538335
-        },
-        {
-          "label": "IVA (19%)",
-          "amount": 3142284
-        },
-        {
-          "label": "Total Bruto",
-          "amount": 19680619
         }
       ],
       "details": [
