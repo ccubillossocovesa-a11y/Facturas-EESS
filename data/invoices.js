@@ -1,5 +1,5 @@
 window.INVOICE_DATA = {
-  "generatedAt": "2026-03-04T18:23:22Z",
+  "generatedAt": "2026-03-13T15:10:30Z",
   "currency": "CLP",
   "invoices": [
     {
@@ -1948,353 +1948,3111 @@ window.INVOICE_DATA = {
       "details": [
         {
           "date": "2026-02-28",
-          "transactionId": "FBADS-789-105590144",
+          "transactionId": "26082823924742142-26091459310545264",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
-        },
-        {
-          "date": "2026-02-28",
-          "transactionId": "AJUSTE-MANUAL-2026-02",
-          "paymentMethod": "No disponible",
-          "status": "Pagado",
-          "amount": 6047002
         },
         {
           "date": "2026-02-27",
-          "transactionId": "FBADS-789-105584116",
+          "transactionId": "26038830939141432-26038830972474762",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-26",
+          "transactionId": "26185043141186879-26026735010351025",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-25",
-          "transactionId": "FBADS-789-105578628",
+          "transactionId": "26062059250151940-26139821949042337",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
-          "date": "2026-02-25",
-          "transactionId": "FBADS-789-105573818",
-          "paymentMethod": "Visa ···· 2327",
-          "status": "Pagado",
-          "amount": 600000
-        },
-        {
-          "date": "2026-02-23",
-          "transactionId": "FBADS-789-105569765",
+          "date": "2026-02-24",
+          "transactionId": "26008016675556192-26053400861017779",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-23",
-          "transactionId": "FBADS-789-105565676",
+          "transactionId": "25994077793616755-26122628304095035",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-22",
+          "transactionId": "25991502897207570-26036801209344411",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-21",
-          "transactionId": "FBADS-789-105561900",
+          "transactionId": "26023643030660226-26148592314831965",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-21",
-          "transactionId": "FBADS-789-105558632",
+          "transactionId": "26096535890037610-26139639562393907",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-20",
-          "transactionId": "FBADS-789-105554618",
-          "paymentMethod": "Visa ···· 2327",
-          "status": "Pagado",
-          "amount": 600000
-        },
-        {
-          "date": "2026-02-20",
-          "transactionId": "FBADS-789-105550712",
+          "transactionId": "26469411892750003-25995309763493559",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-19",
-          "transactionId": "FBADS-789-105547336",
+          "transactionId": "25951170167907518-25997858326572030",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-18",
-          "transactionId": "FBADS-789-105543551",
+          "transactionId": "25993410397016826-26106284712396056",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-17",
-          "transactionId": "FBADS-789-105539709",
+          "transactionId": "26105425425815321-26105425472481983",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 600000
+        },
+        {
+          "date": "2026-02-16",
+          "transactionId": "26031253573232503-26089532120737982",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-15",
-          "transactionId": "FBADS-789-105535796",
-          "paymentMethod": "Visa ···· 2327",
-          "status": "Pagado",
-          "amount": 600000
-        },
-        {
-          "date": "2026-02-15",
-          "transactionId": "FBADS-789-105531618",
+          "transactionId": "25917387407952461-25967844012906798",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-14",
-          "transactionId": "FBADS-789-105527663",
+          "transactionId": "25955455557478974-25943919511965918",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 600000
         },
         {
           "date": "2026-02-14",
-          "transactionId": "FBADS-789-105523479",
+          "transactionId": "26004403949250799-25949902648034268",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105523441",
+          "transactionId": "26071061232585074-26004291329262061",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105523428",
+          "transactionId": "25899217729769429-26062751963415998",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105523402",
+          "transactionId": "26004109009280293-25934378026253400",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105523375",
+          "transactionId": "26408577982166728-25949525621405304",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105523362",
+          "transactionId": "26003927139298480-26003927169298477",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105523336",
+          "transactionId": "25904570685900792-26408387842185742",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105523321",
+          "transactionId": "26408298968861296-25933934936297709",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105523202",
+          "transactionId": "25933843519640184-26003645909326603",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105523058",
+          "transactionId": "26408094315548428-25949040818120451",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522945",
+          "transactionId": "25904173609273833-25898426553181880",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522830",
+          "transactionId": "26003319882692539-26061847666839761",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522811",
+          "transactionId": "26070011359356728-26003239789367215",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522761",
+          "transactionId": "26003123362712191-26026451067046093",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522677",
+          "transactionId": "26407597232264803-25898034356554433",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522552",
+          "transactionId": "26002929406064920-26407484242276102",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522462",
+          "transactionId": "26061361843555010-26026161710408362",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522384",
+          "transactionId": "25903467149344479-25903467169344477",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522323",
+          "transactionId": "25897618226596046-25932806979743838",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522269",
+          "transactionId": "26407092742315252-25932722883085581",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522197",
+          "transactionId": "26406966275661232-26025737713784095",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522165",
+          "transactionId": "26025642193793647-26060841516940376",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522122",
+          "transactionId": "25902946309396563-25947682478256285",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522099",
+          "transactionId": "26025432183814648-26060634003627794",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105522037",
+          "transactionId": "26060526676971860-25896996709991531",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105521896",
+          "transactionId": "25931845469839989-25943797805311416",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105521847",
+          "transactionId": "26060270206997507-26060270246997503",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105521828",
+          "transactionId": "26068384426186088-26001601816197679",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105521774",
+          "transactionId": "25943359122021951-26001448442879683",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105521734",
+          "transactionId": "26024630397228160-26068098322881365",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105521703",
+          "transactionId": "25943085425382654-25943085498715980",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105521670",
+          "transactionId": "26405605532463973-26059579270399934",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
         },
         {
           "date": "2026-02-13",
-          "transactionId": "FBADS-789-105521623",
+          "transactionId": "25901637922860735-26000887016269159",
           "paymentMethod": "Visa ···· 2327",
           "status": "Pagado",
           "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26405307152493811-26024057747285425",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26059122400445621-25930410836650119",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26405001142524412-26067225976301933",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26404874132537113-26023621953995671",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26066952852995912-25945646308459902",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26058547447169783-25895016513522884",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25945377145153485-26404461062578420",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26404309725926887-26066532316371299",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25945095591848307-26022921330732400",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25929280760096460-25894464776911391",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25999289619762232-25900091599682034",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25894196993604836-26057717370586124",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25940989218925608-25999032766454584",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25998868836470977-25899696276388233",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25940675785623618-25944249995266200",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26021908797500320-25944086811949185",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26065261303165067-25943955028629030",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25893344117023457-25928093466881856",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25940093275681869-25940093325681864",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26064894126535118-25927859816905221",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26056500180707843-26402541689437024",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26402415576116302-25939732119051318",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25892717957086073-26402286826129177",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25898345116523349-25943055905385609",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25892406767117192-26401974052827121",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26064036639954200-25997178323306695",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25942512255439974-25996943123330215",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25942215922136274-25897503143274213",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26062780556746475-25925750157116187",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25995189353505592-25995189376838923",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25889944764030059-26061720616852469",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26053240851033776-25936609459363584",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25924294647261738-25936447889379741",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "25895208053503722-26398982953126231",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26061100446914486-25994170656940795",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-13",
+          "transactionId": "26060993146925216-26060993220258542",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25894877460203448-25939573492400517",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25888987394125796-26398537889837404",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25939363839088149-26052388084452386",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26017083247982875-26060601780297686",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26016994017991798-25888734574151078",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25935528166138380-25888656964158839",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25935404532817410-25935404569484073",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25993262283698299-26051931601164701",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26397883343236192-25888337794190756",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25888239127533956-25894018183622709",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25992985993725928-25888161180875084",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25922707494087120-26051578474533347",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25992823333742194-25938471305844069",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25887911307566738-26051400034551191",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25992637950427399-26051306944560500",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25938194762538390-25887729927584876",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26015873798103820-26015873844770482",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26015760158115184-25893302003694327",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26015689371455596-25934312872926576",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26059141583777039-25893139473710580",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26015530974804769-25893071880384006",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26015437284814138-26058980103793187",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25892907690400425-25991948153829712",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25887051760986026-26058839407140590",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25892745950416599-25991788343845693",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26396436140047579-26015131328178067",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26058607127163818-25991647927193068",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25937208022637064-25892517167106144",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26396181623406364-25886638494360686",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26014767388214461-25991355000555694",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25936833439341189-25920869010937635",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26395782836779576-26058027910555073",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25886062414418294-26395605066797353",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26049344964756698-26395391506818709",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26395188636838996-25891426423881885",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25891215010569693-25919942817696921",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25990044984020029-25891000650591129",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26048474351510426-25919492334408636",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26394410843583442-26394410890250104",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26048242934866901-25935227016168498",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25935089072848959-26394151030276090",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25918975457793657-25934946736196526",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26012595075098359-25934842512873615",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25989054924119035-26047726214918573",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25988902800800914-25884083211282881",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25889750057382855-25918418717849331",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25934270439597489-25988607657497095",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25889488177409043-26055490867475444",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25934050122952854-25918032144554655",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25883472394677296-25988286297529231",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25933837739640759-25917812097909993",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25930101270014403-25930101366681060",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25888920544132473-26046605421697319",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25933488219675711-26011232681901265",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26046376861720175-25917347747956428",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25929616380062892-25917221401302396",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25929496350074895-25987471107610750",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26054302814260916-25882505904773945",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26010572661967267-26010572735300593",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25887910610900133-26010343721990161",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25916170351407501-26053509637673567",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26009205982103935-26052765441081320",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25985267247831136-25914926784865191",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26389663424058184-25984908117867049",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25984711994553328-26389476904076836",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "26007992355558631-26389297527428107",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-12",
+          "transactionId": "25885441891147005-25914084574949412",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25879519031739299-25984278701263324",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25879434818414387-25929932020031331",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25913683594989510-25984083884616139",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25983978324626695-25926100810414449",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26042622652095596-26050972914593906",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25929562133401653-25983820617975799",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25929495533408313-25878996851791517",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26007152845642582-25929411530083380",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25983595174665010-26388380620853131",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26388292300861963-26388292337528626",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25878645311826671-26006883129002887",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26050408347983696-26006811639010036",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25925378967153300-26006729289018271",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26006626809028519-25925279427163254",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25912660715091798-25925193640505166",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25928703383487528-26387744494250077",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26049935784697619-26387643324260194",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26041479212209940-26387558580935335",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25928426633515203-25912282601796276",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25928321210192412-25877825341908668",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25924624007228796-26049572421400622",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26049460318078499-25928125350211998",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25982267358131125-25877504498607419",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25911765238514679-26386948770996316",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26386834244341102-26049131064778091",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26005404109150789-25927667120257821",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26040511928973335-26048893001468564",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26005292519161948-25923933647297832",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26386591347698725-25981804604844067",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25927516700272863-26048856258138905",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26005105962513937-25981617418196119",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26048703874820810-26048703961487468",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25876853788672490-26386400727717787",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25981615228196338-25923743027316894",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26386399141051279-25876852425339293",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25981613891529805-25882694011421793",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26005028992521634-26040244512333410",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25911146688576534-25876777888680080",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25927288060295727-25882618588096002",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25876776695346866-26005027029188497",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25882617408096120-26005026222521911",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25927285980295935-25981535971537597",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26040203635670831-26386283421062851",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25981497668208094-25981497721541422",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25981497008208160-25923623397328857",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26048584251499439-26386281661063027",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25876735192017683-25927246850299848",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25911103141914222-26040200932337768",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26048553258169205-26048553334835864",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 11410
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25977992551891939-25879096291781565",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25873064539051415-26044943961863468",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26044807601877104-26044807668543764",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25919726934385170-25977555971935597",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25906940728997130-26000919522932581",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25919397174418146-26035951429429385",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25872297019128167-25977027711988423",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25872061279151741-25976791565345371",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25906353315722538-25906353369055866",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25877898655234662-26000296296328237",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25976754065349121-25877898045234723",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25922570040767529-26043904241967440",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25976752572015937-25976752625349265",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "25918952841129246-25976751735349354",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-11",
+          "transactionId": "26381562694868257-25918922267798970",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 515501
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "25863104443380758-25863104496714086",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "25913494158341784-25862925910065278",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "25896919189999284-26372254409132419",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "25990862147271652-25862590146765521",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "25862399456784590-25909368178754379",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "26371690119188848-26025652963792565",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "25868063576218170-26371621555862371",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "26034000256291172-25912644901760043",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "25909052125452651-25990357383988795",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "26025547093803152-25909051462119384",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "26033997966291401-25990355817322285",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "25896247476733122-25912641778427022",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-10",
+          "transactionId": "26033965809627950-25990324693992064",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 611383
+        },
+        {
+          "date": "2026-02-09",
+          "transactionId": "25900342022990331-25896740780017119",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 438096
+        },
+        {
+          "date": "2026-02-09",
+          "transactionId": "25883664227991447-25977872675237266",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-09",
+          "transactionId": "25855650917459436-25855650957459432",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-09",
+          "transactionId": "25900314289659771-25849678944723308",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-09",
+          "transactionId": "26359128970444963-25849678471390022",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-09",
+          "transactionId": "26013141768377018-26013141808377014",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-09",
+          "transactionId": "26359097763781417-25896680753356455",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-09",
+          "transactionId": "25954068750950986-26359097233781470",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-09",
+          "transactionId": "25900280059663194-25954068097617718",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-09",
+          "transactionId": "25954067330951128-25954067424284452",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-09",
+          "transactionId": "26013113348379860-26021589714198893",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 11882
+        },
+        {
+          "date": "2026-02-08",
+          "transactionId": "26016060274751837-25891142030576994",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-08",
+          "transactionId": "25877909615233575-25877909708566899",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-08",
+          "transactionId": "25894479716909895-25877793458578524",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-08",
+          "transactionId": "26015711671453364-26353067044384489",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-08",
+          "transactionId": "25849603408064187-25947969651560896",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-08",
+          "transactionId": "26352881231069737-26007019728989222",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-08",
+          "transactionId": "26015449184812946-26015449248146273",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-08",
+          "transactionId": "26006859145671947-25877319975292539",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-08",
+          "transactionId": "25971482622542938-26006777979013397",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-08",
+          "transactionId": "25842021505489052-25892639893760544",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 742863
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25862275123463691-25875481385476392",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25862236596800877-25862236636800873",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "26337691079255419-26337691119255415",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25932563963101465-26337690402588820",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25862208886803648-25875414325483098",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25825539710470565-25825539767137226",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25876012855423248-25988833777474484",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25872140749143789-25988660630825132",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25997037496654115-26334196482938212",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "26334032669621260-26334032706287923",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25871630015861529-25952834821074385",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25996606266697238-25871528809204983",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25928507326840462-26333618249662702",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25830409939983534-25871286135895917",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "26333411669683360-25996268333397698",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25874730582218142-25857800363911167",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25996011713423360-25824003633957506",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25995894016768463-25829937073364154",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25829795333378328-25823741070650429",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "26331415673216293-25822248044133065",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 6849
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25950357414655459-25872838165740717",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 6849
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25950317737992760-25822181620806374",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 4567
+        },
+        {
+          "date": "2026-02-06",
+          "transactionId": "25872760339081833-25828203353537526",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 2610
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25981639124860616-25818200051204531",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10569
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25818036454554224-25946156991742168",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25817914204566449-25989927724031759",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25868393956185138-25921680714189790",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "26326791317012062-25823732650651263",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25989532087404656-25817513971273139",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25850823664608837-25850823677942169",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25850660921291778-25850660957958441",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25989116987446166-25867713506253183",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25863895759968288-25867590722932128",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25867476406276893-25944986201859247",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25816745928016610-25944871361870731",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25863529416671589-25988641430827055",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25867146506309883-25816517731372763",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25849843214706882-25979854971705698",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25849722391385631-25866957339662133",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "26325371917154002-25944358545255346",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25863059340051930-25866765913014609",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "26325151980509329-25988057740885424",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25849322784758925-25822016240822904",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "26324915257199668-25821888554169006",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25815675318123671-25866308019727065",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25943651555326045-25866177769740090",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25866015686422965-25862315540126310",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25865878739769993-25848633954827808",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25918998047791390-25978522788505583",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "26324031683954692-25943029682054899",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25820838830940645-25986796924344839",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25820714634286398-25848012228223314",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25918445224513339-25861459986878532",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25847774628247074-25918310424526819",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25814212928269910-25864855603205640",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "26323195967371597-25847465294944674",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25985980411093157-26323046670719860",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25917736024584259-25985870257770839",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25941785438845990-25864315896592944",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25985561744468357-25864160079941859",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25976751222016073-25976751295349399",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25941199775571223-26322203124137548",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25846118458412691-25812872351737301",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25976121318745730-25818768831147645",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25984571617900703-25859454993745698",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25863002440057623-25845573148467222",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25812181421806394-25818268761197652",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25818077594550102-25845197701838100",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25915696408121554-25845004735190730",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25817666501257878-25915468711477657",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25939511772406690-26320523097638884",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25939317025759498-25915083914849470",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25861553376869196-25914780534879808",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25914381511586377-25938624722495395",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25937688725922328-26318703514487509",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25842296675461536-26318264707864723",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25842008405490363-25808839178807285",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25859193457105188-26317695251255002",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25912130008478194-25858963593794841",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25841290472228823-25814237104934151",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25911825318508663-25814144364943425",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25814068684950993-25841115708912966",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-05",
+          "transactionId": "25814030734954788-25807885105569359",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25807706028920600-25971111465913382",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25813653834992478-25979589638398901",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25858022910555576-25807333005624569",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25854150577609473-25910994611925067",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25935229386168262-25970460862645109",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25979016481789550-25840109992346871",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25839993759025161-25853783270979537",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25853645264326671-25970069656017563",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25910371598654035-25934742616216939",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25978506585173873-25969807122710483",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "26315421204815740-25839429719081565",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25806108765746993-25934288899595644",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25934142386276962-25852940664397131",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25856490517375482-25811976315160230",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25977708435253688-25977708495253682",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25933648259659708-25852452614445936",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25909152185442643-25811509741873554",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25805223059168897-25968635739494288",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25811252685232593-25968479796176549",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25977046071986591-25977046128653252",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25855496117474922-25810981048593090",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25837802432577627-26313840258307168",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25837706382587232-25967997786224750",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25967905539567308-25967905616233967",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25908227218868473-25810606505297211",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25932520476439153-25855029547521579",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25851252631232601-25854946570863210",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25810324971992031-25837262495964954",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25810246871999841-25967458506278678",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25907707528920442-25907707565587105",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25809945338696661-25854464800911387",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25975712615453270-25907406752283853",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25907280452296483-25975583122132886",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25975501698807695-25966793579678504",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25931484429876091-25907092032315325",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25853950540962813-25836363406054863",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25803119639379239-26312317648459429",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25836218596069344-25931299423227925",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25966461533045042-25803020079389195",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25975023328855532-25853608337663700",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25966245659733296-25931067146584486",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25974885152202683-25930966579927876",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25849712158053315-25853394061018461",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25853222727702261-25808703815487480",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "26311554995202361-25808573372167191",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "26311458771878650-25906091035748758",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25930318236659377-25930318289992705",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25808151045542757-25965345253156670",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25929973290027205-25973902905634241",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25905386089152586-25929781730046361",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25964808006543728-25848451881512676",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25851983314492869-25964655676558961",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25801085176249352-25807311818960013",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25801000639591139-25904828002541728",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25973036102387588-25807117312312797",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25964099349947927-25851423301215537",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25972664622424736-26309677322056795",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25963780346646494-25800366689654534",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25972359955788536-25806444052380123",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25833114623046408-25847077748316756",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25963190673372128-25971929742498224",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 10000
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25799443283080208-25799443343080202",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 9607
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "26308170762207451-25927232573634610",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8066
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25798630486494821-25926852967005904",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8903
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25831423566548847-25845417955149402",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8903
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25961579396866589-26307337805624080",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8444
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25831096699914867-25804259429265252",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 9221
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25831000566591147-25901715779519617",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 9088
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25961237210234141-25844893758535155",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 7774
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25926028577088343-25969936272697571",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8060
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25925972467093954-25969880899369775",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8664
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25969814462709752-25803896172634911",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8537
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25969774512713747-25901392769551918",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8803
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25960905713600624-25830562766634927",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8657
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25803696559321539-25969618466062685",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8657
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25830439636647240-25797391563285380",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8434
+        },
+        {
+          "date": "2026-02-04",
+          "transactionId": "25797356679955535-25844418808582650",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8434
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25847989784892222-25969451639412701",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8434
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25803458392678689-25969382196086312",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 7750
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25830245103333360-25844263898598141",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 7529
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25847826948241839-25960537300304132",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8347
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25847736778250856-26306193969071797",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 8434
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25829937216697482-25960302966994232",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 6637
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25802973842727144-26305916925766168",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 7992
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25802833596074502-25843703831987481",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 7992
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25900247386333123-25968638632827335",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 7067
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25847042981653569-26305480309143163",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 7650
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25968367289521136-25829240136767190",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 7536
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25968222709535594-25899810003043528",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 7408
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25924189190605615-25802154856142376",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 7301
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25846487621709105-25924049243952943",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 6865
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25842739155417282-25959033040454558",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 6865
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25923775903980277-25958907950467067",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 6711
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25801581542866374-25828395510184986",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 6550
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25923532690671265-25801493619541833",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 6550
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25845919518432582-25923479497343251",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 5618
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25842176578806873-25801296659561529",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 5618
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25828004783557392-25967125909645274",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 4914
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25794858023538734-25923117070712827",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 5847
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "26303843139306880-25800931626264699",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 5444
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25966771296347402-26303747239316470",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 4700
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25966700763021122-25800764029614792",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 5022
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25922675574090310-25922675617423639",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 4740
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25966390269718838-25844964855194715",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 4324
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25800257142998814-25844736048550929",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 3899
+        },
+        {
+          "date": "2026-02-03",
+          "transactionId": "25896662946691567-25896662963358232",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 6489
+        },
+        {
+          "date": "2026-02-02",
+          "transactionId": "25909065785451289-25780782781612925",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 3454
+        },
+        {
+          "date": "2026-02-02",
+          "transactionId": "25908917188799482-25780631938294676",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 2922
+        },
+        {
+          "date": "2026-02-02",
+          "transactionId": "25943824395308756-25786683897689472",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 2828
+        },
+        {
+          "date": "2026-02-02",
+          "transactionId": "25883780091313186-25786480357709826",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 3367
+        },
+        {
+          "date": "2026-02-02",
+          "transactionId": "25812644701760067-25883412268016635",
+          "paymentMethod": "Visa ···· 2327",
+          "status": "Pagado",
+          "amount": 3367
         }
       ],
       "notes": []

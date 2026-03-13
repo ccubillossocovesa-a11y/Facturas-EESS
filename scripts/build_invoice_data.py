@@ -67,8 +67,32 @@ class ParseWarning:
 
 
 def clp_to_int(value: str) -> int:
-    clean = value.replace(".", "").replace(",", "").replace("$", "").strip()
-    return int(clean)
+    clean = re.sub(r"[^\d,.\-]", "", value).strip()
+    if not clean:
+        return 0
+
+    sign = -1 if clean.startswith("-") else 1
+    if clean[0] in "+-":
+        clean = clean[1:]
+    if not clean:
+        return 0
+
+    # Chilean style: 15.977.002 or 15.977.002,50
+    if re.fullmatch(r"\d{1,3}(?:\.\d{3})+(?:,\d+)?", clean):
+        normalized = clean.replace(".", "").replace(",", ".")
+        return sign * int(round(float(normalized)))
+
+    # US style: 600,000.00
+    if re.fullmatch(r"\d{1,3}(?:,\d{3})+(?:\.\d+)?", clean):
+        normalized = clean.replace(",", "")
+        return sign * int(round(float(normalized)))
+
+    # Plain decimals without thousand separators.
+    if re.fullmatch(r"\d+[.,]\d+", clean):
+        normalized = clean.replace(",", ".")
+        return sign * int(round(float(normalized)))
+
+    return sign * int(re.sub(r"[^\d]", "", clean))
 
 
 def iso_from_dmy(value: str) -> str:
@@ -258,6 +282,60 @@ def parse_meta_invoice_ocr_fallback(path: Path, warnings: list[ParseWarning]) ->
         "accountId": "",
         "totalBilled": total_billed,
         "totalFunds": 0,
+        "details": details,
+    }
+
+
+def parse_meta_invoice_activity_export(text: str, filename: str, warnings: list[ParseWarning]) -> dict[str, Any] | None:
+    lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+    row_re = re.compile(
+        r"^(\d{1,2}\s+[a-zA-Z]{3}\s+\d{4})\s*([0-9]{10,}-[0-9]{10,})"
+        r"(?:Visa\s+.*?\d{4}|No disponible)\s+(Pagado|Fondos agregados)\s+\$([\d,\.]+)$",
+        re.IGNORECASE,
+    )
+
+    details: list[dict[str, Any]] = []
+    for line in lines:
+        m = row_re.match(line)
+        if not m:
+            continue
+        date_txt, tx_id, status, amount_txt = m.groups()
+        details.append(
+            {
+                "date": iso_from_dmony(date_txt),
+                "transactionId": tx_id,
+                "paymentMethod": "Visa ···· 2327",
+                "status": status,
+                "amount": clp_to_int(amount_txt),
+            }
+        )
+
+    if not details:
+        return None
+
+    details.sort(key=lambda row: row["date"], reverse=True)
+
+    month = month_key_from_filename(filename)
+    if not month:
+        month = month_key(details[0]["date"])
+        warnings.append(
+            ParseWarning(
+                source=filename,
+                message="Could not infer month from filename, inferred from transaction date.",
+            )
+        )
+
+    total_billed = sum(row["amount"] for row in details if row["status"] == "Pagado")
+    total_funds = sum(row["amount"] for row in details if row["status"] == "Fondos agregados")
+
+    return {
+        "month": month,
+        "invoiceDate": details[0]["date"],
+        "periodStart": f"{month}-01",
+        "periodEnd": first_day_next_month(month),
+        "accountId": "",
+        "totalBilled": total_billed,
+        "totalFunds": total_funds,
         "details": details,
     }
 
@@ -511,15 +589,25 @@ def parse_meta_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, An
         )
 
     if total_billed == 0 and not details:
-        fallback = parse_meta_invoice_ocr_fallback(path, warnings)
-        if fallback:
-            period_start_iso = fallback["periodStart"]
-            period_end_iso = fallback["periodEnd"]
-            invoice_date_iso = fallback["invoiceDate"]
-            account_id = fallback["accountId"]
-            total_billed = fallback["totalBilled"]
-            total_funds = fallback["totalFunds"]
-            details = fallback["details"]
+        export_fallback = parse_meta_invoice_activity_export(text, filename, warnings)
+        if export_fallback:
+            period_start_iso = export_fallback["periodStart"]
+            period_end_iso = export_fallback["periodEnd"]
+            invoice_date_iso = export_fallback["invoiceDate"]
+            account_id = export_fallback["accountId"]
+            total_billed = export_fallback["totalBilled"]
+            total_funds = export_fallback["totalFunds"]
+            details = export_fallback["details"]
+        else:
+            ocr_fallback = parse_meta_invoice_ocr_fallback(path, warnings)
+            if ocr_fallback:
+                period_start_iso = ocr_fallback["periodStart"]
+                period_end_iso = ocr_fallback["periodEnd"]
+                invoice_date_iso = ocr_fallback["invoiceDate"]
+                account_id = ocr_fallback["accountId"]
+                total_billed = ocr_fallback["totalBilled"]
+                total_funds = ocr_fallback["totalFunds"]
+                details = ocr_fallback["details"]
 
     expected_total = META_TOTAL_OVERRIDES.get(filename)
     if expected_total is not None:
