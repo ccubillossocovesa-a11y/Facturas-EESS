@@ -675,17 +675,31 @@ def parse_meta_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, An
     }
 
 
-def parse_excel_sheet_rows(path: Path) -> tuple[str, dict[int, dict[str, str]]]:
+def parse_excel_sheet_rows(path: Path, sheet_name: str | None = None) -> tuple[str, dict[int, dict[str, str]]]:
     ns = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
     rel_ns = {"r": "http://schemas.openxmlformats.org/package/2006/relationships"}
 
     with zipfile.ZipFile(path) as zf:
         workbook = ET.fromstring(zf.read("xl/workbook.xml"))
-        sheet_el = workbook.find("m:sheets/m:sheet", ns)
-        if sheet_el is None:
+        sheet_elements = workbook.findall("m:sheets/m:sheet", ns)
+        if not sheet_elements:
             raise ValueError(f"No sheets found in {path.name}")
-        sheet_name = sheet_el.attrib.get("name", "")
-        rel_id = sheet_el.attrib.get("{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id")
+
+        selected_sheet = None
+        if sheet_name:
+            for candidate in sheet_elements:
+                if candidate.attrib.get("name", "").strip() == sheet_name.strip():
+                    selected_sheet = candidate
+                    break
+            if selected_sheet is None:
+                raise ValueError(f"Sheet '{sheet_name}' not found in {path.name}")
+        else:
+            selected_sheet = sheet_elements[0]
+
+        selected_sheet_name = selected_sheet.attrib.get("name", "")
+        rel_id = selected_sheet.attrib.get(
+            "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id"
+        )
 
         rels = ET.fromstring(zf.read("xl/_rels/workbook.xml.rels"))
         rel_target = ""
@@ -695,6 +709,7 @@ def parse_excel_sheet_rows(path: Path) -> tuple[str, dict[int, dict[str, str]]]:
                 break
         if not rel_target:
             raise ValueError(f"Could not resolve sheet relationship in {path.name}")
+        rel_target = rel_target.lstrip("/")
 
         shared_strings: list[str] = []
         if "xl/sharedStrings.xml" in zf.namelist():
@@ -703,7 +718,8 @@ def parse_excel_sheet_rows(path: Path) -> tuple[str, dict[int, dict[str, str]]]:
                 text = "".join(t.text or "" for t in si.findall(".//m:t", ns))
                 shared_strings.append(text)
 
-        sheet = ET.fromstring(zf.read(f"xl/{rel_target}"))
+        sheet_path = rel_target if rel_target.startswith("xl/") else f"xl/{rel_target}"
+        sheet = ET.fromstring(zf.read(sheet_path))
         rows: dict[int, dict[str, str]] = {}
         for row in sheet.findall("m:sheetData/m:row", ns):
             row_idx = int(row.attrib["r"])
@@ -711,17 +727,123 @@ def parse_excel_sheet_rows(path: Path) -> tuple[str, dict[int, dict[str, str]]]:
             for cell in row.findall("m:c", ns):
                 ref = cell.attrib.get("r", "")
                 col = "".join(ch for ch in ref if ch.isalpha())
-                value_el = cell.find("m:v", ns)
-                if not col or value_el is None:
+                if not col:
                     continue
+
+                cell_type = cell.attrib.get("t")
+                value_el = cell.find("m:v", ns)
+                inline_text = "".join(t.text or "" for t in cell.findall("m:is//m:t", ns))
+
+                if cell_type == "inlineStr":
+                    row_map[col] = inline_text
+                    continue
+
+                if value_el is None:
+                    continue
+
                 val = value_el.text or ""
-                if cell.attrib.get("t") == "s" and val:
-                    row_map[col] = shared_strings[int(val)]
+                if cell_type == "s" and val:
+                    row_map[col] = shared_strings[int(val)] if int(val) < len(shared_strings) else ""
                 else:
                     row_map[col] = val
             if row_map:
                 rows[row_idx] = row_map
-        return sheet_name, rows
+        return selected_sheet_name, rows
+
+
+def parse_rs_excel(path: Path, warnings: list[ParseWarning]) -> list[dict[str, Any]]:
+    try:
+        _, rows = parse_excel_sheet_rows(path, sheet_name="RS")
+    except Exception as exc:
+        warnings.append(ParseWarning(source=path.name, message=f"Could not parse RS sheet: {exc}"))
+        return []
+
+    base_year = datetime.utcnow().year
+    try:
+        first_sheet_name, _ = parse_excel_sheet_rows(path)
+        inferred_month = month_key_from_spanish_name(first_sheet_name)
+        base_year = int(inferred_month[:4])
+    except Exception:
+        pass
+
+    parsed_rules: list[dict[str, Any]] = []
+    for row_idx in sorted(rows):
+        if row_idx < 3:
+            continue
+        row = rows[row_idx]
+        brand = row.get("B", "").strip()
+        platform = row.get("C", "").strip()
+        legal_entity = row.get("D", "").strip()
+        month_raw = row.get("E", "").strip()
+        expense_raw = row.get("F", "").strip()
+        percentage_raw = row.get("G", "").strip()
+
+        if not brand or not platform or not legal_entity or not month_raw or not percentage_raw:
+            continue
+        if platform not in {"Google", "Meta"}:
+            continue
+
+        try:
+            month_number = int(round(float(month_raw)))
+            percentage = float(percentage_raw)
+        except ValueError:
+            warnings.append(
+                ParseWarning(
+                    source=path.name,
+                    message=f"Invalid RS values on row {row_idx}: month='{month_raw}', pct='{percentage_raw}'.",
+                )
+            )
+            continue
+
+        if month_number < 1 or month_number > 12:
+            warnings.append(
+                ParseWarning(
+                    source=path.name,
+                    message=f"Invalid RS month number on row {row_idx}: {month_number}.",
+                )
+            )
+            continue
+
+        expense = None
+        if expense_raw:
+            try:
+                expense = int(round(float(expense_raw)))
+            except ValueError:
+                expense = None
+
+        parsed_rules.append(
+            {
+                "month": f"{base_year:04d}-{month_number:02d}",
+                "monthNumber": f"{month_number:02d}",
+                "brand": brand,
+                "platform": platform,
+                "legalEntity": legal_entity,
+                "percentage": percentage,
+                "expense": expense,
+            }
+        )
+
+    # Deduplicate repeated rows across files while preserving deterministic order.
+    deduped: dict[tuple[str, str, str, str, float], dict[str, Any]] = {}
+    for rule in parsed_rules:
+        key = (
+            rule["month"],
+            rule["brand"],
+            rule["platform"],
+            rule["legalEntity"],
+            rule["percentage"],
+        )
+        deduped[key] = rule
+
+    return sorted(
+        deduped.values(),
+        key=lambda item: (
+            item["month"],
+            item["brand"],
+            item["platform"],
+            item["legalEntity"],
+        ),
+    )
 
 
 def parse_zeppelin_excel(path: Path, warnings: list[ParseWarning], document_file: str) -> list[dict[str, Any]]:
@@ -804,6 +926,7 @@ def main() -> None:
     warnings: list[ParseWarning] = []
 
     invoices: list[dict[str, Any]] = []
+    rs_rules: list[dict[str, Any]] = []
     google_files = sorted(PDF_DIR.glob("*GoogleAds.pdf"))
     meta_files = sorted(PDF_DIR.glob("*Meta*.pdf"))
 
@@ -817,6 +940,7 @@ def main() -> None:
         if file.resolve() != target_excel.resolve():
             shutil.copy2(file, target_excel)
         invoices.extend(parse_zeppelin_excel(file, warnings, document_file=f"pdfs/{target_excel.name}"))
+        rs_rules.extend(parse_rs_excel(file, warnings))
 
     invoices.sort(key=lambda item: (item["month"], item["platform"], item["brand"], item["invoiceDate"]))
 
@@ -841,6 +965,7 @@ def main() -> None:
         "invoices": invoices,
         "brands": brands,
         "platforms": platforms,
+        "rsRules": rs_rules,
     }
 
     JSON_OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-03-13T15:10:30Z",
+  "generatedAt": "2026-03-17T19:16:24Z",
   "currency": "CLP",
   "invoices": [
     {
       "id": "zeppelin-5509669872",
-      "sourceFile": "Facturación EESS.xlsx",
+      "sourceFile": "Facturación EESS.xlsx",
       "pdfFile": "pdfs/Facturacion_EESS.xlsx",
       "documentFile": "pdfs/Facturacion_EESS.xlsx",
       "platform": "Agencia Zeppelin",
@@ -42,7 +42,7 @@
     },
     {
       "id": "zeppelin-5508938234",
-      "sourceFile": "Facturación EESS.xlsx",
+      "sourceFile": "Facturación EESS.xlsx",
       "pdfFile": "pdfs/Facturacion_EESS.xlsx",
       "documentFile": "pdfs/Facturacion_EESS.xlsx",
       "platform": "Agencia Zeppelin",
@@ -78,7 +78,7 @@
     },
     {
       "id": "zeppelin-5511991578",
-      "sourceFile": "Facturación EESS.xlsx",
+      "sourceFile": "Facturación EESS.xlsx",
       "pdfFile": "pdfs/Facturacion_EESS.xlsx",
       "documentFile": "pdfs/Facturacion_EESS.xlsx",
       "platform": "Agencia Zeppelin",
@@ -5068,5 +5068,403 @@
     "Meta",
     "Google Ads",
     "Agencia Zeppelin"
+  ],
+  "rsRules": [
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Almagro",
+      "platform": "Google",
+      "legalEntity": "Almagro S.A",
+      "percentage": 0.9093,
+      "expense": 27311953
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Almagro",
+      "platform": "Google",
+      "legalEntity": "Arcilla Roja",
+      "percentage": 0.0227,
+      "expense": 680654
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Almagro",
+      "platform": "Google",
+      "legalEntity": "Madagascar",
+      "percentage": 0.0681,
+      "expense": 2044450
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Almagro",
+      "platform": "Meta",
+      "legalEntity": "Almagro S.A",
+      "percentage": 0.7852,
+      "expense": 15452383
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Almagro",
+      "platform": "Meta",
+      "legalEntity": "Arcilla Roja",
+      "percentage": 0.2242,
+      "expense": 4413263
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Almagro",
+      "platform": "Meta",
+      "legalEntity": "Madagascar",
+      "percentage": 0.11,
+      "expense": 2164635
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Pilares",
+      "platform": "Google",
+      "legalEntity": "ICSA",
+      "percentage": 0.4961,
+      "expense": 3642615
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Pilares",
+      "platform": "Google",
+      "legalEntity": "Pilares S.A",
+      "percentage": 0.6078,
+      "expense": 4463399
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Pilares",
+      "platform": "Meta",
+      "legalEntity": "ICSA",
+      "percentage": 0.2388,
+      "expense": 2796354
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Pilares",
+      "platform": "Meta",
+      "legalEntity": "Pilares S.A",
+      "percentage": 0.692,
+      "expense": 8104284
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Santiago",
+      "platform": "Google",
+      "legalEntity": "Consorcio Inmobiliario Macul",
+      "percentage": 0.1337,
+      "expense": 1988486
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Santiago",
+      "platform": "Google",
+      "legalEntity": "INSOCO",
+      "percentage": 0.1552,
+      "expense": 2307955
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Santiago",
+      "platform": "Google",
+      "legalEntity": "Inmobiliaria El Descubridor",
+      "percentage": 0.3247,
+      "expense": 4828029
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Santiago",
+      "platform": "Google",
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
+      "percentage": 0.1762,
+      "expense": 2620189
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Santiago",
+      "platform": "Google",
+      "legalEntity": "Sociedad Comercializadora Metropolitana",
+      "percentage": 0.1589,
+      "expense": 2362130
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Santiago",
+      "platform": "Meta",
+      "legalEntity": "Consorcio Inmobiliario Macul",
+      "percentage": 0.0316,
+      "expense": 333268
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Santiago",
+      "platform": "Meta",
+      "legalEntity": "INSOCO",
+      "percentage": 0.3535,
+      "expense": 3729610
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Santiago",
+      "platform": "Meta",
+      "legalEntity": "Inmobiliaria El Descubridor",
+      "percentage": 0.1458,
+      "expense": 1538812
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Santiago",
+      "platform": "Meta",
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
+      "percentage": 0.2917,
+      "expense": 3077676
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Santiago",
+      "platform": "Meta",
+      "legalEntity": "Sociedad Comercializadora Metropolitana",
+      "percentage": 0.0316,
+      "expense": 333656
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Sur",
+      "platform": "Google",
+      "legalEntity": "Socovesa Sur S.A",
+      "percentage": 1.0,
+      "expense": 6438390
+    },
+    {
+      "month": "2026-02",
+      "monthNumber": "02",
+      "brand": "Socovesa Sur",
+      "platform": "Meta",
+      "legalEntity": "Socovesa Sur S.A",
+      "percentage": 1.0,
+      "expense": 5546975
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Almagro",
+      "platform": "Google",
+      "legalEntity": "Almagro S.A",
+      "percentage": 0.906,
+      "expense": 15108209
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Almagro",
+      "platform": "Google",
+      "legalEntity": "Arcilla Roja",
+      "percentage": 0.026,
+      "expense": 433210
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Almagro",
+      "platform": "Google",
+      "legalEntity": "Madagascar",
+      "percentage": 0.0681,
+      "expense": 1134989
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Almagro",
+      "platform": "Meta",
+      "legalEntity": "Almagro S.A",
+      "percentage": 0.7929,
+      "expense": 9816334
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Almagro",
+      "platform": "Meta",
+      "legalEntity": "Arcilla Roja",
+      "percentage": 0.213,
+      "expense": 2637215
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Almagro",
+      "platform": "Meta",
+      "legalEntity": "Madagascar",
+      "percentage": 0.0988,
+      "expense": 1223766
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Pilares",
+      "platform": "Google",
+      "legalEntity": "ICSA",
+      "percentage": 0.4922,
+      "expense": 2490310
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Pilares",
+      "platform": "Google",
+      "legalEntity": "Pilares S.A",
+      "percentage": 0.5776,
+      "expense": 2922542
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Pilares",
+      "platform": "Meta",
+      "legalEntity": "ICSA",
+      "percentage": 0.2413,
+      "expense": 1545098
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Pilares",
+      "platform": "Meta",
+      "legalEntity": "Pilares S.A",
+      "percentage": 0.694,
+      "expense": 4444464
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Santiago",
+      "platform": "Google",
+      "legalEntity": "Consorcio Inmobiliario Macul",
+      "percentage": 0.1013,
+      "expense": 834591
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Santiago",
+      "platform": "Google",
+      "legalEntity": "INSOCO",
+      "percentage": 0.1541,
+      "expense": 1269524
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Santiago",
+      "platform": "Google",
+      "legalEntity": "Inmobiliaria El Descubridor",
+      "percentage": 0.342,
+      "expense": 2816674
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Santiago",
+      "platform": "Google",
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
+      "percentage": 0.1872,
+      "expense": 1541635
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Santiago",
+      "platform": "Google",
+      "legalEntity": "Sociedad Comercializadora Metropolitana",
+      "percentage": 0.1725,
+      "expense": 1420252
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Santiago",
+      "platform": "Meta",
+      "legalEntity": "Consorcio Inmobiliario Macul",
+      "percentage": 0.0185,
+      "expense": 125487
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Santiago",
+      "platform": "Meta",
+      "legalEntity": "INSOCO",
+      "percentage": 0.453,
+      "expense": 3068330
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Santiago",
+      "platform": "Meta",
+      "legalEntity": "Inmobiliaria El Descubridor",
+      "percentage": 0.1253,
+      "expense": 848929
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Santiago",
+      "platform": "Meta",
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
+      "percentage": 0.2453,
+      "expense": 1661791
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Santiago",
+      "platform": "Meta",
+      "legalEntity": "Sociedad Comercializadora Metropolitana",
+      "percentage": 0.0276,
+      "expense": 187206
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Sur",
+      "platform": "Google",
+      "legalEntity": "Socovesa Sur S.A",
+      "percentage": 1.0,
+      "expense": 3763827
+    },
+    {
+      "month": "2026-03",
+      "monthNumber": "03",
+      "brand": "Socovesa Sur",
+      "platform": "Meta",
+      "legalEntity": "Socovesa Sur S.A",
+      "percentage": 1.0,
+      "expense": 3274943
+    }
   ]
 }

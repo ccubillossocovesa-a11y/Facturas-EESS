@@ -215,6 +215,12 @@ body {
   color: var(--muted);
 }
 
+.rs-summary {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
 .invoice-list {
   display: grid;
   gap: 10px;
