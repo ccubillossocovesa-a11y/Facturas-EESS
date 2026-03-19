@@ -28,6 +28,7 @@ const clearFiltersBtn = document.getElementById("clear-filters");
 const rsResultsCount = document.getElementById("rs-results-count");
 const rsSummary = document.getElementById("rs-summary");
 const rsBreakdownBody = document.getElementById("rs-breakdown-body");
+const allReasonSocialRows = Array.isArray(data.reasonSocialRows) ? data.reasonSocialRows : [];
 
 const clpFormatter = new Intl.NumberFormat("es-CL", {
   style: "currency",
@@ -154,151 +155,55 @@ function toNumber(value) {
   return Number.isFinite(parsed) ? parsed : 0;
 }
 
-function normalizeRsPlatform(platform) {
-  if (platform === "Google Ads") return "Google";
-  if (platform === "Meta") return "Meta";
-  return "";
-}
-
-function normalizeRsBrand(brand) {
-  if (brand === "Almagro Inmobiliaria" || brand === "Almagro Propiedades") return "Almagro";
-  return brand;
-}
-
-function rsRuleKey(monthNumber, brand, platform) {
-  return `${monthNumber}|${brand}|${platform}`;
-}
-
-function buildRsRulesIndex() {
-  const rules = Array.isArray(data.rsRules) ? data.rsRules : [];
-  const index = new Map();
-
-  rules.forEach((rule) => {
-    const monthNumber = normalizeText(rule.monthNumber || "").slice(0, 2);
-    const brand = normalizeText(rule.brand);
-    const platform = normalizeText(rule.platform);
-    const legalEntity = normalizeText(rule.legalEntity);
-    const percentage = toNumber(rule.percentage);
-
-    if (!monthNumber || !brand || !platform || !legalEntity || !Number.isFinite(percentage)) return;
-    const key = rsRuleKey(monthNumber, brand, platform);
-    const current = index.get(key) || [];
-    current.push({ legalEntity, percentage });
-    index.set(key, current);
-  });
-
-  Array.from(index.keys()).forEach((key) => {
-    const sorted = index.get(key).sort((a, b) => b.percentage - a.percentage);
-    index.set(key, sorted);
-  });
-
-  return index;
-}
-
-const rsRulesIndex = buildRsRulesIndex();
-
-function getSocovesaGoogleSplit(invoice) {
-  let santiagoAmount = 0;
-  let surAmount = 0;
-
-  (Array.isArray(invoice.details) ? invoice.details : []).forEach((detail) => {
-    const amount = toNumber(detail?.amount);
-    const campaignName = normalizeText(detail?.description).toLocaleLowerCase("es");
-    if (campaignName.includes("sur")) {
-      surAmount += amount;
-      return;
-    }
-    santiagoAmount += amount;
-  });
-
-  return { santiagoAmount, surAmount };
-}
-
-function buildRsBreakdownRows(filteredInvoices) {
-  const rows = [];
-
-  filteredInvoices.forEach((invoice) => {
-    if (invoice.platform !== "Meta" && invoice.platform !== "Google Ads") return;
-
-    const monthNumber = getInvoiceMonthNumber(invoice);
-    const rsPlatform = normalizeRsPlatform(invoice.platform);
-    const invoiceTotal = toNumber(invoice.totalAmount);
-    const baseAllocations = [];
-
-    if (invoice.brand === "Socovesa" && invoice.platform === "Google Ads") {
-      const split = getSocovesaGoogleSplit(invoice);
-      baseAllocations.push({
-        rsBrand: "Socovesa Santiago",
-        baseAmount: split.santiagoAmount,
-        baseRule: "Google Socovesa: campañas sin 'sur'",
-      });
-      baseAllocations.push({
-        rsBrand: "Socovesa Sur",
-        baseAmount: split.surAmount,
-        baseRule: "Google Socovesa: campañas con 'sur'",
-      });
-    } else if (invoice.brand === "Socovesa" && invoice.platform === "Meta") {
-      baseAllocations.push({
-        rsBrand: "Socovesa Santiago",
-        baseAmount: invoiceTotal * 0.6554,
-        baseRule: "Meta Socovesa: 65,54% del total",
-      });
-      baseAllocations.push({
-        rsBrand: "Socovesa Sur",
-        baseAmount: invoiceTotal * 0.3446,
-        baseRule: "Meta Socovesa: 34,46% del total",
-      });
-    } else {
-      baseAllocations.push({
-        rsBrand: normalizeRsBrand(invoice.brand),
-        baseAmount: invoiceTotal,
-        baseRule: "Total factura",
-      });
-    }
-
-    baseAllocations.forEach((base) => {
-      const rules = rsRulesIndex.get(rsRuleKey(monthNumber, base.rsBrand, rsPlatform)) || [];
-      rules.forEach((rule) => {
-        rows.push({
-          invoiceDate: invoice.invoiceDate,
-          invoiceId: invoice.id,
-          invoicePlatform: invoice.platform,
-          invoiceBrand: invoice.brand,
-          rsBrand: base.rsBrand,
-          legalEntity: rule.legalEntity,
-          percentage: rule.percentage,
-          baseAmount: base.baseAmount,
-          assignedAmount: base.baseAmount * rule.percentage,
-          baseRule: base.baseRule,
-          invoiceTotal,
-        });
-      });
-    });
-  });
-
-  return rows.sort((a, b) => {
-    if (a.invoiceDate > b.invoiceDate) return -1;
-    if (a.invoiceDate < b.invoiceDate) return 1;
-    return b.assignedAmount - a.assignedAmount;
-  });
-}
-
 function renderRsBreakdown(filteredInvoices) {
   if (!rsBreakdownBody || !rsResultsCount || !rsSummary) return;
 
-  const rows = buildRsBreakdownRows(filteredInvoices);
-  rsResultsCount.textContent = `${rows.length} línea${rows.length === 1 ? "" : "s"}`;
+  const selectedInvoiceKeys = new Set(
+    filteredInvoices
+      .filter((invoice) => invoice.platform === "Meta" || invoice.platform === "Google Ads")
+      .map((invoice) => `${normalizeText(invoice.id)}|${normalizeText(invoice.platform)}|${normalizeText(invoice.brand)}|${getInvoiceMonthKey(invoice)}`)
+  );
 
-  const totalFiltered = filteredInvoices
-    .filter((invoice) => invoice.platform === "Meta" || invoice.platform === "Google Ads")
-    .reduce((sum, invoice) => sum + toNumber(invoice.totalAmount), 0);
-  const totalAssigned = rows.reduce((sum, row) => sum + row.assignedAmount, 0);
-  const diff = totalFiltered - totalAssigned;
+  const campaignRows = allReasonSocialRows.filter((row) => {
+    const rowMonth = getMonthKey(row.month) || getMonthKey(row.invoiceDate);
+    const rowKey = `${normalizeText(row.invoiceId)}|${normalizeText(row.platform)}|${normalizeText(row.brand)}|${rowMonth}`;
+    return selectedInvoiceKeys.has(rowKey);
+  });
 
-  rsSummary.textContent = `Facturado (Meta + Google): ${formatCLP(totalFiltered)} | Asignado RS: ${formatCLP(totalAssigned)} | Diferencia: ${formatCLP(diff)}`;
+  const summaryMap = new Map();
+  campaignRows.forEach((row) => {
+    const legalEntity = normalizeText(row.legalEntity) || "Sin asignar";
+    const current = summaryMap.get(legalEntity) || {
+      legalEntity,
+      totalAmount: 0,
+      campaigns: new Set(),
+      lines: 0,
+    };
+    current.totalAmount += toNumber(row.amount);
+    current.lines += 1;
+    if (normalizeText(row.campaignName)) current.campaigns.add(normalizeText(row.campaignName));
+    summaryMap.set(legalEntity, current);
+  });
+
+  const rows = Array.from(summaryMap.values())
+    .map((row) => ({
+      legalEntity: row.legalEntity,
+      totalAmount: row.totalAmount,
+      campaignCount: row.campaigns.size,
+      lines: row.lines,
+    }))
+    .sort((a, b) => b.totalAmount - a.totalAmount);
+
+  rsResultsCount.textContent = `${rows.length} razón${rows.length === 1 ? "" : "es"} social${rows.length === 1 ? "" : "es"}`;
+
+  const totalCampaignSpend = rows.reduce((sum, row) => sum + row.totalAmount, 0);
+  const unassignedAmount = rows
+    .filter((row) => row.legalEntity === "Sin asignar")
+    .reduce((sum, row) => sum + row.totalAmount, 0);
+  rsSummary.textContent = `Gasto campañas (Meta + Google): ${formatCLP(totalCampaignSpend)} | Sin asignar: ${formatCLP(unassignedAmount)} | Líneas de campaña: ${campaignRows.length}`;
 
   if (!rows.length) {
-    rsBreakdownBody.innerHTML = '<tr><td colspan="10" class="empty">No hay líneas RS para los filtros seleccionados.</td></tr>';
+    rsBreakdownBody.innerHTML = '<tr><td colspan="5" class="empty">No hay campañas para los filtros seleccionados.</td></tr>';
     return;
   }
 
@@ -306,16 +211,11 @@ function renderRsBreakdown(filteredInvoices) {
     .map(
       (row) => `
       <tr>
-        <td>${formatDate(row.invoiceDate)}</td>
-        <td>${esc(row.invoiceId)}</td>
-        <td>${esc(row.invoicePlatform)}</td>
-        <td>${esc(row.invoiceBrand)}</td>
-        <td>${esc(row.rsBrand)}</td>
         <td>${esc(row.legalEntity)}</td>
-        <td class="amount">${(row.percentage * 100).toFixed(2)}%</td>
-        <td class="amount">${formatCLP(row.baseAmount)}</td>
-        <td class="amount">${formatCLP(row.assignedAmount)}</td>
-        <td>${esc(row.baseRule)}</td>
+        <td class="amount">${formatCLP(row.totalAmount)}</td>
+        <td class="amount">${totalCampaignSpend ? `${((row.totalAmount / totalCampaignSpend) * 100).toFixed(2)}%` : "0.00%"}</td>
+        <td class="amount">${row.campaignCount}</td>
+        <td class="amount">${row.lines}</td>
       </tr>`
     )
     .join("");

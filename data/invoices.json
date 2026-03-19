@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-19T20:42:53Z",
+  "generatedAt": "2026-03-19T21:11:02Z",
   "currency": "CLP",
   "invoices": [
     {
       "id": "zeppelin-5509669872",
       "sourceFile": "Facturación EESS.xlsx",
-      "pdfFile": "pdfs/Facturacion_EESS.xlsx",
-      "documentFile": "pdfs/Facturacion_EESS.xlsx",
+      "pdfFile": "Facturación EESS.xlsx",
+      "documentFile": "Facturación EESS.xlsx",
       "platform": "Agencia Zeppelin",
       "brand": "Almagro Inmobiliaria",
       "month": "2026-02",
@@ -43,8 +43,8 @@
     {
       "id": "zeppelin-5508938234",
       "sourceFile": "Facturación EESS.xlsx",
-      "pdfFile": "pdfs/Facturacion_EESS.xlsx",
-      "documentFile": "pdfs/Facturacion_EESS.xlsx",
+      "pdfFile": "Facturación EESS.xlsx",
+      "documentFile": "Facturación EESS.xlsx",
       "platform": "Agencia Zeppelin",
       "brand": "Pilares",
       "month": "2026-02",
@@ -79,8 +79,8 @@
     {
       "id": "zeppelin-5511991578",
       "sourceFile": "Facturación EESS.xlsx",
-      "pdfFile": "pdfs/Facturacion_EESS.xlsx",
-      "documentFile": "pdfs/Facturacion_EESS.xlsx",
+      "pdfFile": "Facturación EESS.xlsx",
+      "documentFile": "Facturación EESS.xlsx",
       "platform": "Agencia Zeppelin",
       "brand": "Socovesa",
       "month": "2026-02",
@@ -322,6 +322,96 @@
           "amount": 30
         }
       ],
+      "campaigns": [
+        {
+          "name": "Santiago | AO S | Por Comuna | Nunoa #2",
+          "amount": 977005
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | Las Condes",
+          "amount": 890272
+        },
+        {
+          "name": "Norte | AO S | Por Comuna | Antofagasta",
+          "amount": 854120
+        },
+        {
+          "name": "Santiago | MR | Almagro District",
+          "amount": 611677
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | Providencia",
+          "amount": 515931
+        },
+        {
+          "name": "Santiago | AO S | Tudeptoestupie",
+          "amount": 499268
+        },
+        {
+          "name": "Santiago | MR | Insigne",
+          "amount": 478659
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | Lo Barnechea | Los Cactus",
+          "amount": 470468
+        },
+        {
+          "name": "Santiago | AO S | Inversionistas 2",
+          "amount": 357563
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | Santiago Centro #2",
+          "amount": 333094
+        },
+        {
+          "name": "Santiago | MR | Plus",
+          "amount": 291774
+        },
+        {
+          "name": "Nacional | AO S | Por Categoria | Always On",
+          "amount": 274769
+        },
+        {
+          "name": "Santiago | MR | Rengo",
+          "amount": 259141
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | Macul | 2",
+          "amount": 169116
+        },
+        {
+          "name": "Antofagasta | MR | Parque Brasil",
+          "amount": 66713
+        },
+        {
+          "name": "Santiago | Demand Gen | Almagro District",
+          "amount": 48966
+        },
+        {
+          "name": "Santiago | Demand Gen | Almagro District",
+          "amount": 34162
+        },
+        {
+          "name": "Santiago | MR | Rengo",
+          "amount": 7683
+        },
+        {
+          "name": "Santiago | MR | Insigne",
+          "amount": 7304
+        },
+        {
+          "name": "Santiago | MR | Plus",
+          "amount": 1632
+        },
+        {
+          "name": "Antofagasta | MR | Parque Brasil",
+          "amount": 346
+        },
+        {
+          "name": "Santiago | MR | Almagro District",
+          "amount": 220
+        }
+      ],
       "notes": []
     },
     {
@@ -404,6 +494,24 @@
           "quantity": null,
           "unit": null,
           "amount": 1
+        }
+      ],
+      "campaigns": [
+        {
+          "name": "Nacional | AO S | Por Categoria | Propiedades",
+          "amount": 91183
+        },
+        {
+          "name": "Nacional | AO S | Propiedades | Cuota impresiones",
+          "amount": 87922
+        },
+        {
+          "name": "Santiago | AO | DemandGen | Propiedades",
+          "amount": 40199
+        },
+        {
+          "name": "Santiago | AO | DemandGen | Propiedades",
+          "amount": 9342
         }
       ],
       "notes": []
@@ -526,6 +634,56 @@
           "quantity": null,
           "unit": null,
           "amount": 16
+        }
+      ],
+      "campaigns": [
+        {
+          "name": "Santiago | AO S | Por Comuna | Santiago Centro #2",
+          "amount": 328134
+        },
+        {
+          "name": "Santiago | AO S | Inversionistas 2",
+          "amount": 237243
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | La Florida",
+          "amount": 230853
+        },
+        {
+          "name": "Santiago | AO S | Always On",
+          "amount": 167544
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | Estacion Central #2",
+          "amount": 135856
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | La Cisterna",
+          "amount": 132303
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | Ñuñoa #2",
+          "amount": 120834
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | Independencia",
+          "amount": 104449
+        },
+        {
+          "name": "Santiago | Max. Rend. | Por proyecto | Santos Dumont | Independencia",
+          "amount": 67573
+        },
+        {
+          "name": "Santiago | Max. Rend. | Por proyecto | Conde Maule | Estacion Central",
+          "amount": 55602
+        },
+        {
+          "name": "Santiago | Max. Rend. | Por proyecto | Santos Dumont | Independencia",
+          "amount": 993
+        },
+        {
+          "name": "Santiago | Max. Rend. | Por proyecto | Conde Maule | Estacion Central",
+          "amount": 405
         }
       ],
       "notes": []
@@ -712,6 +870,92 @@
           "quantity": null,
           "unit": null,
           "amount": 18
+        }
+      ],
+      "campaigns": [
+        {
+          "name": "Santiago | AO S | Por Comuna | Ñuñoa #2",
+          "amount": 633002
+        },
+        {
+          "name": "Santiago | AO S | Por Categoria | Always On Santiago",
+          "amount": 570556
+        },
+        {
+          "name": "Santiago | AO S | Por Proyecto | Macul | Coipué",
+          "amount": 567910
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | Macul #2",
+          "amount": 529984
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | Lampa",
+          "amount": 449059
+        },
+        {
+          "name": "Sur | AO S | Por Categoria | Always On Sur",
+          "amount": 400326
+        },
+        {
+          "name": "Santiago | AO S | Por Comuna | Maipu V2",
+          "amount": 337660
+        },
+        {
+          "name": "Sur | AO S | Por Ciudad | Temuco",
+          "amount": 286324
+        },
+        {
+          "name": "Sur Austral | AO S | Por Ciudad | Puerto Montt",
+          "amount": 210802
+        },
+        {
+          "name": "Santiago | Max. Rend. | Por Proyecto | Ñuñoa | Marathon",
+          "amount": 202861
+        },
+        {
+          "name": "Santiago | Max. Rend. | Por Proyecto | Maipú | Pajaritos",
+          "amount": 159662
+        },
+        {
+          "name": "Santiago | Max. Rend. | Por Proyecto | Lampa | Los Coihues",
+          "amount": 149247
+        },
+        {
+          "name": "Centro Sur | AO S | Por Ciudad | Los Angeles #2",
+          "amount": 122145
+        },
+        {
+          "name": "Sur | AO S | Valdivia",
+          "amount": 104553
+        },
+        {
+          "name": "Sur | AO S | Inversionistas",
+          "amount": 100782
+        },
+        {
+          "name": "Centro Sur | AO S | Por Ciudad | Chillan 2",
+          "amount": 98406
+        },
+        {
+          "name": "Santiago | AO S | Por Proyecto | Las Pataguas | Lampa",
+          "amount": 86134
+        },
+        {
+          "name": "Sur Austral | AO S | Por Ciudad | Punta Arenas",
+          "amount": 44152
+        },
+        {
+          "name": "Santiago | Max. Rend. | Por Proyecto | Ñuñoa | Marathon",
+          "amount": 3211
+        },
+        {
+          "name": "Santiago | Max. Rend. | Por Proyecto | Lampa | Los Coihues",
+          "amount": 487
+        },
+        {
+          "name": "Santiago | Max. Rend. | Por Proyecto | Maipú | Pajaritos",
+          "amount": 97
         }
       ],
       "notes": []
@@ -1504,6 +1748,96 @@
           "sourceFile": "Facturas Meta/Almagro/febrero_2026/2026-02-02T07-28 Transacción n.º 25620303294321709-25512350051783705 (1).pdf"
         }
       ],
+      "campaigns": [
+        {
+          "name": "FB_Advantage_Almagro",
+          "amount": 14689458
+        },
+        {
+          "name": "FB_AOT_Santiago_AlmagroDistrict",
+          "amount": 1610955
+        },
+        {
+          "name": "FB_Almagro_TuDeptoEsTuPie",
+          "amount": 1184674
+        },
+        {
+          "name": "FB_AOT_Antofagasta_ParqueBrasil",
+          "amount": 1128815
+        },
+        {
+          "name": "FB_AOT_Santiago_AlmagroPlus",
+          "amount": 1128365
+        },
+        {
+          "name": "FB_AOT_Santiago_Rengo",
+          "amount": 1128360
+        },
+        {
+          "name": "FB_AOT_Santiago_Balance",
+          "amount": 1127797
+        },
+        {
+          "name": "FB_AOT_Santiago_Insigne",
+          "amount": 1127711
+        },
+        {
+          "name": "FB_AOL_Santiago_AlmagroDistrict",
+          "amount": 539400
+        },
+        {
+          "name": "FB_AOL_Santiago_Insigne",
+          "amount": 324528
+        },
+        {
+          "name": "FB_AOL_Santiago_Rengo",
+          "amount": 323542
+        },
+        {
+          "name": "FB_AOL_Santiago_AlmagroPlus",
+          "amount": 323471
+        },
+        {
+          "name": "FB_AOL_Antofagasta_ParqueBrasil",
+          "amount": 323360
+        },
+        {
+          "name": "FB_AOL_Santiago_Balance",
+          "amount": 323342
+        },
+        {
+          "name": "FB_AOL_Santiago_Carrera_IV",
+          "amount": 299914
+        },
+        {
+          "name": "FB_AOL_Santiago_LosCactus",
+          "amount": 299810
+        },
+        {
+          "name": "FB_AOL_Antofagasta_Indico",
+          "amount": 299616
+        },
+        {
+          "name": "FB_AOL_Santiago_SanEugenio",
+          "amount": 299049
+        },
+        {
+          "name": "FB_AOL_Santiago_AlmagroHub",
+          "amount": 299032
+        },
+        {
+          "name": "FB_AOL_Santiago_LyonBilbao",
+          "amount": 298693
+        },
+        {
+          "name": "FB_AOL_Santiago_PadreLePaige_Etapa2",
+          "amount": 298644
+        },
+        {
+          "name": "FB_Almagro_Patrocinado_Blog",
+          "amount": 176908
+        }
+      ],
       "notes": [
         "Montos agregados desde comprobantes en carpeta: Facturas Meta/Almagro/febrero_2026.",
         "Meta agrupa esta cuenta como ALMAGRO S A y no separa Inmobiliaria/Propiedades."
@@ -2063,6 +2397,64 @@
           "status": "Pagado",
           "amount": 20197,
           "sourceFile": "Facturas Meta/Pilares/febrero_2026/2026-02-03T22-51 Transacción n.º 25863785519975426-25987320404288597.pdf"
+        }
+      ],
+      "campaigns": [
+        {
+          "name": "FB_Pilares_Advantage_Proyectos",
+          "amount": 7317880
+        },
+        {
+          "name": "FB_AOT_Franklin",
+          "amount": 1938455
+        },
+        {
+          "name": "FB_Pilares_Awareness",
+          "amount": 1246333
+        },
+        {
+          "name": "FB_Pilares_Inversionistas",
+          "amount": 984599
+        },
+        {
+          "name": "FB_AOT_CondeMauleIII",
+          "amount": 926495
+        },
+        {
+          "name": "FB_AOT_SantosDumont",
+          "amount": 925461
+        },
+        {
+          "name": "FB_AOL_Franklin",
+          "amount": 345684
+        },
+        {
+          "name": "FB_AOL_CondeMauleIII",
+          "amount": 265434
+        },
+        {
+          "name": "FB_AOL_SantosDumont",
+          "amount": 265063
+        },
+        {
+          "name": "FB_AOL_VicunaMackenna7244",
+          "amount": 199290
+        },
+        {
+          "name": "FB_AOL_EdificioNuble",
+          "amount": 199280
+        },
+        {
+          "name": "FB_AOL_RodriguezVelasco",
+          "amount": 199183
+        },
+        {
+          "name": "FB_AOL_GuillermoMann",
+          "amount": 198692
+        },
+        {
+          "name": "FB_AOL_LoOvalle_E2",
+          "amount": 198558
         }
       ],
       "notes": [
@@ -5209,6 +5601,120 @@
           "sourceFile": "Facturas Meta/Socovesa/febrero_2026/2026-02-02T07-05 Transacción n.º 25909065785451289-25780782781612925 (1).pdf"
         }
       ],
+      "campaigns": [
+        {
+          "name": "FB_SocovesaSantiago_Advantage",
+          "amount": 3226058
+        },
+        {
+          "name": "FB_SocovesaSur_Advantage",
+          "amount": 1154843
+        },
+        {
+          "name": "FB_AOT_SantiagoMedio_Marathon",
+          "amount": 1111678
+        },
+        {
+          "name": "FB_AOT_SantiagoMedio_LosCoihues",
+          "amount": 1110438
+        },
+        {
+          "name": "FB_AOT_SantiagoMedio_Pajaritos",
+          "amount": 1106335
+        },
+        {
+          "name": "FB_AOT_SantiagoSubsidio_LasPataguas",
+          "amount": 1101402
+        },
+        {
+          "name": "FB_Sur_Inversionista",
+          "amount": 890360
+        },
+        {
+          "name": "FB_AOT_Sur_GarciaReyes",
+          "amount": 442771
+        },
+        {
+          "name": "FB_AOT_SurAustral_PortalAustral",
+          "amount": 438585
+        },
+        {
+          "name": "FB_AOT_CentroSur_PortaldelLibertador",
+          "amount": 376026
+        },
+        {
+          "name": "FB_AOL_SantiagoSubsidio_LasPataguas",
+          "amount": 318437
+        },
+        {
+          "name": "FB_AOL_SantiagoMedio_Marathon",
+          "amount": 318153
+        },
+        {
+          "name": "FB_AOL_SantiagoMedio_LosCoihues",
+          "amount": 317003
+        },
+        {
+          "name": "FB_AOL_SantiagoMedio_Pajaritos",
+          "amount": 316649
+        },
+        {
+          "name": "FB_AOL_SantiagoMedio_Coipue",
+          "amount": 307666
+        },
+        {
+          "name": "FB_AOL_SantiagoMedio_LasPalmas",
+          "amount": 306526
+        },
+        {
+          "name": "FB_SocovesaSantiago_Awareness",
+          "amount": 211382
+        },
+        {
+          "name": "FB_AOL_CentroSur_ElAvellano_E2",
+          "amount": 186552
+        },
+        {
+          "name": "FB_AOL_CentroSur_PortaldelLibertadorVIII",
+          "amount": 182970
+        },
+        {
+          "name": "FB_AOL_CentroSur_NuevaToledo",
+          "amount": 167938
+        },
+        {
+          "name": "FB_AOL_SurAustral_ReservaMagallanes",
+          "amount": 167459
+        },
+        {
+          "name": "FB_AOL_SurAustral_TerrazaMiradorII",
+          "amount": 167229
+        },
+        {
+          "name": "FB_AOL_Sur_ParqueOlimpia_O3",
+          "amount": 167116
+        },
+        {
+          "name": "FB_AOL_Sur_EdificioVertice",
+          "amount": 166881
+        },
+        {
+          "name": "FB_AOL_CentroSur_AltoMaderosll",
+          "amount": 165490
+        },
+        {
+          "name": "FB_AOL_Sur_CasasEnElPortal",
+          "amount": 161995
+        },
+        {
+          "name": "FB_AOL_Sur_GarciaReyes",
+          "amount": 125358
+        },
+        {
+          "name": "FB_AOL_SurAustral_PortalAustral",
+          "amount": 124646
+        }
+      ],
       "notes": [
         "Montos agregados desde comprobantes en carpeta: Facturas Meta/Socovesa/febrero_2026."
       ]
@@ -5225,402 +5731,2311 @@
     "Google Ads",
     "Agencia Zeppelin"
   ],
-  "rsRules": [
+  "rsRules": [],
+  "reasonSocialMappings": [
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Almagro",
-      "platform": "Google",
-      "legalEntity": "Almagro S.A",
-      "percentage": 0.9093,
-      "expense": 27311953
+      "brandGroup": "almagro",
+      "campaignName": "Antofagasta | MR | Parque Brasil",
+      "campaignKey": "antofagastamrparquebrasil",
+      "legalEntity": "Almagro S.A"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Almagro",
-      "platform": "Google",
-      "legalEntity": "Arcilla Roja",
-      "percentage": 0.0227,
-      "expense": 680654
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Antofagasta_Indico",
+      "campaignKey": "fbaolantofagastaindico",
+      "legalEntity": "Almagro S.A"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Almagro",
-      "platform": "Google",
-      "legalEntity": "Madagascar",
-      "percentage": 0.0681,
-      "expense": 2044450
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Antofagasta_ParqueBrasil",
+      "campaignKey": "fbaolantofagastaparquebrasil",
+      "legalEntity": "Almagro S.A"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Almagro",
-      "platform": "Meta",
-      "legalEntity": "Almagro S.A",
-      "percentage": 0.7852,
-      "expense": 15452383
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_AlmagroDistrict",
+      "campaignKey": "fbaolsantiagoalmagrodistrict",
+      "legalEntity": "Madagascar"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Almagro",
-      "platform": "Meta",
-      "legalEntity": "Arcilla Roja",
-      "percentage": 0.2242,
-      "expense": 4413263
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_AlmagroHub",
+      "campaignKey": "fbaolsantiagoalmagrohub",
+      "legalEntity": "Arcilla Roja"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Almagro",
-      "platform": "Meta",
-      "legalEntity": "Madagascar",
-      "percentage": 0.11,
-      "expense": 2164635
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_AlmagroPlus",
+      "campaignKey": "fbaolsantiagoalmagroplus",
+      "legalEntity": "Almagro S.A"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_Balance",
+      "campaignKey": "fbaolsantiagobalance",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_Carrera_IV",
+      "campaignKey": "fbaolsantiagocarreraiv",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_Insigne",
+      "campaignKey": "fbaolsantiagoinsigne",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_LosCactus",
+      "campaignKey": "fbaolsantiagoloscactus",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_LyonBilbao",
+      "campaignKey": "fbaolsantiagolyonbilbao",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_PadreLePaige",
+      "campaignKey": "fbaolsantiagopadrelepaige",
+      "legalEntity": "Arcilla Roja"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_PadreLePaige_Etapa2",
+      "campaignKey": "fbaolsantiagopadrelepaigeetapa2",
+      "legalEntity": "Arcilla Roja"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_Rengo",
+      "campaignKey": "fbaolsantiagorengo",
+      "legalEntity": "Arcilla Roja"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOL_Santiago_SanEugenio",
+      "campaignKey": "fbaolsantiagosaneugenio",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOT_Antofagasta_ParqueBrasil",
+      "campaignKey": "fbaotantofagastaparquebrasil",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOT_Santiago_AlmagroDistrict",
+      "campaignKey": "fbaotsantiagoalmagrodistrict",
+      "legalEntity": "Madagascar"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOT_Santiago_AlmagroPlus",
+      "campaignKey": "fbaotsantiagoalmagroplus",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOT_Santiago_Balance",
+      "campaignKey": "fbaotsantiagobalance",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOT_Santiago_Insigne",
+      "campaignKey": "fbaotsantiagoinsigne",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOT_Santiago_PadreLePaige_Etapa2",
+      "campaignKey": "fbaotsantiagopadrelepaigeetapa2",
+      "legalEntity": "Arcilla Roja"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_AOT_Santiago_Rengo",
+      "campaignKey": "fbaotsantiagorengo",
+      "legalEntity": "Arcilla Roja"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_Advantage_Almagro",
+      "campaignKey": "fbadvantagealmagro",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_Almagro_Advantage",
+      "campaignKey": "fbalmagroadvantage",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_Almagro_Awareness",
+      "campaignKey": "fbalmagroawareness",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_Almagro_Patrocinado_Blog",
+      "campaignKey": "fbalmagropatrocinadoblog",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "FB_Almagro_TuDeptoEsTuPie",
+      "campaignKey": "fbalmagrotudeptoestupie",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Nacional | AO S | Por Categoria | Always On",
+      "campaignKey": "nacionalaosporcategoriaalwayson",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Nacional | AO S | Por Categoria | Propiedades",
+      "campaignKey": "nacionalaosporcategoriapropiedades",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Nacional | AO S | Propiedades | Cuota impresiones",
+      "campaignKey": "nacionalaospropiedadescuotaimpresiones",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Norte | AO S | Por Comuna | Antofagasta",
+      "campaignKey": "norteaosporcomunaantofagasta",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | AO S | Inversionistas 2",
+      "campaignKey": "santiagoaosinversionistas2",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | AO S | Por Comuna | Las Condes",
+      "campaignKey": "santiagoaosporcomunalascondes",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | AO S | Por Comuna | Lo Barnechea | Los Cactus",
+      "campaignKey": "santiagoaosporcomunalobarnechealoscactus",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | AO S | Por Comuna | Macul | 2",
+      "campaignKey": "santiagoaosporcomunamacul2",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | AO S | Por Comuna | Nunoa #2",
+      "campaignKey": "santiagoaosporcomunanunoa2",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | AO S | Por Comuna | Providencia",
+      "campaignKey": "santiagoaosporcomunaprovidencia",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | AO S | Por Comuna | Santiago Centro #2",
+      "campaignKey": "santiagoaosporcomunasantiagocentro2",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | AO S | Tudeptoestupie",
+      "campaignKey": "santiagoaostudeptoestupie",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | AO | DemandGen | Propiedades",
+      "campaignKey": "santiagoaodemandgenpropiedades",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | Demand Gen | Almagro District",
+      "campaignKey": "santiagodemandgenalmagrodistrict",
+      "legalEntity": "Madagascar"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | MR | Almagro District",
+      "campaignKey": "santiagomralmagrodistrict",
+      "legalEntity": "Madagascar"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | MR | Insigne",
+      "campaignKey": "santiagomrinsigne",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | MR | Plus",
+      "campaignKey": "santiagomrplus",
+      "legalEntity": "Almagro S.A"
+    },
+    {
+      "brand": "Almagro",
+      "brandGroup": "almagro",
+      "campaignName": "Santiago | MR | Rengo",
+      "campaignKey": "santiagomrrengo",
+      "legalEntity": "Arcilla Roja"
+    },
+    {
       "brand": "Pilares",
-      "platform": "Google",
-      "legalEntity": "ICSA",
-      "percentage": 0.4961,
-      "expense": 3642615
+      "brandGroup": "pilares",
+      "campaignName": "FB_AOL_CondeMauleIII",
+      "campaignKey": "fbaolcondemauleiii",
+      "legalEntity": "ICSA"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Pilares",
-      "platform": "Google",
-      "legalEntity": "Pilares S.A",
-      "percentage": 0.6078,
-      "expense": 4463399
+      "brandGroup": "pilares",
+      "campaignName": "FB_AOL_EdificioNuble",
+      "campaignKey": "fbaoledificionuble",
+      "legalEntity": "ICSA"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Pilares",
-      "platform": "Meta",
-      "legalEntity": "ICSA",
-      "percentage": 0.2388,
-      "expense": 2796354
+      "brandGroup": "pilares",
+      "campaignName": "FB_AOL_Franklin",
+      "campaignKey": "fbaolfranklin",
+      "legalEntity": "Arcilla Roja"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Pilares",
-      "platform": "Meta",
-      "legalEntity": "Pilares S.A",
-      "percentage": 0.692,
-      "expense": 8104284
+      "brandGroup": "pilares",
+      "campaignName": "FB_AOL_GuillermoMann",
+      "campaignKey": "fbaolguillermomann",
+      "legalEntity": "Pilares S.A"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "FB_AOL_LoOvalle_E2",
+      "campaignKey": "fbaolloovallee2",
+      "legalEntity": "ICSA"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "FB_AOL_RodriguezVelasco",
+      "campaignKey": "fbaolrodriguezvelasco",
+      "legalEntity": "Pilares S.A"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "FB_AOL_SantosDumont",
+      "campaignKey": "fbaolsantosdumont",
+      "legalEntity": "ICSA"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "FB_AOL_VicunaMackenna7244",
+      "campaignKey": "fbaolvicunamackenna7244",
+      "legalEntity": "Pilares S.A"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "FB_AOT_CondeMauleIII",
+      "campaignKey": "fbaotcondemauleiii",
+      "legalEntity": "ICSA"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "FB_AOT_Franklin",
+      "campaignKey": "fbaotfranklin",
+      "legalEntity": "Arcilla Roja"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "FB_AOT_SantosDumont",
+      "campaignKey": "fbaotsantosdumont",
+      "legalEntity": "ICSA"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "FB_Pilares_Advantage_Proyectos",
+      "campaignKey": "fbpilaresadvantageproyectos",
+      "legalEntity": "Pilares S.A"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "FB_Pilares_Awareness",
+      "campaignKey": "fbpilaresawareness",
+      "legalEntity": "Pilares S.A"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "FB_Pilares_Inversionistas",
+      "campaignKey": "fbpilaresinversionistas",
+      "legalEntity": "Pilares S.A"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "FB_Pilares_Inversionistas_Trafico",
+      "campaignKey": "fbpilaresinversionistastrafico",
+      "legalEntity": "Pilares S.A"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "Santiago | AO S | Always On",
+      "campaignKey": "santiagoaosalwayson",
+      "legalEntity": "Pilares S.A"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "Santiago | AO S | Inversionistas 2",
+      "campaignKey": "santiagoaosinversionistas2",
+      "legalEntity": "Pilares S.A"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "Santiago | AO S | Por Comuna | Estacion Central #2",
+      "campaignKey": "santiagoaosporcomunaestacioncentral2",
+      "legalEntity": "ICSA"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "Santiago | AO S | Por Comuna | Independencia",
+      "campaignKey": "santiagoaosporcomunaindependencia",
+      "legalEntity": "ICSA"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "Santiago | AO S | Por Comuna | La Cisterna",
+      "campaignKey": "santiagoaosporcomunalacisterna",
+      "legalEntity": "ICSA"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "Santiago | AO S | Por Comuna | La Florida",
+      "campaignKey": "santiagoaosporcomunalaflorida",
+      "legalEntity": "Pilares S.A"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "Santiago | AO S | Por Comuna | Santiago Centro #2",
+      "campaignKey": "santiagoaosporcomunasantiagocentro2",
+      "legalEntity": "ICSA"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "Santiago | AO S | Por Comuna | Ñuñoa #2",
+      "campaignKey": "santiagoaosporcomunanunoa2",
+      "legalEntity": "Pilares S.A"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "Santiago | Max. Rend. | Por proyecto | Conde Maule | Estacion Central",
+      "campaignKey": "santiagomaxrendporproyectocondemauleestacioncentral",
+      "legalEntity": "ICSA"
+    },
+    {
+      "brand": "Pilares",
+      "brandGroup": "pilares",
+      "campaignName": "Santiago | Max. Rend. | Por proyecto | Santos Dumont | Independencia",
+      "campaignKey": "santiagomaxrendporproyectosantosdumontindependencia",
+      "legalEntity": "ICSA"
+    },
+    {
       "brand": "Socovesa Santiago",
-      "platform": "Google",
-      "legalEntity": "Consorcio Inmobiliario Macul",
-      "percentage": 0.1337,
-      "expense": 1988486
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_AOL_SantiagoMedio_Coipue",
+      "campaignKey": "fbaolsantiagomediocoipue",
+      "legalEntity": "Sociedad Comercializadora Metropolitana"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Socovesa Santiago",
-      "platform": "Google",
-      "legalEntity": "INSOCO",
-      "percentage": 0.1552,
-      "expense": 2307955
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_AOL_SantiagoMedio_LasPalmas",
+      "campaignKey": "fbaolsantiagomediolaspalmas",
+      "legalEntity": "Consorcio Inmobiliario Macul"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Socovesa Santiago",
-      "platform": "Google",
-      "legalEntity": "Inmobiliaria El Descubridor",
-      "percentage": 0.3247,
-      "expense": 4828029
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_AOL_SantiagoMedio_LosCoihues",
+      "campaignKey": "fbaolsantiagomedioloscoihues",
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Socovesa Santiago",
-      "platform": "Google",
-      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
-      "percentage": 0.1762,
-      "expense": 2620189
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_AOL_SantiagoMedio_Marathon",
+      "campaignKey": "fbaolsantiagomediomarathon",
+      "legalEntity": "Pilares S.A"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Socovesa Santiago",
-      "platform": "Google",
-      "legalEntity": "Sociedad Comercializadora Metropolitana",
-      "percentage": 0.1589,
-      "expense": 2362130
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_AOL_SantiagoMedio_Pajaritos",
+      "campaignKey": "fbaolsantiagomediopajaritos",
+      "legalEntity": "Inmobiliaria El Descubridor"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Socovesa Santiago",
-      "platform": "Meta",
-      "legalEntity": "Consorcio Inmobiliario Macul",
-      "percentage": 0.0316,
-      "expense": 333268
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_AOL_SantiagoSubsidio_LasPataguas",
+      "campaignKey": "fbaolsantiagosubsidiolaspataguas",
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Socovesa Santiago",
-      "platform": "Meta",
-      "legalEntity": "INSOCO",
-      "percentage": 0.3535,
-      "expense": 3729610
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_AOT_SantiagoMedio_LosCoihues",
+      "campaignKey": "fbaotsantiagomedioloscoihues",
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Socovesa Santiago",
-      "platform": "Meta",
-      "legalEntity": "Inmobiliaria El Descubridor",
-      "percentage": 0.1458,
-      "expense": 1538812
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_AOT_SantiagoMedio_Marathon",
+      "campaignKey": "fbaotsantiagomediomarathon",
+      "legalEntity": "Pilares S.A"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Socovesa Santiago",
-      "platform": "Meta",
-      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
-      "percentage": 0.2917,
-      "expense": 3077676
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_AOT_SantiagoMedio_Pajaritos",
+      "campaignKey": "fbaotsantiagomediopajaritos",
+      "legalEntity": "Inmobiliaria El Descubridor"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
       "brand": "Socovesa Santiago",
-      "platform": "Meta",
-      "legalEntity": "Sociedad Comercializadora Metropolitana",
-      "percentage": 0.0316,
-      "expense": 333656
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_AOT_SantiagoSubsidio_LasPataguas",
+      "campaignKey": "fbaotsantiagosubsidiolaspataguas",
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen"
     },
     {
-      "month": "2026-02",
-      "monthNumber": "02",
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_SocovesaSantiago_Advantage",
+      "campaignKey": "fbsocovesasantiagoadvantage",
+      "legalEntity": "INSOCO"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_SocovesaSantiago_Awareness",
+      "campaignKey": "fbsocovesasantiagoawareness",
+      "legalEntity": "INSOCO"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "FB_SocovesaSantiago_Marca_Trafico",
+      "campaignKey": "fbsocovesasantiagomarcatrafico",
+      "legalEntity": "INSOCO"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "Santiago | AO S | Por Categoria | Always On Santiago",
+      "campaignKey": "santiagoaosporcategoriaalwaysonsantiago",
+      "legalEntity": "INSOCO"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "Santiago | AO S | Por Comuna | Lampa",
+      "campaignKey": "santiagoaosporcomunalampa",
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "Santiago | AO S | Por Comuna | Macul #2",
+      "campaignKey": "santiagoaosporcomunamacul2",
+      "legalEntity": "Consorcio Inmobiliario Macul"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "Santiago | AO S | Por Comuna | Maipu V2",
+      "campaignKey": "santiagoaosporcomunamaipuv2",
+      "legalEntity": "Inmobiliaria El Descubridor"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "Santiago | AO S | Por Comuna | Ñuñoa #2",
+      "campaignKey": "santiagoaosporcomunanunoa2",
+      "legalEntity": "Inmobiliaria El Descubridor"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "Santiago | AO S | Por Proyecto | Las Pataguas | Lampa",
+      "campaignKey": "santiagoaosporproyectolaspataguaslampa",
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "Santiago | AO S | Por Proyecto | Macul | Coipué",
+      "campaignKey": "santiagoaosporproyectomaculcoipue",
+      "legalEntity": "Sociedad Comercializadora Metropolitana"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "Santiago | Max. Rend. | Por Proyecto | Lampa | Los Coihues",
+      "campaignKey": "santiagomaxrendporproyectolampaloscoihues",
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "Santiago | Max. Rend. | Por Proyecto | Maipú | Pajaritos",
+      "campaignKey": "santiagomaxrendporproyectomaipupajaritos",
+      "legalEntity": "Inmobiliaria El Descubridor"
+    },
+    {
+      "brand": "Socovesa Santiago",
+      "brandGroup": "socovesasantiago",
+      "campaignName": "Santiago | Max. Rend. | Por Proyecto | Ñuñoa | Marathon",
+      "campaignKey": "santiagomaxrendporproyectonunoamarathon",
+      "legalEntity": "Pilares S.A"
+    },
+    {
       "brand": "Socovesa Sur",
-      "platform": "Google",
-      "legalEntity": "Socovesa Sur S.A",
-      "percentage": 1.0,
-      "expense": 6438390
+      "brandGroup": "socovesasur",
+      "campaignName": "Centro Sur | AO S | Por Ciudad | Chillan 2",
+      "campaignKey": "centrosuraosporciudadchillan2",
+      "legalEntity": "Socovesa Sur S.A"
     },
     {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "Centro Sur | AO S | Por Ciudad | Los Angeles #2",
+      "campaignKey": "centrosuraosporciudadlosangeles2",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_CentroSur_AltoMaderosll",
+      "campaignKey": "fbaolcentrosuraltomaderosll",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_CentroSur_ElAvellano_E2",
+      "campaignKey": "fbaolcentrosurelavellanoe2",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_CentroSur_NuevaToledo",
+      "campaignKey": "fbaolcentrosurnuevatoledo",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_CentroSur_PortaldelLibertadorVIII",
+      "campaignKey": "fbaolcentrosurportaldellibertadorviii",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_SurAustral_PortalAustral",
+      "campaignKey": "fbaolsuraustralportalaustral",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_SurAustral_ReservaMagallanes",
+      "campaignKey": "fbaolsuraustralreservamagallanes",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_SurAustral_TerrazaMiradorII",
+      "campaignKey": "fbaolsuraustralterrazamiradorii",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_Sur_CasasEnElPortal",
+      "campaignKey": "fbaolsurcasasenelportal",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_Sur_EdificioVertice",
+      "campaignKey": "fbaolsuredificiovertice",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_Sur_GarciaReyes",
+      "campaignKey": "fbaolsurgarciareyes",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_Sur_ParqueOlimpia_O3",
+      "campaignKey": "fbaolsurparqueolimpiao3",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOL_Sur_VistaNielol_N3",
+      "campaignKey": "fbaolsurvistanieloln3",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOT_CentroSur_PortaldelLibertador",
+      "campaignKey": "fbaotcentrosurportaldellibertador",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOT_SurAustral_PortalAustral",
+      "campaignKey": "fbaotsuraustralportalaustral",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_AOT_Sur_GarciaReyes",
+      "campaignKey": "fbaotsurgarciareyes",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_SocovesaSur_Advantage",
+      "campaignKey": "fbsocovesasuradvantage",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "FB_Sur_Inversionista",
+      "campaignKey": "fbsurinversionista",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "Sur Austral | AO S | Por Ciudad | Puerto Montt",
+      "campaignKey": "suraustralaosporciudadpuertomontt",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "Sur Austral | AO S | Por Ciudad | Punta Arenas",
+      "campaignKey": "suraustralaosporciudadpuntaarenas",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "Sur | AO S | Inversionistas",
+      "campaignKey": "suraosinversionistas",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "Sur | AO S | Por Categoria | Always On Sur",
+      "campaignKey": "suraosporcategoriaalwaysonsur",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "Sur | AO S | Por Ciudad | Temuco",
+      "campaignKey": "suraosporciudadtemuco",
+      "legalEntity": "Socovesa Sur S.A"
+    },
+    {
+      "brand": "Socovesa Sur",
+      "brandGroup": "socovesasur",
+      "campaignName": "Sur | AO S | Valdivia",
+      "campaignKey": "suraosvaldivia",
+      "legalEntity": "Socovesa Sur S.A"
+    }
+  ],
+  "reasonSocialRows": [
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
       "month": "2026-02",
-      "monthNumber": "02",
-      "brand": "Socovesa Sur",
-      "platform": "Meta",
-      "legalEntity": "Socovesa Sur S.A",
-      "percentage": 1.0,
-      "expense": 5546975
-    },
-    {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Almagro",
-      "platform": "Google",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Antofagasta | MR | Parque Brasil",
+      "amount": 66713,
       "legalEntity": "Almagro S.A",
-      "percentage": 0.906,
-      "expense": 15108209
+      "mappingBrand": "Almagro",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Almagro",
-      "platform": "Google",
-      "legalEntity": "Arcilla Roja",
-      "percentage": 0.026,
-      "expense": 433210
-    },
-    {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Almagro",
-      "platform": "Google",
-      "legalEntity": "Madagascar",
-      "percentage": 0.0681,
-      "expense": 1134989
-    },
-    {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Almagro",
-      "platform": "Meta",
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Antofagasta | MR | Parque Brasil",
+      "amount": 346,
       "legalEntity": "Almagro S.A",
-      "percentage": 0.7929,
-      "expense": 9816334
+      "mappingBrand": "Almagro",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Almagro",
-      "platform": "Meta",
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Nacional | AO S | Por Categoria | Always On",
+      "amount": 274769,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Norte | AO S | Por Comuna | Antofagasta",
+      "amount": 854120,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | AO S | Inversionistas 2",
+      "amount": 357563,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | AO S | Por Comuna | Las Condes",
+      "amount": 890272,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | AO S | Por Comuna | Lo Barnechea | Los Cactus",
+      "amount": 470468,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | AO S | Por Comuna | Macul | 2",
+      "amount": 169116,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | AO S | Por Comuna | Nunoa #2",
+      "amount": 977005,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | AO S | Por Comuna | Providencia",
+      "amount": 515931,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | AO S | Por Comuna | Santiago Centro #2",
+      "amount": 333094,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | AO S | Tudeptoestupie",
+      "amount": 499268,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | MR | Insigne",
+      "amount": 478659,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | MR | Insigne",
+      "amount": 7304,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | MR | Plus",
+      "amount": 291774,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | MR | Plus",
+      "amount": 1632,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | MR | Rengo",
+      "amount": 259141,
       "legalEntity": "Arcilla Roja",
-      "percentage": 0.213,
-      "expense": 2637215
+      "mappingBrand": "Almagro",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Almagro",
-      "platform": "Meta",
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | MR | Rengo",
+      "amount": 7683,
+      "legalEntity": "Arcilla Roja",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | Demand Gen | Almagro District",
+      "amount": 48966,
       "legalEntity": "Madagascar",
-      "percentage": 0.0988,
-      "expense": 1223766
+      "mappingBrand": "Almagro",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | Demand Gen | Almagro District",
+      "amount": 34162,
+      "legalEntity": "Madagascar",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | MR | Almagro District",
+      "amount": 611677,
+      "legalEntity": "Madagascar",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Santiago | MR | Almagro District",
+      "amount": 220,
+      "legalEntity": "Madagascar",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5510587237",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Propiedades",
+      "campaignName": "Nacional | AO S | Por Categoria | Propiedades",
+      "amount": 91183,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5510587237",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Propiedades",
+      "campaignName": "Nacional | AO S | Propiedades | Cuota impresiones",
+      "amount": 87922,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5510587237",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Propiedades",
+      "campaignName": "Santiago | AO | DemandGen | Propiedades",
+      "amount": 40199,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5510587237",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Propiedades",
+      "campaignName": "Santiago | AO | DemandGen | Propiedades",
+      "amount": 9342,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
       "brand": "Pilares",
-      "platform": "Google",
+      "campaignName": "Santiago | AO S | Por Comuna | Estacion Central #2",
+      "amount": 135856,
       "legalEntity": "ICSA",
-      "percentage": 0.4922,
-      "expense": 2490310
+      "mappingBrand": "Pilares",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
       "brand": "Pilares",
-      "platform": "Google",
-      "legalEntity": "Pilares S.A",
-      "percentage": 0.5776,
-      "expense": 2922542
-    },
-    {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Pilares",
-      "platform": "Meta",
+      "campaignName": "Santiago | AO S | Por Comuna | Independencia",
+      "amount": 104449,
       "legalEntity": "ICSA",
-      "percentage": 0.2413,
-      "expense": 1545098
+      "mappingBrand": "Pilares",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
       "brand": "Pilares",
-      "platform": "Meta",
+      "campaignName": "Santiago | AO S | Por Comuna | La Cisterna",
+      "amount": 132303,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Pilares",
+      "campaignName": "Santiago | AO S | Por Comuna | Santiago Centro #2",
+      "amount": 328134,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Pilares",
+      "campaignName": "Santiago | Max. Rend. | Por proyecto | Conde Maule | Estacion Central",
+      "amount": 55602,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Pilares",
+      "campaignName": "Santiago | Max. Rend. | Por proyecto | Conde Maule | Estacion Central",
+      "amount": 405,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Pilares",
+      "campaignName": "Santiago | Max. Rend. | Por proyecto | Santos Dumont | Independencia",
+      "amount": 67573,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Pilares",
+      "campaignName": "Santiago | Max. Rend. | Por proyecto | Santos Dumont | Independencia",
+      "amount": 993,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Pilares",
+      "campaignName": "Santiago | AO S | Always On",
+      "amount": 167544,
       "legalEntity": "Pilares S.A",
-      "percentage": 0.694,
-      "expense": 4444464
+      "mappingBrand": "Pilares",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Santiago",
-      "platform": "Google",
-      "legalEntity": "Consorcio Inmobiliario Macul",
-      "percentage": 0.1013,
-      "expense": 834591
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Pilares",
+      "campaignName": "Santiago | AO S | Inversionistas 2",
+      "amount": 237243,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Pilares",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Santiago",
-      "platform": "Google",
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Pilares",
+      "campaignName": "Santiago | AO S | Por Comuna | La Florida",
+      "amount": 230853,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Pilares",
+      "campaignName": "Santiago | AO S | Por Comuna | Ñuñoa #2",
+      "amount": 120834,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | AO S | Por Categoria | Always On Santiago",
+      "amount": 570556,
       "legalEntity": "INSOCO",
-      "percentage": 0.1541,
-      "expense": 1269524
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Santiago",
-      "platform": "Google",
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | AO S | Por Comuna | Maipu V2",
+      "amount": 337660,
       "legalEntity": "Inmobiliaria El Descubridor",
-      "percentage": 0.342,
-      "expense": 2816674
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Santiago",
-      "platform": "Google",
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | Max. Rend. | Por Proyecto | Maipú | Pajaritos",
+      "amount": 159662,
+      "legalEntity": "Inmobiliaria El Descubridor",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | Max. Rend. | Por Proyecto | Maipú | Pajaritos",
+      "amount": 97,
+      "legalEntity": "Inmobiliaria El Descubridor",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | AO S | Por Comuna | Lampa",
+      "amount": 449059,
       "legalEntity": "Inmobiliaria Encinas de Peñalolen",
-      "percentage": 0.1872,
-      "expense": 1541635
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Santiago",
-      "platform": "Google",
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | AO S | Por Proyecto | Las Pataguas | Lampa",
+      "amount": 86134,
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | Max. Rend. | Por Proyecto | Lampa | Los Coihues",
+      "amount": 149247,
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | Max. Rend. | Por Proyecto | Lampa | Los Coihues",
+      "amount": 487,
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | Max. Rend. | Por Proyecto | Ñuñoa | Marathon",
+      "amount": 202861,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | Max. Rend. | Por Proyecto | Ñuñoa | Marathon",
+      "amount": 3211,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | AO S | Por Comuna | Macul #2",
+      "amount": 529984,
+      "legalEntity": "Sin asignar",
+      "mappingBrand": "",
+      "matched": false
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | AO S | Por Comuna | Ñuñoa #2",
+      "amount": 633002,
+      "legalEntity": "Sin asignar",
+      "mappingBrand": "",
+      "matched": false
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Santiago | AO S | Por Proyecto | Macul | Coipué",
+      "amount": 567910,
       "legalEntity": "Sociedad Comercializadora Metropolitana",
-      "percentage": 0.1725,
-      "expense": 1420252
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Santiago",
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Centro Sur | AO S | Por Ciudad | Chillan 2",
+      "amount": 98406,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Centro Sur | AO S | Por Ciudad | Los Angeles #2",
+      "amount": 122145,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Sur Austral | AO S | Por Ciudad | Puerto Montt",
+      "amount": 210802,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Sur Austral | AO S | Por Ciudad | Punta Arenas",
+      "amount": 44152,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Sur | AO S | Inversionistas",
+      "amount": 100782,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Sur | AO S | Por Categoria | Always On Sur",
+      "amount": 400326,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Sur | AO S | Por Ciudad | Temuco",
+      "amount": 286324,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Sur | AO S | Valdivia",
+      "amount": 104553,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
       "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Antofagasta_Indico",
+      "amount": 299616,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Antofagasta_ParqueBrasil",
+      "amount": 323360,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Santiago_AlmagroPlus",
+      "amount": 323471,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Santiago_Balance",
+      "amount": 323342,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Santiago_Carrera_IV",
+      "amount": 299914,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Santiago_Insigne",
+      "amount": 324528,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Santiago_LosCactus",
+      "amount": 299810,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Santiago_LyonBilbao",
+      "amount": 298693,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Santiago_SanEugenio",
+      "amount": 299049,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOT_Antofagasta_ParqueBrasil",
+      "amount": 1128815,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOT_Santiago_AlmagroPlus",
+      "amount": 1128365,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOT_Santiago_Balance",
+      "amount": 1127797,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOT_Santiago_Insigne",
+      "amount": 1127711,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_Advantage_Almagro",
+      "amount": 14689458,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_Almagro_Patrocinado_Blog",
+      "amount": 176908,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_Almagro_TuDeptoEsTuPie",
+      "amount": 1184674,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Santiago_AlmagroHub",
+      "amount": 299032,
+      "legalEntity": "Arcilla Roja",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Santiago_PadreLePaige_Etapa2",
+      "amount": 298644,
+      "legalEntity": "Arcilla Roja",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Santiago_Rengo",
+      "amount": 323542,
+      "legalEntity": "Arcilla Roja",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOT_Santiago_Rengo",
+      "amount": 1128360,
+      "legalEntity": "Arcilla Roja",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOL_Santiago_AlmagroDistrict",
+      "amount": 539400,
+      "legalEntity": "Madagascar",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-almagro-inmobiliaria-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "FB_AOT_Santiago_AlmagroDistrict",
+      "amount": 1610955,
+      "legalEntity": "Madagascar",
+      "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_AOL_Franklin",
+      "amount": 345684,
+      "legalEntity": "Arcilla Roja",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_AOT_Franklin",
+      "amount": 1938455,
+      "legalEntity": "Arcilla Roja",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_AOL_CondeMauleIII",
+      "amount": 265434,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_AOL_EdificioNuble",
+      "amount": 199280,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_AOL_LoOvalle_E2",
+      "amount": 198558,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_AOL_SantosDumont",
+      "amount": 265063,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_AOT_CondeMauleIII",
+      "amount": 926495,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_AOT_SantosDumont",
+      "amount": 925461,
+      "legalEntity": "ICSA",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_AOL_GuillermoMann",
+      "amount": 198692,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_AOL_RodriguezVelasco",
+      "amount": 199183,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_AOL_VicunaMackenna7244",
+      "amount": 199290,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_Pilares_Advantage_Proyectos",
+      "amount": 7317880,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_Pilares_Awareness",
+      "amount": 1246333,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-pilares-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Pilares",
+      "campaignName": "FB_Pilares_Inversionistas",
+      "amount": 984599,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_SantiagoMedio_LasPalmas",
+      "amount": 306526,
       "legalEntity": "Consorcio Inmobiliario Macul",
-      "percentage": 0.0185,
-      "expense": 125487
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Santiago",
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
       "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_SocovesaSantiago_Advantage",
+      "amount": 3226058,
       "legalEntity": "INSOCO",
-      "percentage": 0.453,
-      "expense": 3068330
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Santiago",
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
       "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_SocovesaSantiago_Awareness",
+      "amount": 211382,
+      "legalEntity": "INSOCO",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_SantiagoMedio_Pajaritos",
+      "amount": 316649,
       "legalEntity": "Inmobiliaria El Descubridor",
-      "percentage": 0.1253,
-      "expense": 848929
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Santiago",
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
       "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOT_SantiagoMedio_Pajaritos",
+      "amount": 1106335,
+      "legalEntity": "Inmobiliaria El Descubridor",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_SantiagoMedio_LosCoihues",
+      "amount": 317003,
       "legalEntity": "Inmobiliaria Encinas de Peñalolen",
-      "percentage": 0.2453,
-      "expense": 1661791
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Santiago",
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
       "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_SantiagoSubsidio_LasPataguas",
+      "amount": 318437,
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOT_SantiagoMedio_LosCoihues",
+      "amount": 1110438,
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOT_SantiagoSubsidio_LasPataguas",
+      "amount": 1101402,
+      "legalEntity": "Inmobiliaria Encinas de Peñalolen",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_SantiagoMedio_Marathon",
+      "amount": 318153,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOT_SantiagoMedio_Marathon",
+      "amount": 1111678,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_SantiagoMedio_Coipue",
+      "amount": 307666,
       "legalEntity": "Sociedad Comercializadora Metropolitana",
-      "percentage": 0.0276,
-      "expense": 187206
+      "mappingBrand": "Socovesa Santiago",
+      "matched": true
     },
     {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Sur",
-      "platform": "Google",
-      "legalEntity": "Socovesa Sur S.A",
-      "percentage": 1.0,
-      "expense": 3763827
-    },
-    {
-      "month": "2026-03",
-      "monthNumber": "03",
-      "brand": "Socovesa Sur",
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
       "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_CentroSur_AltoMaderosll",
+      "amount": 165490,
       "legalEntity": "Socovesa Sur S.A",
-      "percentage": 1.0,
-      "expense": 3274943
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_CentroSur_ElAvellano_E2",
+      "amount": 186552,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_CentroSur_NuevaToledo",
+      "amount": 167938,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_CentroSur_PortaldelLibertadorVIII",
+      "amount": 182970,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_SurAustral_PortalAustral",
+      "amount": 124646,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_SurAustral_ReservaMagallanes",
+      "amount": 167459,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_SurAustral_TerrazaMiradorII",
+      "amount": 167229,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_Sur_CasasEnElPortal",
+      "amount": 161995,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_Sur_EdificioVertice",
+      "amount": 166881,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_Sur_GarciaReyes",
+      "amount": 125358,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOL_Sur_ParqueOlimpia_O3",
+      "amount": 167116,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOT_CentroSur_PortaldelLibertador",
+      "amount": 376026,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOT_SurAustral_PortalAustral",
+      "amount": 438585,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_AOT_Sur_GarciaReyes",
+      "amount": 442771,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_SocovesaSur_Advantage",
+      "amount": 1154843,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "meta-socovesa-2026-02",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Meta",
+      "brand": "Socovesa",
+      "campaignName": "FB_Sur_Inversionista",
+      "amount": 890360,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "Socovesa Sur",
+      "matched": true
     }
   ]
 }

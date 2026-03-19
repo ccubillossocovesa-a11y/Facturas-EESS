@@ -5,11 +5,12 @@ from __future__ import annotations
 
 import json
 import re
-import shutil
 import subprocess
 import tempfile
+import unicodedata
 import zipfile
 from calendar import monthrange
+from collections import defaultdict
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -66,6 +67,26 @@ META_RECEIPT_DATE_RE = re.compile(r"(\d{1,2})\s+([a-zA-Záéíóúñ\.]+)\s+(\d{
 class ParseWarning:
     source: str
     message: str
+
+
+def normalize_key(value: str) -> str:
+    plain = "".join(ch for ch in unicodedata.normalize("NFKD", str(value).lower()) if not unicodedata.combining(ch))
+    return re.sub(r"[^a-z0-9]+", "", plain)
+
+
+def normalize_brand_group(value: str) -> str:
+    plain = normalize_key(value)
+    if "almagro" in plain:
+        return "almagro"
+    if "pilares" in plain:
+        return "pilares"
+    if "socovesasantiago" in plain:
+        return "socovesasantiago"
+    if "socovesasur" in plain:
+        return "socovesasur"
+    if "socovesa" in plain:
+        return "socovesa"
+    return plain
 
 
 def clp_to_int(value: str) -> int:
@@ -386,9 +407,44 @@ def iso_from_meta_receipt_date(value: str) -> str:
     return datetime(int(year), month, int(day)).strftime("%Y-%m-%d")
 
 
+def parse_meta_receipt_campaigns(lines: list[str]) -> list[dict[str, Any]]:
+    campaigns: list[dict[str, Any]] = []
+    in_campaign_block = False
+    current_campaign = ""
+
+    for line in lines:
+        if line.startswith("Campañas"):
+            in_campaign_block = True
+            current_campaign = ""
+            continue
+        if not in_campaign_block:
+            continue
+        if line.startswith("Meta Platforms"):
+            break
+
+        if line.startswith("FB_") and "$" not in line:
+            current_campaign = " ".join(line.split())
+            continue
+
+        if not current_campaign:
+            continue
+
+        amount_only = re.fullmatch(r"\$([\d\.,]+)", line)
+        if amount_only:
+            campaigns.append({"campaignName": current_campaign, "amount": clp_to_int(amount_only.group(1))})
+            continue
+
+        amount_trailing = re.search(r"\$([\d\.,]+)\s*$", line)
+        if amount_trailing and not line.startswith("FB_"):
+            campaigns.append({"campaignName": current_campaign, "amount": clp_to_int(amount_trailing.group(1))})
+
+    return [item for item in campaigns if item["amount"] > 0]
+
+
 def parse_meta_receipt_pdf(path: Path, warnings: list[ParseWarning], month_hint: str) -> dict[str, Any] | None:
     text = extract_text_pypdf(path)
-    flat = " | ".join([ln.strip() for ln in text.splitlines() if ln.strip()])
+    lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+    flat = " | ".join(lines)
 
     tx_m = re.search(r"Identificador de la transacción\s*[:|]?\s*([0-9]{10,}-[0-9]{10,})", flat, re.IGNORECASE)
     amount_m = re.search(r"(Pagado|Fondos agregados)\s*[:|]?\s*\$([\d\.,]+)", flat, re.IGNORECASE)
@@ -431,6 +487,8 @@ def parse_meta_receipt_pdf(path: Path, warnings: list[ParseWarning], month_hint:
         return None
 
     resolved_month = month_hint or month_key(date_iso)
+    campaigns = parse_meta_receipt_campaigns(lines)
+
     return {
         "month": resolved_month,
         "date": date_iso,
@@ -440,6 +498,7 @@ def parse_meta_receipt_pdf(path: Path, warnings: list[ParseWarning], month_hint:
         "amount": amount,
         "accountId": account_m.group(1).strip() if account_m else "",
         "sourceFile": str(path.relative_to(ROOT)),
+        "campaigns": campaigns,
     }
 
 
@@ -472,6 +531,7 @@ def parse_meta_receipt_folders(root_dir: Path, warnings: list[ParseWarning]) -> 
                         "seenTx": set(),
                         "accountIds": [],
                         "sourceDir": str(month_dir.relative_to(ROOT)),
+                        "campaignTotals": defaultdict(int),
                     }
                 current = grouped[key]
                 tx_id = parsed["transactionId"]
@@ -491,6 +551,11 @@ def parse_meta_receipt_folders(root_dir: Path, warnings: list[ParseWarning]) -> 
                         "sourceFile": parsed["sourceFile"],
                     }
                 )
+                for campaign in parsed.get("campaigns", []):
+                    campaign_name = str(campaign.get("campaignName", "")).strip()
+                    campaign_amount = int(campaign.get("amount", 0) or 0)
+                    if campaign_name and campaign_amount > 0:
+                        current["campaignTotals"][campaign_name] += campaign_amount
 
     invoices: list[dict[str, Any]] = []
     for (brand, account_name, month), values in sorted(grouped.items()):
@@ -503,6 +568,14 @@ def parse_meta_receipt_folders(root_dir: Path, warnings: list[ParseWarning]) -> 
         account_id = values["accountIds"][0] if values["accountIds"] else ""
         period_start = f"{month}-01"
         period_end = last_day_of_month(month)
+        campaigns = sorted(
+            (
+                {"name": campaign_name, "amount": amount}
+                for campaign_name, amount in values["campaignTotals"].items()
+                if amount > 0
+            ),
+            key=lambda item: (-item["amount"], item["name"]),
+        )
 
         notes = [f"Montos agregados desde comprobantes en carpeta: {values['sourceDir']}."]
         if brand == "Almagro Inmobiliaria":
@@ -530,6 +603,7 @@ def parse_meta_receipt_folders(root_dir: Path, warnings: list[ParseWarning]) -> 
                     {"label": "Total de fondos agregado", "amount": total_funds},
                 ],
                 "details": details,
+                "campaigns": campaigns,
                 "notes": notes,
             }
         )
@@ -677,6 +751,12 @@ def parse_google_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, 
             )
         )
 
+    campaigns = [
+        {"name": item["description"], "amount": item["amount"]}
+        for item in details
+        if item.get("description") and item.get("quantity") is not None and item.get("amount", 0) > 0
+    ]
+
     return {
         "id": invoice_number,
         "sourceFile": filename,
@@ -695,6 +775,7 @@ def parse_google_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, 
         "totalAmount": total_amount,
         "summaryBreakdown": summary_items,
         "details": details,
+        "campaigns": campaigns,
         "notes": [],
     }
 
@@ -867,6 +948,7 @@ def parse_meta_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, An
             {"label": "Total de fondos agregado", "amount": total_funds},
         ],
         "details": details,
+        "campaigns": [],
         "notes": notes,
     }
 
@@ -951,7 +1033,8 @@ def parse_rs_excel(path: Path, warnings: list[ParseWarning]) -> list[dict[str, A
     try:
         _, rows = parse_excel_sheet_rows(path, sheet_name="RS")
     except Exception as exc:
-        warnings.append(ParseWarning(source=path.name, message=f"Could not parse RS sheet: {exc}"))
+        if "Sheet 'RS' not found" not in str(exc):
+            warnings.append(ParseWarning(source=path.name, message=f"Could not parse RS sheet: {exc}"))
         return []
 
     base_year = datetime.utcnow().year
@@ -1038,6 +1121,110 @@ def parse_rs_excel(path: Path, warnings: list[ParseWarning]) -> list[dict[str, A
             item["brand"],
             item["platform"],
             item["legalEntity"],
+        ),
+    )
+
+
+def parse_reason_social_sheet(path: Path, warnings: list[ParseWarning]) -> list[dict[str, Any]]:
+    try:
+        _, rows = parse_excel_sheet_rows(path, sheet_name="Razón social")
+    except Exception as exc:
+        warnings.append(ParseWarning(source=path.name, message=f"Could not parse 'Razón social' sheet: {exc}"))
+        return []
+
+    mappings: list[dict[str, Any]] = []
+    for row_idx in sorted(rows):
+        row = rows[row_idx]
+        brand = row.get("C", "").strip()
+        campaign = row.get("D", "").strip()
+        legal_entity = row.get("E", "").strip()
+
+        if not brand or not campaign or not legal_entity:
+            continue
+        if campaign.lower().startswith("proyecto") or campaign.lower().startswith("concatenar"):
+            continue
+
+        mappings.append(
+            {
+                "brand": brand,
+                "brandGroup": normalize_brand_group(brand),
+                "campaignName": campaign,
+                "campaignKey": normalize_key(campaign),
+                "legalEntity": legal_entity,
+            }
+        )
+
+    deduped: dict[tuple[str, str, str], dict[str, Any]] = {}
+    for item in mappings:
+        key = (item["brandGroup"], item["campaignKey"], item["legalEntity"])
+        deduped[key] = item
+
+    return sorted(deduped.values(), key=lambda item: (item["brand"], item["campaignName"], item["legalEntity"]))
+
+
+def build_reason_social_rows(
+    invoices: list[dict[str, Any]], reason_social_mappings: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    by_brand_campaign: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    by_campaign: dict[str, list[dict[str, Any]]] = defaultdict(list)
+
+    for mapping in reason_social_mappings:
+        key = (mapping["brandGroup"], mapping["campaignKey"])
+        by_brand_campaign[key].append(mapping)
+        by_campaign[mapping["campaignKey"]].append(mapping)
+
+    rows: list[dict[str, Any]] = []
+    for invoice in invoices:
+        platform = str(invoice.get("platform", "")).strip()
+        if platform not in {"Meta", "Google Ads"}:
+            continue
+
+        brand = str(invoice.get("brand", "")).strip()
+        brand_group = normalize_brand_group(brand)
+        campaigns = invoice.get("campaigns", []) if isinstance(invoice.get("campaigns"), list) else []
+
+        for campaign in campaigns:
+            campaign_name = str(campaign.get("name", "")).strip()
+            amount = int(campaign.get("amount", 0) or 0)
+            if not campaign_name or amount <= 0:
+                continue
+
+            campaign_key = normalize_key(campaign_name)
+            candidates = by_brand_campaign.get((brand_group, campaign_key), [])
+            if not candidates:
+                fallback = by_campaign.get(campaign_key, [])
+                if len({item["legalEntity"] for item in fallback}) == 1:
+                    candidates = fallback
+
+            legal_entity = "Sin asignar"
+            mapping_brand = ""
+            if candidates:
+                legal_entity = candidates[0]["legalEntity"]
+                mapping_brand = candidates[0]["brand"]
+
+            rows.append(
+                {
+                    "invoiceId": invoice.get("id", ""),
+                    "invoiceDate": invoice.get("invoiceDate", ""),
+                    "month": invoice.get("month", ""),
+                    "platform": platform,
+                    "brand": brand,
+                    "campaignName": campaign_name,
+                    "amount": amount,
+                    "legalEntity": legal_entity,
+                    "mappingBrand": mapping_brand,
+                    "matched": legal_entity != "Sin asignar",
+                }
+            )
+
+    return sorted(
+        rows,
+        key=lambda item: (
+            item["month"],
+            item["platform"],
+            item["brand"],
+            item["legalEntity"],
+            item["campaignName"],
         ),
     )
 
@@ -1129,6 +1316,7 @@ def main() -> None:
 
     invoices: list[dict[str, Any]] = []
     rs_rules: list[dict[str, Any]] = []
+    reason_social_mappings: list[dict[str, Any]] = []
     google_files = sorted(PDF_DIR.glob("*GoogleAds.pdf"))
     meta_files = sorted(PDF_DIR.glob("*Meta*.pdf"))
 
@@ -1145,18 +1333,22 @@ def main() -> None:
     excel_files = sorted(ROOT.glob(EXCEL_PATTERN))
     if excel_files:
         for file in excel_files:
-            target_excel = PDF_DIR / "Facturacion_EESS.xlsx"
-            if file.resolve() != target_excel.resolve():
-                shutil.copy2(file, target_excel)
-            invoices.extend(parse_zeppelin_excel(file, warnings, document_file=f"pdfs/{target_excel.name}"))
+            invoices.extend(parse_zeppelin_excel(file, warnings, document_file=file.name))
             rs_rules.extend(parse_rs_excel(file, warnings))
+            reason_social_mappings.extend(parse_reason_social_sheet(file, warnings))
     else:
         existing_invoices = existing_data.get("invoices", []) if isinstance(existing_data, dict) else []
         carried_zeppelin = [item for item in existing_invoices if item.get("platform") == "Agencia Zeppelin"]
         invoices.extend(carried_zeppelin)
         rs_rules = existing_data.get("rsRules", []) if isinstance(existing_data.get("rsRules"), list) else []
+        reason_social_mappings = (
+            existing_data.get("reasonSocialMappings", [])
+            if isinstance(existing_data.get("reasonSocialMappings"), list)
+            else []
+        )
 
     invoices.sort(key=lambda item: (item["month"], item["platform"], item["brand"], item["invoiceDate"]))
+    reason_social_rows = build_reason_social_rows(invoices, reason_social_mappings)
 
     known_brand_order = [
         "Almagro Inmobiliaria",
@@ -1180,6 +1372,8 @@ def main() -> None:
         "brands": brands,
         "platforms": platforms,
         "rsRules": rs_rules,
+        "reasonSocialMappings": reason_social_mappings,
+        "reasonSocialRows": reason_social_rows,
     }
 
     JSON_OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

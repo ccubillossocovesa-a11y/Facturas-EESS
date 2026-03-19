@@ -6,6 +6,7 @@ App web estática para visualizar facturas de `Meta` y `Google Ads` con:
 - KPI adicional para `Agencia Zeppelin`
 - Filtros por `plataforma`, `mes`, `año` y `marca`
 - Detalle por factura (líneas de cargo / transacciones)
+- Resumen por `Razón Social` usando mapeo de campañas desde la hoja `Razón social` en `Facturación EESS.xlsx`
 - Descarga de respaldo (`PDF` o `Excel`)
 
 ## Archivos clave
