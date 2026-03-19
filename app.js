@@ -175,9 +175,10 @@ function exportReasonSocialTableXlsx() {
   }
 
   const totalPercent = currentReasonSocialMeta.totalAmount > 0 ? 1 : 0;
-  const headers = ["Razón social", "Monto total", "% del total", "Campañas", "Líneas"];
+  const headers = ["Razón social", "Plataforma", "Monto total", "% del total", "Campañas", "Líneas"];
   const body = currentReasonSocialSummaryRows.map((row) => [
     row.legalEntity,
+    row.platform,
     row.totalAmount,
     currentReasonSocialMeta.totalAmount ? row.totalAmount / currentReasonSocialMeta.totalAmount : 0,
     row.campaignCount,
@@ -186,6 +187,7 @@ function exportReasonSocialTableXlsx() {
 
   body.push([
     "TOTAL",
+    "-",
     currentReasonSocialMeta.totalAmount,
     totalPercent,
     currentReasonSocialMeta.totalUniqueCampaigns,
@@ -193,11 +195,11 @@ function exportReasonSocialTableXlsx() {
   ]);
 
   const worksheet = window.XLSX.utils.aoa_to_sheet([headers, ...body]);
-  worksheet["!cols"] = [{ wch: 42 }, { wch: 18 }, { wch: 14 }, { wch: 12 }, { wch: 10 }];
+  worksheet["!cols"] = [{ wch: 38 }, { wch: 16 }, { wch: 18 }, { wch: 14 }, { wch: 12 }, { wch: 10 }];
 
   for (let rowIndex = 2; rowIndex <= body.length + 1; rowIndex += 1) {
-    const amountCell = worksheet[`B${rowIndex}`];
-    const pctCell = worksheet[`C${rowIndex}`];
+    const amountCell = worksheet[`C${rowIndex}`];
+    const pctCell = worksheet[`D${rowIndex}`];
     if (amountCell) amountCell.z = '"$"#,##0';
     if (pctCell) pctCell.z = "0.00%";
   }
@@ -224,6 +226,7 @@ function exportReasonSocialTablePdf() {
   const totalAmount = currentReasonSocialMeta.totalAmount;
   const body = currentReasonSocialSummaryRows.map((row) => [
     row.legalEntity,
+    row.platform,
     formatCLP(row.totalAmount),
     totalAmount ? `${((row.totalAmount / totalAmount) * 100).toFixed(2)}%` : "0.00%",
     String(row.campaignCount),
@@ -232,6 +235,7 @@ function exportReasonSocialTablePdf() {
 
   body.push([
     "TOTAL",
+    "-",
     formatCLP(totalAmount),
     totalAmount ? "100.00%" : "0.00%",
     String(currentReasonSocialMeta.totalUniqueCampaigns),
@@ -245,15 +249,15 @@ function exportReasonSocialTablePdf() {
 
   doc.autoTable({
     startY: 68,
-    head: [["Razón social", "Monto total", "% del total", "Campañas", "Líneas"]],
+    head: [["Razón social", "Plataforma", "Monto total", "% del total", "Campañas", "Líneas"]],
     body,
     styles: { fontSize: 9, cellPadding: 6 },
     headStyles: { fillColor: [31, 31, 31] },
     columnStyles: {
-      1: { halign: "right" },
       2: { halign: "right" },
       3: { halign: "right" },
       4: { halign: "right" },
+      5: { halign: "right" },
     },
     didParseCell(hookData) {
       if (hookData.section === "body" && hookData.row.index === body.length - 1) {
@@ -284,8 +288,11 @@ function renderRsBreakdown(filteredInvoices) {
   const summaryMap = new Map();
   campaignRows.forEach((row) => {
     const legalEntity = normalizeText(row.legalEntity) || "Sin asignar";
-    const current = summaryMap.get(legalEntity) || {
+    const platform = normalizeText(row.platform) || "-";
+    const key = `${legalEntity}|${platform}`;
+    const current = summaryMap.get(key) || {
       legalEntity,
+      platform,
       totalAmount: 0,
       campaigns: new Set(),
       lines: 0,
@@ -293,19 +300,20 @@ function renderRsBreakdown(filteredInvoices) {
     current.totalAmount += toNumber(row.amount);
     current.lines += 1;
     if (normalizeText(row.campaignName)) current.campaigns.add(normalizeText(row.campaignName));
-    summaryMap.set(legalEntity, current);
+    summaryMap.set(key, current);
   });
 
   const rows = Array.from(summaryMap.values())
     .map((row) => ({
       legalEntity: row.legalEntity,
+      platform: row.platform,
       totalAmount: row.totalAmount,
       campaignCount: row.campaigns.size,
       lines: row.lines,
     }))
     .sort((a, b) => b.totalAmount - a.totalAmount);
 
-  rsResultsCount.textContent = `${rows.length} razón${rows.length === 1 ? "" : "es"} social${rows.length === 1 ? "" : "es"}`;
+  rsResultsCount.textContent = `${rows.length} fila${rows.length === 1 ? "" : "s"}`;
 
   const totalCampaignSpend = rows.reduce((sum, row) => sum + row.totalAmount, 0);
   const totalUniqueCampaigns = new Set(campaignRows.map((row) => normalizeText(row.campaignName)).filter(Boolean)).size;
@@ -325,7 +333,7 @@ function renderRsBreakdown(filteredInvoices) {
   if (rsExportPdfBtn) rsExportPdfBtn.disabled = rows.length === 0;
 
   if (!rows.length) {
-    rsBreakdownBody.innerHTML = '<tr><td colspan="5" class="empty">No hay campañas para los filtros seleccionados.</td></tr>';
+    rsBreakdownBody.innerHTML = '<tr><td colspan="6" class="empty">No hay campañas para los filtros seleccionados.</td></tr>';
     return;
   }
 
@@ -334,6 +342,7 @@ function renderRsBreakdown(filteredInvoices) {
       (row) => `
       <tr>
         <td>${esc(row.legalEntity)}</td>
+        <td>${esc(row.platform)}</td>
         <td class="amount">${formatCLP(row.totalAmount)}</td>
         <td class="amount">${totalCampaignSpend ? `${((row.totalAmount / totalCampaignSpend) * 100).toFixed(2)}%` : "0.00%"}</td>
         <td class="amount">${row.campaignCount}</td>
@@ -345,6 +354,7 @@ function renderRsBreakdown(filteredInvoices) {
   rsBreakdownBody.innerHTML += `
       <tr class="total-row">
         <td>TOTAL</td>
+        <td>-</td>
         <td class="amount">${formatCLP(totalCampaignSpend)}</td>
         <td class="amount">${totalCampaignSpend ? "100.00%" : "0.00%"}</td>
         <td class="amount">${totalUniqueCampaigns}</td>
