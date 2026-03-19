@@ -89,6 +89,16 @@ def normalize_brand_group(value: str) -> str:
     return plain
 
 
+def is_special_charge_label(label: str) -> bool:
+    normalized = normalize_key(label)
+    return (
+        "actividadnovalida" in normalized
+        or "costosoperativosregulatorios" in normalized
+        or "tarifadelimpuesto" in normalized
+        or "tarifasimpuestos" in normalized
+    )
+
+
 def clp_to_int(value: str) -> int:
     clean = re.sub(r"[^\d,.\-]", "", value).strip()
     if not clean:
@@ -1165,6 +1175,31 @@ def parse_reason_social_sheet(path: Path, warnings: list[ParseWarning]) -> list[
 def build_reason_social_rows(
     invoices: list[dict[str, Any]], reason_social_mappings: list[dict[str, Any]]
 ) -> list[dict[str, Any]]:
+    def extract_special_charges(invoice: dict[str, Any]) -> list[dict[str, Any]]:
+        charges: list[dict[str, Any]] = []
+
+        details = invoice.get("details", []) if isinstance(invoice.get("details"), list) else []
+        for detail in details:
+            label = str(detail.get("description", "")).strip()
+            amount = int(detail.get("amount", 0) or 0)
+            if not label or amount == 0:
+                continue
+            if is_special_charge_label(label):
+                charges.append({"label": label, "amount": amount})
+
+        if charges:
+            return charges
+
+        summary_items = invoice.get("summaryBreakdown", []) if isinstance(invoice.get("summaryBreakdown"), list) else []
+        for item in summary_items:
+            label = str(item.get("label", "")).strip()
+            amount = int(item.get("amount", 0) or 0)
+            if not label or amount == 0:
+                continue
+            if is_special_charge_label(label):
+                charges.append({"label": label, "amount": amount})
+        return charges
+
     by_brand_campaign: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     by_campaign: dict[str, list[dict[str, Any]]] = defaultdict(list)
 
@@ -1214,6 +1249,48 @@ def build_reason_social_rows(
                     "legalEntity": legal_entity,
                     "mappingBrand": mapping_brand,
                     "matched": legal_entity != "Sin asignar",
+                }
+            )
+
+    brand_top_legal_entity: dict[str, str] = {}
+    brand_totals: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
+    for row in rows:
+        legal_entity = str(row.get("legalEntity", "")).strip()
+        brand = str(row.get("brand", "")).strip()
+        amount = int(row.get("amount", 0) or 0)
+        if not brand or not legal_entity or legal_entity == "Sin asignar" or amount <= 0:
+            continue
+        brand_totals[brand][legal_entity] += amount
+
+    for brand, totals in brand_totals.items():
+        sorted_totals = sorted(totals.items(), key=lambda item: (-item[1], item[0]))
+        if sorted_totals:
+            brand_top_legal_entity[brand] = sorted_totals[0][0]
+
+    for invoice in invoices:
+        platform = str(invoice.get("platform", "")).strip()
+        if platform not in {"Meta", "Google Ads"}:
+            continue
+
+        special_charges = extract_special_charges(invoice)
+        if not special_charges:
+            continue
+
+        brand = str(invoice.get("brand", "")).strip()
+        top_legal_entity = brand_top_legal_entity.get(brand, "Sin asignar")
+        for charge in special_charges:
+            rows.append(
+                {
+                    "invoiceId": invoice.get("id", ""),
+                    "invoiceDate": invoice.get("invoiceDate", ""),
+                    "month": invoice.get("month", ""),
+                    "platform": platform,
+                    "brand": brand,
+                    "campaignName": charge["label"],
+                    "amount": charge["amount"],
+                    "legalEntity": top_legal_entity,
+                    "mappingBrand": "",
+                    "matched": top_legal_entity != "Sin asignar",
                 }
             )
 

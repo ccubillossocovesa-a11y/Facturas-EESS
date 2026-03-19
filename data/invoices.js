@@ -1,5 +1,5 @@
 window.INVOICE_DATA = {
-  "generatedAt": "2026-03-19T21:11:02Z",
+  "generatedAt": "2026-03-19T21:36:54Z",
   "currency": "CLP",
   "invoices": [
     {
@@ -6567,6 +6567,18 @@ window.INVOICE_DATA = {
       "month": "2026-02",
       "platform": "Google Ads",
       "brand": "Almagro Inmobiliaria",
+      "campaignName": "Actividad no válida...",
+      "amount": -2070,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
       "campaignName": "Antofagasta | MR | Parque Brasil",
       "amount": 66713,
       "legalEntity": "Almagro S.A",
@@ -6583,6 +6595,42 @@ window.INVOICE_DATA = {
       "amount": 346,
       "legalEntity": "Almagro S.A",
       "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Costos operativos regulatorios de España",
+      "amount": 355,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Costos operativos regulatorios de Francia",
+      "amount": 30,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
+      "campaignName": "Costos operativos regulatorios de Italia",
+      "amount": 79,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "",
       "matched": true
     },
     {
@@ -6759,6 +6807,18 @@ window.INVOICE_DATA = {
       "month": "2026-02",
       "platform": "Google Ads",
       "brand": "Almagro Inmobiliaria",
+      "campaignName": "Tarifa del impuesto a los servicios digitales del Reino Unido",
+      "amount": 40,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "",
+      "matched": true
+    },
+    {
+      "invoiceId": "5509647851",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Inmobiliaria",
       "campaignName": "Santiago | MR | Rengo",
       "amount": 259141,
       "legalEntity": "Arcilla Roja",
@@ -6831,6 +6891,30 @@ window.INVOICE_DATA = {
       "month": "2026-02",
       "platform": "Google Ads",
       "brand": "Almagro Propiedades",
+      "campaignName": "Actividad no válida...",
+      "amount": -4404,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "",
+      "matched": true
+    },
+    {
+      "invoiceId": "5510587237",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Propiedades",
+      "campaignName": "Costos operativos regulatorios de Francia",
+      "amount": 5,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "",
+      "matched": true
+    },
+    {
+      "invoiceId": "5510587237",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Propiedades",
       "campaignName": "Nacional | AO S | Por Categoria | Propiedades",
       "amount": 91183,
       "legalEntity": "Almagro S.A",
@@ -6871,6 +6955,18 @@ window.INVOICE_DATA = {
       "amount": 9342,
       "legalEntity": "Almagro S.A",
       "mappingBrand": "Almagro",
+      "matched": true
+    },
+    {
+      "invoiceId": "5510587237",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Almagro Propiedades",
+      "campaignName": "Tarifa del impuesto a los servicios digitales del Reino Unido",
+      "amount": 1,
+      "legalEntity": "Almagro S.A",
+      "mappingBrand": "",
       "matched": true
     },
     {
@@ -6967,6 +7063,30 @@ window.INVOICE_DATA = {
       "amount": 993,
       "legalEntity": "ICSA",
       "mappingBrand": "Pilares",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Pilares",
+      "campaignName": "Actividad no válida...",
+      "amount": -104,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508450624",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Pilares",
+      "campaignName": "Costos operativos regulatorios de Francia",
+      "amount": 16,
+      "legalEntity": "Pilares S.A",
+      "mappingBrand": "",
       "matched": true
     },
     {
@@ -7179,6 +7299,18 @@ window.INVOICE_DATA = {
       "month": "2026-02",
       "platform": "Google Ads",
       "brand": "Socovesa",
+      "campaignName": "Actividad no válida...",
+      "amount": -18215,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
       "campaignName": "Centro Sur | AO S | Por Ciudad | Chillan 2",
       "amount": 98406,
       "legalEntity": "Socovesa Sur S.A",
@@ -7195,6 +7327,18 @@ window.INVOICE_DATA = {
       "amount": 122145,
       "legalEntity": "Socovesa Sur S.A",
       "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Costos operativos regulatorios de España",
+      "amount": 160,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "",
       "matched": true
     },
     {
@@ -7267,6 +7411,18 @@ window.INVOICE_DATA = {
       "amount": 104553,
       "legalEntity": "Socovesa Sur S.A",
       "mappingBrand": "Socovesa Sur",
+      "matched": true
+    },
+    {
+      "invoiceId": "5508956529",
+      "invoiceDate": "2026-02-28",
+      "month": "2026-02",
+      "platform": "Google Ads",
+      "brand": "Socovesa",
+      "campaignName": "Tarifa del impuesto a los servicios digitales del Reino Unido",
+      "amount": 18,
+      "legalEntity": "Socovesa Sur S.A",
+      "mappingBrand": "",
       "matched": true
     },
     {
