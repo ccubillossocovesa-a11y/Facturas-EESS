@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-19T21:53:35Z",
+  "generatedAt": "2026-03-19T22:13:02Z",
   "currency": "CLP",
   "invoices": [
     {
@@ -1751,15 +1751,11 @@
       "campaigns": [
         {
           "name": "FB_Advantage_Almagro",
-          "amount": 14689458
+          "amount": 7345555
         },
         {
           "name": "FB_AOT_Santiago_AlmagroDistrict",
           "amount": 1610955
-        },
-        {
-          "name": "FB_Almagro_TuDeptoEsTuPie",
-          "amount": 1184674
         },
         {
           "name": "FB_AOT_Antofagasta_ParqueBrasil",
@@ -1780,6 +1776,10 @@
         {
           "name": "FB_AOT_Santiago_Insigne",
           "amount": 1127711
+        },
+        {
+          "name": "FB_Almagro_TuDeptoEsTuPie",
+          "amount": 592337
         },
         {
           "name": "FB_AOL_Santiago_AlmagroDistrict",
@@ -1835,7 +1835,7 @@
         },
         {
           "name": "FB_Almagro_Patrocinado_Blog",
-          "amount": 176908
+          "amount": 88454
         }
       ],
       "notes": [
@@ -2402,7 +2402,7 @@
       "campaigns": [
         {
           "name": "FB_Pilares_Advantage_Proyectos",
-          "amount": 7317880
+          "amount": 3658940
         },
         {
           "name": "FB_AOT_Franklin",
@@ -7588,7 +7588,7 @@
       "platform": "Meta",
       "brand": "Almagro Inmobiliaria",
       "campaignName": "FB_Advantage_Almagro",
-      "amount": 14689458,
+      "amount": 7345555,
       "legalEntity": "Almagro S.A",
       "mappingBrand": "Almagro",
       "matched": true
@@ -7600,7 +7600,7 @@
       "platform": "Meta",
       "brand": "Almagro Inmobiliaria",
       "campaignName": "FB_Almagro_Patrocinado_Blog",
-      "amount": 176908,
+      "amount": 88454,
       "legalEntity": "Almagro S.A",
       "mappingBrand": "Almagro",
       "matched": true
@@ -7612,7 +7612,7 @@
       "platform": "Meta",
       "brand": "Almagro Inmobiliaria",
       "campaignName": "FB_Almagro_TuDeptoEsTuPie",
-      "amount": 1184674,
+      "amount": 592337,
       "legalEntity": "Almagro S.A",
       "mappingBrand": "Almagro",
       "matched": true
@@ -7828,7 +7828,7 @@
       "platform": "Meta",
       "brand": "Pilares",
       "campaignName": "FB_Pilares_Advantage_Proyectos",
-      "amount": 7317880,
+      "amount": 3658940,
       "legalEntity": "Pilares S.A",
       "mappingBrand": "Pilares",
       "matched": true

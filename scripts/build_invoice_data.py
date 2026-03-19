@@ -426,35 +426,53 @@ def iso_from_meta_receipt_date(value: str) -> str:
 def parse_meta_receipt_campaigns(lines: list[str]) -> list[dict[str, Any]]:
     campaigns: list[dict[str, Any]] = []
     in_campaign_block = False
-    current_campaign = ""
+    idx = 0
 
-    for line in lines:
+    while idx < len(lines):
+        line = lines[idx]
         if line.startswith("Campañas"):
             in_campaign_block = True
-            current_campaign = ""
+            idx += 1
             continue
         if not in_campaign_block:
+            idx += 1
             continue
         if line.startswith("Meta Platforms"):
             break
 
         if line.startswith("FB_") and "$" not in line:
-            current_campaign = " ".join(line.split())
+            campaign_name = " ".join(line.split())
+            idx += 1
+
+            standalone_amount = 0
+            fallback_amount = 0
+            while idx < len(lines):
+                current = lines[idx]
+                if current.startswith("Meta Platforms"):
+                    break
+                if current.startswith("FB_") and "$" not in current:
+                    break
+
+                amount_only = re.fullmatch(r"\$([\d\.,]+)", current)
+                if amount_only:
+                    standalone_amount = clp_to_int(amount_only.group(1))
+                    idx += 1
+                    continue
+
+                amount_trailing = re.search(r"\$([\d\.,]+)\s*$", current)
+                if amount_trailing and not current.startswith("FB_") and not current.startswith("De "):
+                    fallback_amount += clp_to_int(amount_trailing.group(1))
+
+                idx += 1
+
+            amount = standalone_amount if standalone_amount > 0 else fallback_amount
+            if amount > 0:
+                campaigns.append({"campaignName": campaign_name, "amount": amount})
             continue
 
-        if not current_campaign:
-            continue
+        idx += 1
 
-        amount_only = re.fullmatch(r"\$([\d\.,]+)", line)
-        if amount_only:
-            campaigns.append({"campaignName": current_campaign, "amount": clp_to_int(amount_only.group(1))})
-            continue
-
-        amount_trailing = re.search(r"\$([\d\.,]+)\s*$", line)
-        if amount_trailing and not line.startswith("FB_"):
-            campaigns.append({"campaignName": current_campaign, "amount": clp_to_int(amount_trailing.group(1))})
-
-    return [item for item in campaigns if item["amount"] > 0]
+    return campaigns
 
 
 def parse_meta_receipt_pdf(path: Path, warnings: list[ParseWarning], month_hint: str) -> dict[str, Any] | None:
