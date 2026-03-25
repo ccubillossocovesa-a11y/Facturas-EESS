@@ -82,6 +82,57 @@ def normalize_key(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", plain)
 
 
+PROJECT_LEGAL_ENTITY_OVERRIDES = {
+    normalize_key("Almagro Plus"): "Almagro S.A",
+    normalize_key("San Eugenio 2"): "Almagro S.A",
+    normalize_key("Indico"): "Almagro S.A",
+    normalize_key("Parque Brasil"): "Almagro S.A",
+    normalize_key("Balance"): "Almagro S.A",
+    normalize_key("Lyon Bilbao"): "Almagro S.A",
+    normalize_key("Carrera 4"): "Almagro S.A",
+    normalize_key("Insigne"): "Almagro S.A",
+    normalize_key("Los Cactus"): "Almagro S.A",
+    normalize_key("PLP 1"): "Arcilla Roja",
+    normalize_key("PLP 2"): "Arcilla Roja",
+    normalize_key("Almagro Hub"): "Arcilla Roja",
+    normalize_key("Rengo"): "Arcilla Roja",
+    normalize_key("Las Palmas"): "Consorcio Inmobiliario Macul",
+    normalize_key("Conde del Maule"): "ICSA",
+    normalize_key("Edificio Ñuble"): "ICSA",
+    normalize_key("Lo Ovalle"): "ICSA",
+    normalize_key("Santos Dumont"): "ICSA",
+    normalize_key("Pajaritos"): "Inmobiliaria El Descubridor",
+    normalize_key("Las Pataguas"): "Inmobiliaria Encinas de Peñalolen",
+    normalize_key("Los Coihues"): "Inmobiliaria Encinas de Peñalolen",
+    normalize_key("Almagro District"): "Madagascar",
+    normalize_key("Marathon"): "Pilares S.A",
+    normalize_key("Guillermo Mann"): "Pilares S.A",
+    normalize_key("Rodriguez Velasco"): "Pilares S.A",
+    normalize_key("Vicuña Mackenna 7244"): "Pilares S.A",
+    normalize_key("Coipue"): "Sociedad Comercializadora Metropolitana",
+    normalize_key("Alto Maderos"): "Socovesa Sur S.A",
+    normalize_key("Edificio Vértice"): "Socovesa Sur S.A",
+    normalize_key("García Reyes"): "Socovesa Sur S.A",
+    normalize_key("Icono"): "Socovesa Sur S.A",
+    normalize_key("N3"): "Socovesa Sur S.A",
+    normalize_key("Nueva Toledo"): "Socovesa Sur S.A",
+    normalize_key("O3"): "Socovesa Sur S.A",
+    normalize_key("Origen"): "Socovesa Sur S.A",
+    normalize_key("Parque Avellanos"): "Socovesa Sur S.A",
+    normalize_key("PDL"): "Socovesa Sur S.A",
+    normalize_key("Portal Austral"): "Socovesa Sur S.A",
+    normalize_key("Reserva Magallanes"): "Socovesa Sur S.A",
+    normalize_key("Terraza Mirador"): "Socovesa Sur S.A",
+}
+
+
+def override_legal_entity_by_project(project: str, fallback_legal_entity: str) -> str:
+    project_key = normalize_key(project)
+    if not project_key:
+        return fallback_legal_entity
+    return PROJECT_LEGAL_ENTITY_OVERRIDES.get(project_key, fallback_legal_entity)
+
+
 def normalize_brand_group(value: str) -> str:
     plain = normalize_key(value)
     if "almagro" in plain:
@@ -1595,6 +1646,20 @@ def build_reason_social_rows(
                     "matched": top_legal_entity != "Sin asignar",
                 }
             )
+
+    for row in rows:
+        row_project = str(row.get("project", "")).strip()
+        row_legal_entity = str(row.get("legalEntity", "")).strip() or "Sin asignar"
+        row["legalEntity"] = override_legal_entity_by_project(row_project, row_legal_entity)
+        row["matched"] = row["legalEntity"] != "Sin asignar"
+
+        split_assignments = row.get("splitAssignments", [])
+        if not isinstance(split_assignments, list):
+            continue
+        for split in split_assignments:
+            split_project = str(split.get("project", "")).strip()
+            split_legal_entity = str(split.get("legalEntity", "")).strip() or row["legalEntity"]
+            split["legalEntity"] = override_legal_entity_by_project(split_project, split_legal_entity)
 
     return sorted(
         rows,
