@@ -734,6 +734,25 @@ def parse_meta_receipt_folders(root_dir: Path, warnings: list[ParseWarning]) -> 
     return invoices
 
 
+def collect_meta_payment_references(invoices: list[dict[str, Any]]) -> set[str]:
+    references: set[str] = set()
+    for invoice in invoices:
+        if str(invoice.get("platform", "")).strip() != "Meta":
+            continue
+        details = invoice.get("details", []) if isinstance(invoice.get("details"), list) else []
+        for detail in details:
+            ref = str(detail.get("paymentReference", "")).strip().upper()
+            if ref:
+                references.add(ref)
+
+        campaign_details = invoice.get("campaignDetails", []) if isinstance(invoice.get("campaignDetails"), list) else []
+        for detail in campaign_details:
+            ref = str(detail.get("paymentReference", "")).strip().upper()
+            if ref:
+                references.add(ref)
+    return references
+
+
 def extract_card_statement_text(path: Path, warnings: list[ParseWarning]) -> str:
     text = extract_text_pypdf(path)
     if len(re.sub(r"\s+", "", text)) >= 200 and "FACEBK" in text.upper():
@@ -777,11 +796,85 @@ def extract_card_statement_text(path: Path, warnings: list[ParseWarning]) -> str
     return text
 
 
-def parse_meta_card_statement_charges(root_dir: Path, warnings: list[ParseWarning]) -> dict[str, dict[str, Any]]:
+def parse_meta_card_statement_charges(
+    root_dir: Path, warnings: list[ParseWarning], known_references: set[str] | None = None
+) -> dict[str, dict[str, Any]]:
     if not root_dir.exists():
         return {}
 
+    known_references = known_references or set()
+    ambiguous_pairs = {
+        ("5", "S"),
+        ("S", "5"),
+        ("0", "O"),
+        ("O", "0"),
+        ("1", "I"),
+        ("I", "1"),
+        ("1", "L"),
+        ("L", "1"),
+        ("6", "G"),
+        ("G", "6"),
+        ("8", "B"),
+        ("B", "8"),
+        ("2", "Z"),
+        ("Z", "2"),
+        ("7", "T"),
+        ("T", "7"),
+        ("9", "S"),
+        ("S", "9"),
+    }
+
+    def normalize_code(value: str) -> str:
+        return re.sub(r"[^A-Z0-9]", "", str(value).upper())
+
+    def substitution_cost(a: str, b: str) -> int:
+        if a == b:
+            return 0
+        if (a, b) in ambiguous_pairs:
+            return 1
+        return 2
+
+    def weighted_edit_distance(a: str, b: str) -> int:
+        n, m = len(a), len(b)
+        dp = [[0] * (m + 1) for _ in range(n + 1)]
+        for i in range(1, n + 1):
+            dp[i][0] = i
+        for j in range(1, m + 1):
+            dp[0][j] = j
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+                dp[i][j] = min(
+                    dp[i - 1][j] + 1,
+                    dp[i][j - 1] + 1,
+                    dp[i - 1][j - 1] + substitution_cost(a[i - 1], b[j - 1]),
+                )
+        return dp[n][m]
+
+    def resolve_to_known_reference(raw_code: str) -> tuple[str, str]:
+        code = normalize_code(raw_code)
+        if not code or not known_references:
+            return code, ""
+        if code in known_references:
+            return code, ""
+
+        best_distance = 99
+        best_refs: list[str] = []
+        for candidate in known_references:
+            if abs(len(candidate) - len(code)) > 2:
+                continue
+            distance = weighted_edit_distance(code, candidate)
+            if distance < best_distance:
+                best_distance = distance
+                best_refs = [candidate]
+            elif distance == best_distance:
+                best_refs.append(candidate)
+
+        if best_distance <= 2 and len(best_refs) == 1:
+            return best_refs[0], code
+        return code, ""
+
     charges_by_code: dict[str, dict[str, Any]] = {}
+    reconciled_codes = 0
     for pdf_file in sorted(root_dir.glob("*.pdf")):
         text = extract_card_statement_text(pdf_file, warnings)
         if not text:
@@ -795,7 +888,10 @@ def parse_meta_card_statement_charges(root_dir: Path, warnings: list[ParseWarnin
             if not code_match:
                 continue
 
-            charge_code = code_match.group(1).upper()
+            charge_code_raw = code_match.group(1).upper()
+            charge_code, reconciled_from = resolve_to_known_reference(charge_code_raw)
+            if reconciled_from:
+                reconciled_codes += 1
             tail = line[code_match.end() :]
             amount_tokens = DECIMAL_COMMA_RE.findall(tail)
             if len(amount_tokens) < 2:
@@ -817,6 +913,8 @@ def parse_meta_card_statement_charges(root_dir: Path, warnings: list[ParseWarnin
             entry = {
                 "chargeCode": charge_code,
                 "descriptionCharge": f"FACEBK *{charge_code}",
+                "sourceCodeRaw": charge_code_raw,
+                "reconciledFromRawCode": reconciled_from,
                 "amountOriginal": amount_origin,
                 "amountOriginalRaw": amount_origin_raw,
                 "amountUsd": amount_usd,
@@ -845,6 +943,14 @@ def parse_meta_card_statement_charges(root_dir: Path, warnings: list[ParseWarnin
             warnings.append(
                 ParseWarning(source=pdf_file.name, message="No FACEBK charge rows parsed from card statement PDF.")
             )
+
+    if reconciled_codes:
+        warnings.append(
+            ParseWarning(
+                source="Cartola TC",
+                message=f"Reconciled {reconciled_codes} FACEBK codes to known Meta payment references.",
+            )
+        )
 
     return charges_by_code
 
@@ -1724,6 +1830,7 @@ def build_reason_social_rows(
                     "chargeAmountOriginal": charge_amount_original,
                     "chargeAmountUsd": charge_amount_usd,
                     "chargeAmountValidation": charge_amount_validation,
+                    "chargeTcAmount": None,
                     "legalEntity": legal_entity,
                     "comuna": comuna,
                     "project": project,
@@ -1796,6 +1903,7 @@ def build_reason_social_rows(
                     "chargeAmountOriginal": None,
                     "chargeAmountUsd": None,
                     "chargeAmountValidation": "Sin match",
+                    "chargeTcAmount": None,
                     "legalEntity": top_legal_entity,
                     "comuna": top_comuna,
                     "project": top_project,
@@ -1858,6 +1966,45 @@ def build_reason_social_rows(
         row["chargeAmountValidation"] = (
             "Coincide" if total_by_reference == int(row.get("chargeAmountOriginal", 0) or 0) else "No coincide"
         )
+
+    def allocate_proportional_int(total: int, weights: list[int]) -> list[int]:
+        if total <= 0 or not weights:
+            return [0 for _ in weights]
+        safe_weights = [max(int(weight), 0) for weight in weights]
+        weight_sum = sum(safe_weights)
+        if weight_sum <= 0:
+            return [0 for _ in weights]
+
+        exacts = [total * weight / weight_sum for weight in safe_weights]
+        base = [int(value) for value in exacts]
+        missing = total - sum(base)
+        remainders = sorted(
+            ((exacts[idx] - base[idx], idx) for idx in range(len(base))),
+            key=lambda item: (-item[0], item[1]),
+        )
+        for _, idx in remainders[:missing]:
+            base[idx] += 1
+        return base
+
+    meta_rows_by_reference: dict[str, list[int]] = defaultdict(list)
+    for idx, row in enumerate(rows):
+        if str(row.get("platform", "")).strip() != "Meta":
+            continue
+        payment_reference = str(row.get("paymentReference", "")).strip().upper()
+        if not payment_reference:
+            continue
+        if row.get("chargeAmountOriginal") is None:
+            continue
+        meta_rows_by_reference[payment_reference].append(idx)
+
+    for payment_reference, row_indexes in meta_rows_by_reference.items():
+        if not row_indexes:
+            continue
+        charge_total = int(rows[row_indexes[0]].get("chargeAmountOriginal", 0) or 0)
+        weights = [int(rows[idx].get("amount", 0) or 0) for idx in row_indexes]
+        allocated = allocate_proportional_int(charge_total, weights)
+        for pos, row_idx in enumerate(row_indexes):
+            rows[row_idx]["chargeTcAmount"] = allocated[pos]
 
     return sorted(
         rows,
@@ -1973,7 +2120,10 @@ def main() -> None:
     meta_receipt_invoices = parse_meta_receipt_folders(META_INVOICES_DIR, warnings)
     if meta_receipt_invoices:
         invoices.extend(meta_receipt_invoices)
-        card_charges_by_code = parse_meta_card_statement_charges(META_CARD_STATEMENTS_DIR, warnings)
+        known_meta_references = collect_meta_payment_references(meta_receipt_invoices)
+        card_charges_by_code = parse_meta_card_statement_charges(
+            META_CARD_STATEMENTS_DIR, warnings, known_references=known_meta_references
+        )
     else:
         for file in meta_files:
             invoices.append(parse_meta_invoice(file, warnings))

@@ -86,6 +86,47 @@ function formatUSD(value) {
   return usdFormatter.format(num);
 }
 
+function allocateProportionalInt(total, weights) {
+  const safeTotal = Number(total);
+  if (!Number.isFinite(safeTotal) || safeTotal <= 0 || !Array.isArray(weights) || weights.length === 0) {
+    return (weights || []).map(() => 0);
+  }
+
+  const safeWeights = weights.map((weight) => Math.max(0, Number(weight) || 0));
+  const weightSum = safeWeights.reduce((sum, value) => sum + value, 0);
+  if (weightSum <= 0) return safeWeights.map(() => 0);
+
+  const exacts = safeWeights.map((weight) => (safeTotal * weight) / weightSum);
+  const base = exacts.map((value) => Math.floor(value));
+  let missing = Math.round(safeTotal - base.reduce((sum, value) => sum + value, 0));
+  const remainders = exacts
+    .map((value, index) => ({ index, remainder: value - base[index] }))
+    .sort((a, b) => b.remainder - a.remainder || a.index - b.index);
+
+  for (let i = 0; i < remainders.length && missing > 0; i += 1) {
+    base[remainders[i].index] += 1;
+    missing -= 1;
+  }
+  return base;
+}
+
+function getUniqueCardChargeTotals(rows) {
+  const seen = new Set();
+  let totalOrigin = 0;
+  let totalUsd = 0;
+
+  rows.forEach((row) => {
+    const paymentReference = normalizeText(row.paymentReference);
+    const origin = toOptionalNumber(row.chargeAmountOriginal);
+    if (!paymentReference || origin === null || seen.has(paymentReference)) return;
+    seen.add(paymentReference);
+    totalOrigin += origin;
+    totalUsd += toOptionalNumber(row.chargeAmountUsd) || 0;
+  });
+
+  return { totalOrigin, totalUsd };
+}
+
 function formatDate(value) {
   const raw = normalizeText(value);
   const m = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
@@ -113,6 +154,7 @@ function buildXlsxBodyWithOutline(rows) {
   const outlineRows = [];
 
   sortedRows.forEach((row) => {
+    const rowChargeTc = toOptionalNumber(row.chargeTcAmount);
     body.push([
       toMonthLabel(row.monthKey),
       row.legalEntity,
@@ -123,7 +165,7 @@ function buildXlsxBodyWithOutline(rows) {
       row.referenceId,
       formatDate(row.paymentDate),
       row.paymentReference || "-",
-      row.chargeCode || "",
+      rowChargeTc,
       toOptionalNumber(row.chargeAmountOriginal),
       toOptionalNumber(row.chargeAmountUsd),
       row.chargeAmountValidation || "-",
@@ -133,6 +175,10 @@ function buildXlsxBodyWithOutline(rows) {
 
     const splits = Array.isArray(row.splitAssignments) ? row.splitAssignments : [];
     if (splits.length <= 1) return;
+    const splitChargeAllocations = allocateProportionalInt(
+      rowChargeTc || 0,
+      splits.map((split) => Number(split.amount || 0))
+    );
 
     splits.forEach((split, splitIndex) => {
       body.push([
@@ -145,7 +191,7 @@ function buildXlsxBodyWithOutline(rows) {
         row.referenceId,
         formatDate(row.paymentDate),
         row.paymentReference || "-",
-        row.chargeCode || "",
+        splitChargeAllocations[splitIndex] || 0,
         toOptionalNumber(row.chargeAmountOriginal),
         toOptionalNumber(row.chargeAmountUsd),
         row.chargeAmountValidation || "-",
@@ -176,7 +222,7 @@ function exportTableXlsx(rows) {
     "ID transacción / N° factura",
     "Fecha de pago",
     "N° referencia",
-    "Código (Descripción del cobro)",
+    "Cobro TC",
     "Monto moneda origen",
     "Monto US$",
     "Validación monto",
@@ -184,7 +230,9 @@ function exportTableXlsx(rows) {
   ];
 
   const totalAmount = sortedRows.reduce((sum, row) => sum + row.amount, 0);
-  body.push(["-", "TOTAL", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", totalAmount]);
+  const totalChargeTc = sortedRows.reduce((sum, row) => sum + (toOptionalNumber(row.chargeTcAmount) || 0), 0);
+  const { totalOrigin, totalUsd } = getUniqueCardChargeTotals(sortedRows);
+  body.push(["-", "TOTAL", "-", "-", "-", "-", "-", "-", "-", totalChargeTc, totalOrigin, totalUsd, "-", totalAmount]);
   outlineRows.push({ level: 0 });
 
   const worksheet = window.XLSX.utils.aoa_to_sheet([headers, ...body]);
@@ -210,6 +258,8 @@ function exportTableXlsx(rows) {
     worksheet["!rows"].push(meta);
   });
   for (let rowIndex = 2; rowIndex <= body.length + 1; rowIndex += 1) {
+    const tcCell = worksheet[`J${rowIndex}`];
+    if (tcCell && typeof tcCell.v === "number") tcCell.z = '"$"#,##0';
     const originCell = worksheet[`K${rowIndex}`];
     if (originCell && typeof originCell.v === "number") originCell.z = '"$"#,##0';
     const usdCell = worksheet[`L${rowIndex}`];
@@ -239,6 +289,8 @@ function exportTablePdf(rows) {
 
   const sortedRows = toExportRows(rows);
   const totalAmount = sortedRows.reduce((sum, row) => sum + row.amount, 0);
+  const totalChargeTc = sortedRows.reduce((sum, row) => sum + (toOptionalNumber(row.chargeTcAmount) || 0), 0);
+  const { totalOrigin, totalUsd } = getUniqueCardChargeTotals(sortedRows);
   const body = sortedRows.map((row) => [
     toMonthLabel(row.monthKey),
     row.legalEntity,
@@ -249,13 +301,28 @@ function exportTablePdf(rows) {
     row.referenceId,
     formatDate(row.paymentDate),
     row.paymentReference || "-",
-    row.chargeCode || "-",
+    formatOptionalCLP(row.chargeTcAmount),
     formatOptionalCLP(row.chargeAmountOriginal),
     formatUSD(row.chargeAmountUsd),
     row.chargeAmountValidation || "-",
     formatCLP(row.amount),
   ]);
-  body.push(["-", "TOTAL", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", "-", formatCLP(totalAmount)]);
+  body.push([
+    "-",
+    "TOTAL",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    formatCLP(totalChargeTc),
+    formatCLP(totalOrigin),
+    formatUSD(totalUsd),
+    "-",
+    formatCLP(totalAmount),
+  ]);
 
   doc.setFontSize(13);
   doc.text("Detalle por Razón Social", 40, 36);
@@ -275,7 +342,7 @@ function exportTablePdf(rows) {
         "ID transacción / N° factura",
         "Fecha de pago",
         "N° referencia",
-        "Código (Descripción del cobro)",
+        "Cobro TC",
         "Monto moneda origen",
         "Monto US$",
         "Validación monto",
@@ -285,7 +352,7 @@ function exportTablePdf(rows) {
     body,
     styles: { fontSize: 8, cellPadding: 5 },
     headStyles: { fillColor: [31, 31, 31] },
-    columnStyles: { 10: { halign: "right" }, 11: { halign: "right" }, 13: { halign: "right" } },
+    columnStyles: { 9: { halign: "right" }, 10: { halign: "right" }, 11: { halign: "right" }, 13: { halign: "right" } },
     didParseCell(hookData) {
       if (hookData.section === "body" && hookData.row.index === body.length - 1) {
         hookData.cell.styles.fontStyle = "bold";
@@ -356,6 +423,7 @@ function extractRows() {
       const paymentDate = normalizeText(row.paymentDate || row.invoiceDate);
       const paymentReference = normalizeText(row.paymentReference);
       const chargeCode = normalizeText(row.chargeCode);
+      const chargeTcAmount = toOptionalNumber(row.chargeTcAmount);
       const chargeAmountOriginal = toOptionalNumber(row.chargeAmountOriginal);
       const chargeAmountUsd = toOptionalNumber(row.chargeAmountUsd);
       const chargeAmountValidation = normalizeText(row.chargeAmountValidation) || "Sin match";
@@ -397,6 +465,7 @@ function extractRows() {
         paymentDate: paymentDate || "-",
         paymentReference: paymentReference || "-",
         chargeCode: chargeCode || "-",
+        chargeTcAmount,
         chargeAmountOriginal,
         chargeAmountUsd,
         chargeAmountValidation,
@@ -446,6 +515,7 @@ function getFilteredRows() {
         row.paymentDate,
         row.paymentReference,
         row.chargeCode,
+        row.chargeTcAmount,
         row.chargeAmountValidation,
         row.brand,
       ]
@@ -461,6 +531,8 @@ function render(rows) {
   currentFilteredRows = toExportRows(rows);
   const visibleRows = currentFilteredRows;
   const total = visibleRows.reduce((sum, row) => sum + row.amount, 0);
+  const totalChargeTc = visibleRows.reduce((sum, row) => sum + (toOptionalNumber(row.chargeTcAmount) || 0), 0);
+  const { totalOrigin, totalUsd } = getUniqueCardChargeTotals(visibleRows);
   const uniqueCampaigns = new Set(visibleRows.map((row) => row.campaignName).filter(Boolean)).size;
 
   kpiTotal.textContent = formatCLP(total);
@@ -480,6 +552,10 @@ function render(rows) {
       const splitRows = Array.isArray(row.splitAssignments) ? row.splitAssignments : [];
       const hasSplit = splitRows.length > 1;
       const isExpanded = hasSplit && expandedRowIds.has(row.rowId);
+      const splitChargeAllocations = allocateProportionalInt(
+        toOptionalNumber(row.chargeTcAmount) || 0,
+        splitRows.map((split) => Number(split.amount || 0))
+      );
       const toggleButton = hasSplit
         ? `<button class="rsd-expand-toggle" type="button" data-row-id="${esc(row.rowId)}" aria-expanded="${isExpanded ? "true" : "false"}">${isExpanded ? "Ocultar apertura" : `Aperturar (${splitRows.length})`}</button>`
         : "";
@@ -499,7 +575,7 @@ function render(rows) {
         <td>${esc(row.referenceId)}</td>
         <td>${esc(formatDate(row.paymentDate))}</td>
         <td>${esc(row.paymentReference)}</td>
-        <td>${esc(row.chargeCode)}</td>
+        <td class="amount">${formatOptionalCLP(row.chargeTcAmount)}</td>
         <td class="amount">${formatOptionalCLP(row.chargeAmountOriginal)}</td>
         <td class="amount">${formatUSD(row.chargeAmountUsd)}</td>
         <td>${esc(row.chargeAmountValidation)}</td>
@@ -521,7 +597,7 @@ function render(rows) {
         <td>${esc(row.referenceId)}</td>
         <td>${esc(formatDate(row.paymentDate))}</td>
         <td>${esc(row.paymentReference)}</td>
-        <td>${esc(row.chargeCode)}</td>
+        <td class="amount">${formatOptionalCLP(splitChargeAllocations[splitIndex] || 0)}</td>
         <td class="amount">${formatOptionalCLP(row.chargeAmountOriginal)}</td>
         <td class="amount">${formatUSD(row.chargeAmountUsd)}</td>
         <td>${esc(row.chargeAmountValidation)}</td>
@@ -533,6 +609,24 @@ function render(rows) {
       return mainRow + breakdownRows;
     })
     .join("");
+
+  tableBody.innerHTML += `
+    <tr class="rsd-total-row">
+      <td>-</td>
+      <td><strong>TOTAL</strong></td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td>-</td>
+      <td class="amount"><strong>${formatCLP(totalChargeTc)}</strong></td>
+      <td class="amount"><strong>${formatCLP(totalOrigin)}</strong></td>
+      <td class="amount"><strong>${formatUSD(totalUsd)}</strong></td>
+      <td>-</td>
+      <td class="amount"><strong>${formatCLP(total)}</strong></td>
+    </tr>`;
 }
 
 function attachEvents() {
