@@ -874,6 +874,8 @@ def parse_meta_card_statement_charges(
         ("T", "7"),
         ("9", "S"),
         ("S", "9"),
+        ("I", "J"),
+        ("J", "I"),
     }
 
     def normalize_code(value: str) -> str:
