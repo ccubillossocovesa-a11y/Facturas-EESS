@@ -161,6 +161,7 @@ function buildXlsxBodyWithOutline(rows) {
       row.platform,
       row.comuna,
       row.project,
+      row.pepCode || "-",
       row.campaignName,
       row.referenceId,
       formatDate(row.paymentDate),
@@ -188,6 +189,7 @@ function buildXlsxBodyWithOutline(rows) {
         row.platform,
         split.comuna,
         split.project,
+        split.pepCode || "-",
         `Apertura ${splitIndex + 1}/${splits.length} - ${row.campaignName}`,
         row.referenceId,
         formatDate(row.paymentDate),
@@ -220,6 +222,7 @@ function exportTableXlsx(rows) {
     "Plataforma",
     "Comuna",
     "Proyecto",
+    "PEP",
     "Nombre de campaña",
     "ID transacción / N° factura",
     "Fecha de pago",
@@ -235,7 +238,24 @@ function exportTableXlsx(rows) {
   const totalAmount = sortedRows.reduce((sum, row) => sum + row.amount, 0);
   const totalChargeTc = sortedRows.reduce((sum, row) => sum + (toOptionalNumber(row.chargeTcAmount) || 0), 0);
   const { totalOrigin, totalUsd } = getUniqueCardChargeTotals(sortedRows);
-  body.push(["-", "TOTAL", "-", "-", "-", "-", "-", "-", "-", "-", totalChargeTc, totalOrigin, totalUsd, "-", totalAmount]);
+  body.push([
+    "-",
+    "TOTAL",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    totalChargeTc,
+    totalOrigin,
+    totalUsd,
+    "-",
+    totalAmount,
+  ]);
   outlineRows.push({ level: 0 });
 
   const worksheet = window.XLSX.utils.aoa_to_sheet([headers, ...body]);
@@ -245,6 +265,7 @@ function exportTableXlsx(rows) {
     { wch: 14 },
     { wch: 20 },
     { wch: 20 },
+    { wch: 14 },
     { wch: 40 },
     { wch: 30 },
     { wch: 16 },
@@ -262,13 +283,13 @@ function exportTableXlsx(rows) {
     worksheet["!rows"].push(meta);
   });
   for (let rowIndex = 2; rowIndex <= body.length + 1; rowIndex += 1) {
-    const tcCell = worksheet[`K${rowIndex}`];
+    const tcCell = worksheet[`L${rowIndex}`];
     if (tcCell && typeof tcCell.v === "number") tcCell.z = '"$"#,##0';
-    const originCell = worksheet[`L${rowIndex}`];
+    const originCell = worksheet[`M${rowIndex}`];
     if (originCell && typeof originCell.v === "number") originCell.z = '"$"#,##0';
-    const usdCell = worksheet[`M${rowIndex}`];
+    const usdCell = worksheet[`N${rowIndex}`];
     if (usdCell && typeof usdCell.v === "number") usdCell.z = '"US$"#,##0.00';
-    const amountCell = worksheet[`O${rowIndex}`];
+    const amountCell = worksheet[`P${rowIndex}`];
     if (amountCell) amountCell.z = '"$"#,##0';
   }
 
@@ -301,6 +322,7 @@ function exportTablePdf(rows) {
     row.platform,
     row.comuna,
     row.project,
+    row.pepCode || "-",
     row.campaignName,
     row.referenceId,
     formatDate(row.paymentDate),
@@ -315,6 +337,7 @@ function exportTablePdf(rows) {
   body.push([
     "-",
     "TOTAL",
+    "-",
     "-",
     "-",
     "-",
@@ -344,6 +367,7 @@ function exportTablePdf(rows) {
         "Plataforma",
         "Comuna",
         "Proyecto",
+        "PEP",
         "Nombre de campaña",
         "ID transacción / N° factura",
         "Fecha de pago",
@@ -359,7 +383,7 @@ function exportTablePdf(rows) {
     body,
     styles: { fontSize: 8, cellPadding: 5 },
     headStyles: { fillColor: [31, 31, 31] },
-    columnStyles: { 10: { halign: "right" }, 11: { halign: "right" }, 12: { halign: "right" }, 14: { halign: "right" } },
+    columnStyles: { 11: { halign: "right" }, 12: { halign: "right" }, 13: { halign: "right" }, 15: { halign: "right" } },
     didParseCell(hookData) {
       if (hookData.section === "body" && hookData.row.index === body.length - 1) {
         hookData.cell.styles.fontStyle = "bold";
@@ -434,6 +458,7 @@ function extractRows() {
       const chargeAmountOriginal = toOptionalNumber(row.chargeAmountOriginal);
       const chargeAmountUsd = toOptionalNumber(row.chargeAmountUsd);
       const chargeAmountValidation = normalizeText(row.chargeAmountValidation) || "Sin match";
+      const pepCode = normalizeText(row.pepCode);
       const splitAssignmentsRaw = Array.isArray(row.splitAssignments) ? row.splitAssignments : [];
       const splitAssignments =
         splitAssignmentsRaw.length > 0
@@ -442,6 +467,7 @@ function extractRows() {
                 legalEntity: normalizeText(splitRow.legalEntity) || "Sin asignar",
                 comuna: normalizeText(splitRow.comuna) || "Sin asignar",
                 project: normalizeText(splitRow.project) || "Sin asignar",
+                pepCode: normalizeText(splitRow.pepCode),
                 amount: Number(splitRow.amount || 0),
               }))
           : [];
@@ -453,6 +479,7 @@ function extractRows() {
                 legalEntity: normalizeText(row.legalEntity) || "Sin asignar",
                 comuna: normalizeText(row.comuna) || "Sin asignar",
                 project: normalizeText(row.project) || "Sin asignar",
+                pepCode: pepCode || "",
                 amount: Number(row.amount || 0),
               },
             ];
@@ -466,6 +493,7 @@ function extractRows() {
         year,
         comuna: normalizeText(row.comuna) || "Sin asignar",
         project: normalizeText(row.project) || "Sin asignar",
+        pepCode: pepCode || "-",
         campaignName: normalizeText(row.campaignName) || "-",
         referenceType,
         referenceId: referenceId || "-",
@@ -517,6 +545,7 @@ function getFilteredRows() {
         row.platform,
         row.comuna,
         row.project,
+        row.pepCode,
         row.campaignName,
         row.referenceId,
         row.paymentDate,
@@ -550,7 +579,7 @@ function render(rows) {
   if (exportPdfBtn) exportPdfBtn.disabled = visibleRows.length === 0;
 
   if (!visibleRows.length) {
-    tableBody.innerHTML = '<tr><td colspan="15" class="empty">No hay filas para los filtros seleccionados.</td></tr>';
+    tableBody.innerHTML = '<tr><td colspan="16" class="empty">No hay filas para los filtros seleccionados.</td></tr>';
     return;
   }
 
@@ -573,6 +602,7 @@ function render(rows) {
         <td>${esc(row.platform)}</td>
         <td>${esc(row.comuna)}</td>
         <td>${esc(row.project)}</td>
+        <td>${esc(row.pepCode)}</td>
         <td>
           <div class="rsd-campaign-cell">
             <span>${esc(row.campaignName)}</span>
@@ -601,6 +631,7 @@ function render(rows) {
         <td>${esc(row.platform)}</td>
         <td>${esc(splitRow.comuna)}</td>
         <td>${esc(splitRow.project)}</td>
+        <td>${esc(splitRow.pepCode || "-")}</td>
         <td><span class="rsd-split-label">Apertura ${splitIndex + 1}/${splitRows.length}</span> ${esc(row.campaignName)}</td>
         <td>${esc(row.referenceId)}</td>
         <td>${esc(formatDate(row.paymentDate))}</td>
@@ -623,6 +654,7 @@ function render(rows) {
     <tr class="rsd-total-row">
       <td>-</td>
       <td><strong>TOTAL</strong></td>
+      <td>-</td>
       <td>-</td>
       <td>-</td>
       <td>-</td>

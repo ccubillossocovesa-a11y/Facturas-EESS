@@ -129,12 +129,63 @@ PROJECT_LEGAL_ENTITY_OVERRIDES = {
     normalize_key("Terraza Mirador"): "Socovesa Sur S.A",
 }
 
+PROJECT_PEP_CODES = {
+    normalize_key("Insigne"): "I-ALM-2157",
+    normalize_key("Parque Brasil"): "I-ALM-2285",
+    normalize_key("PLP 1"): "I-ALM-2226",
+    normalize_key("Los Cactus"): "I-ALM-2342",
+    normalize_key("Almagro Plus"): "I-ALM-2234",
+    normalize_key("Lyon Bilbao"): "I-ALM-2211",
+    normalize_key("Carrera 4"): "I-ALM-2275",
+    normalize_key("Almagro District"): "I-ALM-2399",
+    normalize_key("Rengo"): "I-ALM-2288",
+    normalize_key("Indico"): "I-ALM-1453",
+    normalize_key("Almagro Hub"): "I-ALM-2189",
+    normalize_key("Balance"): "I-ALM-2358",
+    normalize_key("PLP 2"): "I-ALM-2306",
+    normalize_key("San Eugenio 2"): "I-ALM-2227",
+    normalize_key("Guillermo Mann"): "I-SVS-2250",
+    normalize_key("Conde del Maule"): "I-SVS-2255",
+    normalize_key("Santos Dumont"): "I-SVS-2246",
+    normalize_key("Lo Ovalle"): "I-SVS-2296",
+    normalize_key("Rodriguez Velasco"): "I-SVS-2289",
+    normalize_key("Edificio Ñuble"): "I-SVS-2173",
+    normalize_key("Franklin"): "I-ALM-2212",
+    normalize_key("Vicuña Mackenna 7244"): "I-SVS-2131",
+    normalize_key("Los Coihues"): "I-STG-2325",
+    normalize_key("Las Palmas"): "I-STG-2205",
+    normalize_key("Pajaritos"): "I-STG-2204",
+    normalize_key("Marathon"): "I-SVS-2349",
+    normalize_key("Las Pataguas"): "I-STG-2366",
+    normalize_key("Coipue"): "I-STG-2229",
+    normalize_key("PDL"): "I-SUR-2372",
+    normalize_key("Alto Maderos"): "I-SUR-2335",
+    normalize_key("N3"): "I-SUR-2331",
+    normalize_key("García Reyes"): "I-SUR-2283",
+    normalize_key("Portal Austral"): "I-SUR-2340",
+    normalize_key("Reserva Magallanes"): "I-SUR-2323",
+    normalize_key("Parque Avellanos"): "I-SUR-2336",
+    normalize_key("Nueva Toledo"): "I-SUR-2334",
+    normalize_key("Origen"): "I-SUR-2346",
+    normalize_key("Edificio Vértice"): "I-SUR-2297",
+    normalize_key("O3"): "I-SUR-2373",
+    normalize_key("Terraza Mirador"): "I-SUR-2333",
+    normalize_key("Almagro Terra"): "I-ALM-2360",
+}
+
 
 def override_legal_entity_by_project(project: str, fallback_legal_entity: str) -> str:
     project_key = normalize_key(project)
     if not project_key:
         return fallback_legal_entity
     return PROJECT_LEGAL_ENTITY_OVERRIDES.get(project_key, fallback_legal_entity)
+
+
+def pep_code_by_project(project: str) -> str:
+    project_key = normalize_key(project)
+    if not project_key:
+        return ""
+    return PROJECT_PEP_CODES.get(project_key, "")
 
 
 def normalize_brand_group(value: str) -> str:
@@ -1826,6 +1877,7 @@ def build_reason_social_rows(
                     "legalEntity": legal_entity,
                     "comuna": split_candidates[idx][0],
                     "project": split_candidates[idx][1],
+                    "pepCode": pep_code_by_project(split_candidates[idx][1]),
                     "amount": split_amounts[idx],
                 }
                 for idx in range(len(split_candidates))
@@ -1850,6 +1902,7 @@ def build_reason_social_rows(
                     "legalEntity": legal_entity,
                     "comuna": comuna,
                     "project": project,
+                    "pepCode": pep_code_by_project(project),
                     "referenceId": reference_id,
                     "referenceType": reference_type,
                     "mappingBrand": mapping_brand,
@@ -1923,6 +1976,7 @@ def build_reason_social_rows(
                     "legalEntity": top_legal_entity,
                     "comuna": top_comuna,
                     "project": top_project,
+                    "pepCode": pep_code_by_project(top_project),
                     "referenceId": reference_id,
                     "referenceType": reference_type,
                     "mappingBrand": "",
@@ -1931,6 +1985,7 @@ def build_reason_social_rows(
                             "legalEntity": top_legal_entity,
                             "comuna": top_comuna,
                             "project": top_project,
+                            "pepCode": pep_code_by_project(top_project),
                             "amount": charge["amount"],
                         }
                     ],
@@ -1943,6 +1998,7 @@ def build_reason_social_rows(
         row_project = str(row.get("project", "")).strip()
         row_legal_entity = str(row.get("legalEntity", "")).strip() or "Sin asignar"
         row["legalEntity"] = override_legal_entity_by_project(row_project, row_legal_entity)
+        row["pepCode"] = pep_code_by_project(row_project)
         row["matched"] = row["legalEntity"] != "Sin asignar"
 
         split_assignments = row.get("splitAssignments", [])
@@ -1952,6 +2008,7 @@ def build_reason_social_rows(
             split_project = str(split.get("project", "")).strip()
             split_legal_entity = str(split.get("legalEntity", "")).strip() or row["legalEntity"]
             split["legalEntity"] = override_legal_entity_by_project(split_project, split_legal_entity)
+            split["pepCode"] = pep_code_by_project(split_project)
 
     # Meta validation must compare the card statement amount against the total per reference,
     # summing all campaign rows that belong to the same payment reference.
