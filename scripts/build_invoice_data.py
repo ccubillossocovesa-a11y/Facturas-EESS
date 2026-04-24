@@ -535,6 +535,17 @@ def normalize_meta_folder_brand(folder_name: str) -> tuple[str, str]:
     return cleaned, cleaned
 
 
+META_ACCOUNT_ID_BRAND_MAP = {
+    "1933674297549805": ("Almagro Inmobiliaria", "ALMAGRO S A"),
+    "2369745096782799": ("Pilares", "Pilares"),
+    "854587093857588": ("Socovesa", "Socovesa"),
+}
+
+
+def normalize_meta_account_brand(account_id: str) -> tuple[str, str]:
+    return META_ACCOUNT_ID_BRAND_MAP.get(account_id.strip(), ("", ""))
+
+
 def iso_from_meta_receipt_date(value: str) -> str:
     m = META_RECEIPT_DATE_RE.search(value.strip().lower())
     if not m:
@@ -668,6 +679,100 @@ def parse_meta_receipt_folders(root_dir: Path, warnings: list[ParseWarning]) -> 
 
     grouped: dict[tuple[str, str, str], dict[str, Any]] = {}
 
+    def append_parsed_receipt(
+        *,
+        brand: str,
+        account_name: str,
+        source_dir: str,
+        month_hint: str,
+        pdf_file: Path,
+    ) -> None:
+        parsed = parse_meta_receipt_pdf(pdf_file, warnings, month_hint)
+        if not parsed:
+            return
+
+        month = parsed["month"]
+        key = (brand, account_name, month)
+        if key not in grouped:
+            grouped[key] = {
+                "details": [],
+                "seenTx": set(),
+                "accountIds": [],
+                "sourceDir": source_dir,
+                "campaignTotals": defaultdict(int),
+                "campaignDetails": [],
+            }
+        current = grouped[key]
+        tx_id = parsed["transactionId"]
+        if tx_id in current["seenTx"]:
+            parsed_ref = str(parsed.get("paymentReference", "")).strip().upper()
+            if not parsed_ref:
+                return
+
+            for detail in current["details"]:
+                if str(detail.get("transactionId", "")).strip() != tx_id:
+                    continue
+                existing_ref = str(detail.get("paymentReference", "")).strip().upper()
+                if existing_ref and existing_ref != parsed_ref:
+                    warnings.append(
+                        ParseWarning(
+                            source=pdf_file.name,
+                            message=(
+                                f"Duplicate transaction id {tx_id} with conflicting payment references: "
+                                f"{existing_ref} vs {parsed_ref}."
+                            ),
+                        )
+                    )
+                    continue
+                if not existing_ref:
+                    detail["paymentReference"] = parsed_ref
+                    parsed_method = str(parsed.get("paymentMethod", "")).strip()
+                    if parsed_method:
+                        detail["paymentMethod"] = parsed_method
+                    if str(detail.get("status", "")).strip() == "Fondos agregados":
+                        detail["status"] = "Pagado"
+
+            for campaign_detail in current["campaignDetails"]:
+                if str(campaign_detail.get("transactionId", "")).strip() != tx_id:
+                    continue
+                if not str(campaign_detail.get("paymentReference", "")).strip():
+                    campaign_detail["paymentReference"] = parsed_ref
+            return
+
+        current["seenTx"].add(tx_id)
+        if parsed["accountId"]:
+            current["accountIds"].append(parsed["accountId"])
+        detail_status = str(parsed.get("status", "")).strip()
+        parsed_ref = str(parsed.get("paymentReference", "")).strip().upper()
+        if detail_status == "Fondos agregados" and parsed_ref:
+            detail_status = "Pagado"
+
+        current["details"].append(
+            {
+                "date": parsed["date"],
+                "transactionId": tx_id,
+                "paymentMethod": parsed["paymentMethod"],
+                "paymentReference": parsed_ref,
+                "status": detail_status,
+                "amount": parsed["amount"],
+                "sourceFile": parsed["sourceFile"],
+            }
+        )
+        for campaign in parsed.get("campaigns", []):
+            campaign_name = str(campaign.get("campaignName", "")).strip()
+            campaign_amount = int(campaign.get("amount", 0) or 0)
+            if campaign_name and campaign_amount > 0:
+                current["campaignTotals"][campaign_name] += campaign_amount
+                current["campaignDetails"].append(
+                    {
+                        "name": campaign_name,
+                        "amount": campaign_amount,
+                        "transactionId": tx_id,
+                        "date": parsed["date"],
+                        "paymentReference": parsed.get("paymentReference", ""),
+                    }
+                )
+
     for brand_dir in sorted(root_dir.iterdir()):
         if not brand_dir.is_dir():
             continue
@@ -679,54 +784,40 @@ def parse_meta_receipt_folders(root_dir: Path, warnings: list[ParseWarning]) -> 
             month_hint = month_key_from_folder_name(month_dir.name)
 
             for pdf_file in sorted(month_dir.glob("*.pdf")):
-                parsed = parse_meta_receipt_pdf(pdf_file, warnings, month_hint)
-                if not parsed:
-                    continue
-
-                month = parsed["month"]
-                key = (brand, account_name, month)
-                if key not in grouped:
-                    grouped[key] = {
-                        "details": [],
-                        "seenTx": set(),
-                        "accountIds": [],
-                        "sourceDir": str(month_dir.relative_to(ROOT)),
-                        "campaignTotals": defaultdict(int),
-                        "campaignDetails": [],
-                    }
-                current = grouped[key]
-                tx_id = parsed["transactionId"]
-                if tx_id in current["seenTx"]:
-                    continue
-
-                current["seenTx"].add(tx_id)
-                if parsed["accountId"]:
-                    current["accountIds"].append(parsed["accountId"])
-                current["details"].append(
-                    {
-                        "date": parsed["date"],
-                        "transactionId": tx_id,
-                        "paymentMethod": parsed["paymentMethod"],
-                        "paymentReference": parsed.get("paymentReference", ""),
-                        "status": parsed["status"],
-                        "amount": parsed["amount"],
-                        "sourceFile": parsed["sourceFile"],
-                    }
+                append_parsed_receipt(
+                    brand=brand,
+                    account_name=account_name,
+                    source_dir=str(month_dir.relative_to(ROOT)),
+                    month_hint=month_hint,
+                    pdf_file=pdf_file,
                 )
-                for campaign in parsed.get("campaigns", []):
-                    campaign_name = str(campaign.get("campaignName", "")).strip()
-                    campaign_amount = int(campaign.get("amount", 0) or 0)
-                    if campaign_name and campaign_amount > 0:
-                        current["campaignTotals"][campaign_name] += campaign_amount
-                        current["campaignDetails"].append(
-                            {
-                                "name": campaign_name,
-                                "amount": campaign_amount,
-                                "transactionId": tx_id,
-                                "date": parsed["date"],
-                                "paymentReference": parsed.get("paymentReference", ""),
-                            }
-                        )
+
+    for pdf_file in sorted(root_dir.glob("*.pdf")):
+        parsed = parse_meta_receipt_pdf(pdf_file, warnings, "")
+        if not parsed:
+            continue
+        account_id = str(parsed.get("accountId", "")).strip()
+        brand, account_name = normalize_meta_account_brand(account_id)
+        if not brand:
+            warnings.append(
+                ParseWarning(
+                    source=pdf_file.name,
+                    message=(
+                        "Root-level Meta receipt skipped because account id "
+                        f"'{account_id or 'N/A'}' is unknown. Move it to a brand/month folder."
+                    ),
+                )
+            )
+            continue
+
+        # Re-process through shared path to keep grouping and de-duplication logic in one place.
+        append_parsed_receipt(
+            brand=brand,
+            account_name=account_name,
+            source_dir=str(root_dir.relative_to(ROOT)),
+            month_hint="",
+            pdf_file=pdf_file,
+        )
 
     invoices: list[dict[str, Any]] = []
     for (brand, account_name, month), values in sorted(grouped.items()):
@@ -1680,6 +1771,7 @@ def build_reason_social_rows(
             campaign_details = (
                 invoice.get("campaignDetails", []) if isinstance(invoice.get("campaignDetails"), list) else []
             )
+            covered_transaction_ids: set[str] = set()
             for detail in campaign_details:
                 campaign_name = str(detail.get("name", "") or detail.get("campaignName", "")).strip()
                 amount = int(detail.get("amount", 0) or 0)
@@ -1688,6 +1780,8 @@ def build_reason_social_rows(
                 payment_reference = str(detail.get("paymentReference", "")).strip().upper()
                 if not campaign_name or amount <= 0:
                     continue
+                if transaction_id:
+                    covered_transaction_ids.add(transaction_id)
                 lines.append(
                     {
                         "campaignName": campaign_name,
@@ -1697,6 +1791,30 @@ def build_reason_social_rows(
                         "paymentReference": payment_reference,
                     }
                 )
+
+            details = invoice.get("details", []) if isinstance(invoice.get("details"), list) else []
+            for detail in details:
+                status = str(detail.get("status", "")).strip()
+                if status and status != "Pagado":
+                    continue
+                amount = int(detail.get("amount", 0) or 0)
+                if amount <= 0:
+                    continue
+                transaction_id = str(detail.get("transactionId", "")).strip()
+                if not transaction_id or transaction_id in covered_transaction_ids:
+                    continue
+                payment_date = str(detail.get("date", "")).strip() or invoice_date
+                payment_reference = str(detail.get("paymentReference", "")).strip().upper()
+                lines.append(
+                    {
+                        "campaignName": "Sin desglose de campaña (Meta)",
+                        "amount": amount,
+                        "referenceId": transaction_id,
+                        "paymentDate": payment_date,
+                        "paymentReference": payment_reference,
+                    }
+                )
+
             if lines:
                 return lines
 
