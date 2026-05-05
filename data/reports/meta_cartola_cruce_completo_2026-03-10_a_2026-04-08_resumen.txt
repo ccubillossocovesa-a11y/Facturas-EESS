@@ -1,0 +1,7 @@
+Rango: 2026-03-10 a 2026-04-08
+Cruce: Cartola TC vs Facturas Meta por paymentReference (FACEBK code)
+
+Codigos cartola: 91
+Codigos cartola cruzados: 91
+Codigos cartola no encontrados: 0
+Monto cruzado (suma filas con columnas completas): 53098561

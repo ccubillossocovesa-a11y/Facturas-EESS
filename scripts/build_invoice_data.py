@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: latin-1 -*-
 """Build a normalized invoice dataset from local Meta and Google Ads PDFs."""
 
 from __future__ import annotations
@@ -19,6 +20,10 @@ from xml.etree import ElementTree as ET
 
 import pdfplumber
 from pypdf import PdfReader
+try:
+    import xlrd
+except ImportError:  # pragma: no cover - optional dependency in some environments
+    xlrd = None
 
 ROOT = Path(__file__).resolve().parent.parent
 PDF_DIR = ROOT / "pdfs"
@@ -256,6 +261,11 @@ def decimal_comma_to_float(value: str) -> float:
         return float(clean)
     except ValueError:
         return 0.0
+
+
+def normalize_text_for_search(value: str) -> str:
+    plain = "".join(ch for ch in unicodedata.normalize("NFKD", str(value)) if not unicodedata.combining(ch))
+    return " ".join(plain.split())
 
 
 def iso_from_dmy(value: str) -> str:
@@ -615,6 +625,8 @@ def parse_meta_receipt_pdf(path: Path, warnings: list[ParseWarning], month_hint:
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
     flat = " | ".join(lines)
 
+    flat_normalized = normalize_text_for_search(flat)
+
     tx_m = re.search(
         r"Identificador de la transacci(?:ÃƒÆ’Ã‚Â³n|ÃƒÂ³n|Ã³n|on)\s*[:|]?\s*([0-9]{10,}-[0-9]{10,})",
         flat,
@@ -624,6 +636,8 @@ def parse_meta_receipt_pdf(path: Path, warnings: list[ParseWarning], month_hint:
     account_m = re.search(r"Identificador de la cuenta\s*[:|]?\s*([0-9]+)", flat, re.IGNORECASE)
     method_m = re.search(r"M(?:ÃƒÆ’Ã‚Â©|ÃƒÂ©|Ã©|e)todo de pago\s*[:|]?\s*([^|]+)", flat, re.IGNORECASE)
     payment_reference_m = re.search(r"N(?:ÃƒÆ’Ã‚Âº|ÃƒÂº|Ãº|u)mero de referencia\s*[:|]?\s*([A-Za-z0-9]+)", flat, re.IGNORECASE)
+    if not payment_reference_m:
+        payment_reference_m = re.search(r"numero\s+de\s+referencia\s*[:|]?\s*([A-Za-z0-9]{8,12})", flat_normalized, re.IGNORECASE)
     date_m = re.search(
         r"Fecha de nota de pago pendiente/comprobante de pago\s*[:|]?\s*([0-9]{1,2}\s+[a-zA-ZÃƒÆ’Ã‚Â¡ÃƒÆ’Ã‚Â©ÃƒÆ’Ã‚Â­ÃƒÆ’Ã‚Â³ÃƒÆ’Ã‚ÂºÃƒÆ’Ã‚Â±Ã¡Ã©Ã­Ã³ÃºÃ±\.]+\s+[0-9]{4})",
         flat,
@@ -1025,6 +1039,80 @@ def parse_meta_card_statement_charges(
             return best_refs[0], code
         return code, ""
 
+    def register_charge(entry: dict[str, Any], source_name: str) -> None:
+        charge_code = str(entry.get("chargeCode", "")).strip().upper()
+        if not charge_code:
+            return
+        existing = charges_by_code.get(charge_code)
+        if existing and (
+            existing.get("amountOriginal") != entry.get("amountOriginal")
+            or str(existing.get("amountUsdRaw", "")) != str(entry.get("amountUsdRaw", ""))
+        ):
+            warnings.append(
+                ParseWarning(
+                    source=source_name,
+                    message=(
+                        f"Duplicate FACEBK code with different amounts: {charge_code} "
+                        f"({existing.get('amountOriginalRaw')}/{existing.get('amountUsdRaw')} vs "
+                        f"{entry.get('amountOriginalRaw')}/{entry.get('amountUsdRaw')})."
+                    ),
+                )
+            )
+        charges_by_code[charge_code] = entry
+
+    def parse_cartola_xls(file_path: Path) -> tuple[int, int]:
+        if xlrd is None:
+            warnings.append(
+                ParseWarning(source=file_path.name, message="xlrd is not installed; skipping .xls cartola parsing.")
+            )
+            return 0, 0
+
+        try:
+            workbook = xlrd.open_workbook(str(file_path))
+            sheet = workbook.sheet_by_index(0)
+        except Exception as exc:
+            warnings.append(ParseWarning(source=file_path.name, message=f"Could not read .xls cartola: {exc}"))
+            return 0, 0
+
+        parsed_rows = 0
+        reconciled_rows = 0
+        for row_idx in range(sheet.nrows):
+            desc_raw = str(sheet.cell_value(row_idx, 2) or "").strip()
+            if "FACEBK" not in desc_raw.upper():
+                continue
+            code_match = FACEBK_CODE_RE.search(desc_raw.upper())
+            if not code_match:
+                continue
+
+            charge_code_raw = code_match.group(1).upper()
+            charge_code, reconciled_from = resolve_to_known_reference(charge_code_raw)
+            if reconciled_from:
+                reconciled_rows += 1
+            amount_origin_raw = str(sheet.cell_value(row_idx, 5) or "").strip()
+            amount_usd_raw = str(sheet.cell_value(row_idx, 8) or "").strip()
+            amount_origin = clp_to_int(amount_origin_raw)
+            amount_usd = decimal_comma_to_float(amount_usd_raw)
+            if amount_origin <= 0:
+                continue
+
+            parsed_rows += 1
+            entry = {
+                "chargeCode": charge_code,
+                "descriptionCharge": f"FACEBK *{charge_code}",
+                "sourceCodeRaw": charge_code_raw,
+                "reconciledFromRawCode": reconciled_from,
+                "amountOriginal": amount_origin,
+                "amountOriginalRaw": amount_origin_raw,
+                "amountUsd": amount_usd,
+                "amountUsdRaw": amount_usd_raw,
+                "sourceFile": str(file_path.relative_to(ROOT)),
+            }
+            register_charge(entry, file_path.name)
+
+        if parsed_rows == 0:
+            warnings.append(ParseWarning(source=file_path.name, message="No FACEBK rows parsed from .xls cartola."))
+        return parsed_rows, reconciled_rows
+
     charges_by_code: dict[str, dict[str, Any]] = {}
     reconciled_codes = 0
     for pdf_file in sorted(root_dir.glob("*.pdf")):
@@ -1073,28 +1161,22 @@ def parse_meta_card_statement_charges(
                 "amountUsdRaw": amount_usd_raw,
                 "sourceFile": str(pdf_file.relative_to(ROOT)),
             }
-
-            existing = charges_by_code.get(charge_code)
-            if existing and (
-                existing.get("amountOriginal") != entry["amountOriginal"]
-                or existing.get("amountUsdRaw") != entry["amountUsdRaw"]
-            ):
-                warnings.append(
-                    ParseWarning(
-                        source=pdf_file.name,
-                        message=(
-                            f"Duplicate FACEBK code with different amounts: {charge_code} "
-                            f"({existing.get('amountOriginalRaw')}/{existing.get('amountUsdRaw')} vs "
-                            f"{entry['amountOriginalRaw']}/{entry['amountUsdRaw']})."
-                        ),
-                    )
-                )
-            charges_by_code[charge_code] = entry
+            register_charge(entry, pdf_file.name)
 
         if parsed_rows == 0:
             warnings.append(
                 ParseWarning(source=pdf_file.name, message="No FACEBK charge rows parsed from card statement PDF.")
             )
+
+    for xls_file in sorted(root_dir.glob("*.xls")):
+        parsed_rows, reconciled_rows = parse_cartola_xls(xls_file)
+        if parsed_rows:
+            reconciled_codes += reconciled_rows
+
+    for xlsx_file in sorted(root_dir.glob("*.xlsx")):
+        parsed_rows, reconciled_rows = parse_cartola_xls(xlsx_file)
+        if parsed_rows:
+            reconciled_codes += reconciled_rows
 
     if reconciled_codes:
         warnings.append(

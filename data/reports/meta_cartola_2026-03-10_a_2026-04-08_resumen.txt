@@ -1,0 +1,15 @@
+Rango: 2026-03-10 a 2026-04-08
+Criterio de cruce: fecha + monto CLP
+
+Meta rows: 95
+Cartola rows: 91
+Matched rows: 81
+Solo Meta rows: 14
+Solo Cartola rows: 10
+
+Total Meta CLP: 54904643
+Total Cartola CLP: 53098561
+Total Matched CLP: 47098561
+Total Solo Meta CLP: 7806082
+Total Solo Cartola CLP: 6000000
+Diferencia Meta - Cartola CLP: 1806082

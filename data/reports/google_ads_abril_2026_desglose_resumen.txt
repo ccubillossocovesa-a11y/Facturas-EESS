@@ -1,0 +1,11 @@
+Google Ads abril 2026 - Desglose
+
+Facturas: 4
+Filas desglose: 207
+Total desglose: 62328400
+Total facturas (invoices.json): 62328400
+
+5561173542 | Almagro Inmobiliaria | factura=28571332 | desglose=28571332
+5561290576 | Socovesa | factura=21168043 | desglose=21168043
+5565266948 | Pilares | factura=11011553 | desglose=11011553
+5570571122 | Almagro Propiedades | factura=1577472 | desglose=1577472
