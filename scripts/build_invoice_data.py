@@ -62,7 +62,7 @@ SPANISH_MONTHS = {
 
 DATE_DMY_RE = re.compile(r"^(\d{1,2})/(\d{1,2})/(\d{4})$")
 DATE_DMONY_RE = re.compile(r"^(\d{1,2})\s+([a-zA-Z]{3})\s+(\d{4})$")
-META_RECEIPT_DATE_RE = re.compile(r"(\d{1,2})\s+([a-zA-Záéíóúñ\.]+)\s+(\d{4})", re.IGNORECASE)
+META_RECEIPT_DATE_RE = re.compile(r"(\d{1,2})\s+([a-zA-ZÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚ÂºÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±\.]+)\s+(\d{4})", re.IGNORECASE)
 FACEBK_CODE_RE = re.compile(r"FACEBK\s*\*([A-Z0-9]{8,12})", re.IGNORECASE)
 DECIMAL_COMMA_RE = re.compile(r"\d{1,3}(?:\.\d{3})*,\d{2}")
 
@@ -102,21 +102,21 @@ PROJECT_LEGAL_ENTITY_OVERRIDES = {
     normalize_key("Rengo"): "Arcilla Roja",
     normalize_key("Las Palmas"): "Consorcio Inmobiliario Macul",
     normalize_key("Conde del Maule"): "ICSA",
-    normalize_key("Edificio Ñuble"): "ICSA",
+    normalize_key("Edificio ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¹Ãƒâ€¦Ã¢â‚¬Å“uble"): "ICSA",
     normalize_key("Lo Ovalle"): "ICSA",
     normalize_key("Santos Dumont"): "ICSA",
     normalize_key("Pajaritos"): "Inmobiliaria El Descubridor",
-    normalize_key("Las Pataguas"): "Inmobiliaria Encinas de Peñalolen",
-    normalize_key("Los Coihues"): "Inmobiliaria Encinas de Peñalolen",
+    normalize_key("Las Pataguas"): "Inmobiliaria Encinas de PeÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±alolen",
+    normalize_key("Los Coihues"): "Inmobiliaria Encinas de PeÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±alolen",
     normalize_key("Almagro District"): "Madagascar",
     normalize_key("Marathon"): "Pilares S.A",
     normalize_key("Guillermo Mann"): "Pilares S.A",
     normalize_key("Rodriguez Velasco"): "Pilares S.A",
-    normalize_key("Vicuña Mackenna 7244"): "Pilares S.A",
+    normalize_key("VicuÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±a Mackenna 7244"): "Pilares S.A",
     normalize_key("Coipue"): "Sociedad Comercializadora Metropolitana",
     normalize_key("Alto Maderos"): "Socovesa Sur S.A",
-    normalize_key("Edificio Vértice"): "Socovesa Sur S.A",
-    normalize_key("García Reyes"): "Socovesa Sur S.A",
+    normalize_key("Edificio VÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©rtice"): "Socovesa Sur S.A",
+    normalize_key("GarcÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­a Reyes"): "Socovesa Sur S.A",
     normalize_key("Icono"): "Socovesa Sur S.A",
     normalize_key("N3"): "Socovesa Sur S.A",
     normalize_key("Nueva Toledo"): "Socovesa Sur S.A",
@@ -445,7 +445,7 @@ def parse_meta_invoice_ocr_fallback(path: Path, warnings: list[ParseWarning]) ->
             {
                 "date": date_iso,
                 "transactionId": tx_id,
-                "paymentMethod": "Visa ···· 2327",
+                "paymentMethod": "Visa ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â·ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â·ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â·ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· 2327",
                 "status": "Pagado",
                 "amount": amount,
             }
@@ -487,7 +487,7 @@ def parse_meta_invoice_activity_export(text: str, filename: str, warnings: list[
             {
                 "date": iso_from_dmony(date_txt),
                 "transactionId": tx_id,
-                "paymentMethod": "Visa ···· 2327",
+                "paymentMethod": "Visa ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â·ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â·ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â·ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· 2327",
                 "status": status,
                 "amount": clp_to_int(amount_txt),
             }
@@ -565,7 +565,7 @@ def parse_meta_receipt_campaigns(lines: list[str]) -> list[dict[str, Any]]:
 
     while idx < len(lines):
         line = lines[idx]
-        if line.startswith("Campañas"):
+        if line.startswith("CampaÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â±as"):
             in_campaign_block = True
             idx += 1
             continue
@@ -615,18 +615,26 @@ def parse_meta_receipt_pdf(path: Path, warnings: list[ParseWarning], month_hint:
     lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
     flat = " | ".join(lines)
 
-    tx_m = re.search(r"Identificador de la transacción\s*[:|]?\s*([0-9]{10,}-[0-9]{10,})", flat, re.IGNORECASE)
+    tx_m = re.search(
+        r"Identificador de la transacci(?:ÃƒÆ’Ã‚Â³n|ÃƒÂ³n|Ã³n|on)\s*[:|]?\s*([0-9]{10,}-[0-9]{10,})",
+        flat,
+        re.IGNORECASE,
+    )
     amount_m = re.search(r"(Pagado|Fondos agregados)\s*[:|]?\s*\$([\d\.,]+)", flat, re.IGNORECASE)
     account_m = re.search(r"Identificador de la cuenta\s*[:|]?\s*([0-9]+)", flat, re.IGNORECASE)
-    method_m = re.search(r"Método de pago\s*[:|]?\s*([^|]+)", flat, re.IGNORECASE)
-    payment_reference_m = re.search(r"Número de referencia\s*[:|]?\s*([A-Za-z0-9]+)", flat, re.IGNORECASE)
+    method_m = re.search(r"M(?:ÃƒÆ’Ã‚Â©|ÃƒÂ©|Ã©|e)todo de pago\s*[:|]?\s*([^|]+)", flat, re.IGNORECASE)
+    payment_reference_m = re.search(r"N(?:ÃƒÆ’Ã‚Âº|ÃƒÂº|Ãº|u)mero de referencia\s*[:|]?\s*([A-Za-z0-9]+)", flat, re.IGNORECASE)
     date_m = re.search(
-        r"Fecha de nota de pago pendiente/comprobante de pago\s*[:|]?\s*([0-9]{1,2}\s+[a-zA-Záéíóúñ\.]+\s+[0-9]{4})",
+        r"Fecha de nota de pago pendiente/comprobante de pago\s*[:|]?\s*([0-9]{1,2}\s+[a-zA-ZÃƒÆ’Ã‚Â¡ÃƒÆ’Ã‚Â©ÃƒÆ’Ã‚Â­ÃƒÆ’Ã‚Â³ÃƒÆ’Ã‚ÂºÃƒÆ’Ã‚Â±Ã¡Ã©Ã­Ã³ÃºÃ±\.]+\s+[0-9]{4})",
         flat,
         re.IGNORECASE,
     )
 
     tx_id = tx_m.group(1).strip() if tx_m else ""
+    if not tx_id:
+        # Fallback: muchas boletas vienen con el ID en el nombre del archivo.
+        tx_file_m = re.search(r"([0-9]{10,}-[0-9]{10,})", path.name)
+        tx_id = tx_file_m.group(1).strip() if tx_file_m else ""
     if not tx_id:
         warnings.append(ParseWarning(source=path.name, message="Could not parse transaction id in Meta receipt PDF."))
         return None
@@ -671,7 +679,6 @@ def parse_meta_receipt_pdf(path: Path, warnings: list[ParseWarning], month_hint:
         "sourceFile": str(path.relative_to(ROOT)),
         "campaigns": campaigns,
     }
-
 
 def parse_meta_receipt_folders(root_dir: Path, warnings: list[ParseWarning]) -> list[dict[str, Any]]:
     if not root_dir.exists():
@@ -1122,7 +1129,7 @@ def parse_google_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, 
     text = extract_text_pypdf(path)
     lines = extract_layout_lines(path)
 
-    invoice_number_m = re.search(r"Número de factura:\s*(\d+)", text)
+    invoice_number_m = re.search(r"NÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºmero de factura:\s*(\d+)", text)
     invoice_number = invoice_number_m.group(1) if invoice_number_m else filename.split("_")[0]
 
     header_date_m = re.search(r"\.{5,}(\d{1,2}\s+[a-zA-Z]{3}\s+\d{4})", text)
@@ -1188,7 +1195,7 @@ def parse_google_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, 
     details: list[dict[str, Any]] = []
     in_table = False
     for line in lines:
-        if line.startswith("Descripción"):
+        if line.startswith("DescripciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n"):
             in_table = True
             continue
         if not in_table:
@@ -1198,10 +1205,10 @@ def parse_google_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, 
             continue
         if line.startswith("Si tiene alguna pregunta"):
             continue
-        if line.startswith("Factura") or line.startswith("Número de factura:"):
+        if line.startswith("Factura") or line.startswith("NÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Âºmero de factura:"):
             continue
 
-        invalid_m = re.match(r"^(Actividad no válida\.\.\.)\s+(-?[\d,]+)$", line)
+        invalid_m = re.match(r"^(Actividad no vÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡lida\.\.\.)\s+(-?[\d,]+)$", line)
         if invalid_m:
             details.append(
                 {
@@ -1302,7 +1309,7 @@ def parse_meta_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, An
     account_m = re.search(r"Cuenta:\s*([0-9]+)", text)
     account_id = account_m.group(1) if account_m else ""
 
-    period_m = re.search(r"Informe de facturación:\s*(\d{1,2}/\d{1,2}/\d{4})\s*-\s*(\d{1,2}/\d{1,2}/\d{4})", text)
+    period_m = re.search(r"Informe de facturaciÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â³n:\s*(\d{1,2}/\d{1,2}/\d{4})\s*-\s*(\d{1,2}/\d{1,2}/\d{4})", text)
     period_start_iso = iso_from_dmy(period_m.group(1)) if period_m else "1970-01-01"
     period_end_iso = iso_from_dmy(period_m.group(2)) if period_m else "1970-01-01"
 
@@ -1311,12 +1318,12 @@ def parse_meta_invoice(path: Path, warnings: list[ParseWarning]) -> dict[str, An
     total_billed = clp_to_int(total_billed_m.group(1)) if total_billed_m else 0
     total_funds = clp_to_int(total_funds_m.group(1)) if total_funds_m else 0
 
-    default_method_m = re.search(r"Método de pago:\s*(.+)", text)
+    default_method_m = re.search(r"MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©todo de pago:\s*(.+)", text)
     default_method = default_method_m.group(1).strip() if default_method_m else "No disponible"
 
     date_re = re.compile(r"^(\d{1,2}/\d{1,2}/\d{4})\s*(.*)$")
     amount_status_re = re.compile(r"\$([\d\.]+)\s+CLP\s+(Pagado|Fondos agregados)\s*$")
-    method_re = re.compile(r"(Visa\s+·+\s*\d{4}|No disponible)")
+    method_re = re.compile(r"(Visa\s+ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â·+\s*\d{4}|No disponible)")
 
     details: list[dict[str, Any]] = []
     i = 0
@@ -1628,10 +1635,39 @@ def parse_rs_excel(path: Path, warnings: list[ParseWarning]) -> list[dict[str, A
 
 
 def parse_reason_social_sheet(path: Path, warnings: list[ParseWarning]) -> list[dict[str, Any]]:
-    try:
-        _, rows = parse_excel_sheet_rows(path, sheet_name="Razón social")
-    except Exception as exc:
-        warnings.append(ParseWarning(source=path.name, message=f"Could not parse 'Razón social' sheet: {exc}"))
+    sheet_candidates = [
+        "Razón social",
+        "Razon social",
+        "Razón Social",
+        "Razon Social",
+    ]
+    rows: dict[int, dict[str, str]] | None = None
+
+    for sheet_name in sheet_candidates:
+        try:
+            _, rows = parse_excel_sheet_rows(path, sheet_name=sheet_name)
+            break
+        except Exception:
+            continue
+
+    if rows is None:
+        try:
+            workbook = load_workbook(path, data_only=True, read_only=True)
+            normalized_target = normalize_key("Razon social")
+            for sheet_name in workbook.sheetnames:
+                if normalize_key(sheet_name) == normalized_target:
+                    _, rows = parse_excel_sheet_rows(path, sheet_name=sheet_name)
+                    break
+        except Exception:
+            rows = None
+
+    if rows is None:
+        warnings.append(
+            ParseWarning(
+                source=path.name,
+                message="Could not parse reason-social sheet from Excel.",
+            )
+        )
         return []
 
     mappings: list[dict[str, Any]] = []
@@ -1660,15 +1696,7 @@ def parse_reason_social_sheet(path: Path, warnings: list[ParseWarning]) -> list[
             }
         )
 
-    deduped: dict[tuple[str, str, str, str, str], dict[str, Any]] = {}
-    for item in mappings:
-        key = (item["brandGroup"], item["campaignKey"], item["legalEntity"], item["comuna"], item["project"])
-        deduped[key] = item
-
-    return sorted(
-        deduped.values(),
-        key=lambda item: (item["brand"], item["campaignName"], item["legalEntity"], item["comuna"], item["project"]),
-    )
+    return mappings
 
 
 def split_desglose_filter(raw_filter: str) -> tuple[str, str, str]:
@@ -1682,7 +1710,6 @@ def split_desglose_filter(raw_filter: str) -> tuple[str, str, str]:
             campaign_name = value[len(prefix) :].strip()
             return prefix, brand_group, campaign_name
     return "", "", ""
-
 
 def parse_desglose_por_rs_sheet(path: Path, warnings: list[ParseWarning]) -> list[dict[str, Any]]:
     try:
@@ -2199,76 +2226,147 @@ def build_reason_social_rows(
         for pos, row_idx in enumerate(row_indexes):
             rows[row_idx]["chargeTcAmount"] = allocated[pos]
 
-    # Ajuste de diferencias Google:
+    # Ajuste de diferencias por plataforma:
     # si el total de la factura no coincide con la suma de filas asignadas,
-    # se descuenta/agrega la diferencia a la razón social con mayor inversión por marca.
-    brand_google_diffs: dict[str, int] = defaultdict(int)
-    for invoice in invoices:
-        if str(invoice.get("platform", "")).strip() != "Google Ads":
-            continue
-        invoice_id = str(invoice.get("id", "")).strip()
-        brand = str(invoice.get("brand", "")).strip()
-        if not invoice_id or not brand:
-            continue
-        invoice_total = int(invoice.get("totalAmount", 0) or 0)
-        mapped_total = sum(
-            int(row.get("amount", 0) or 0)
-            for row in rows
-            if str(row.get("platform", "")).strip() == "Google Ads" and str(row.get("invoiceId", "")).strip() == invoice_id
-        )
-        diff = invoice_total - mapped_total
-        if diff != 0:
-            brand_google_diffs[brand] += diff
+    # se descuenta/agrega la diferencia a la razon social con mayor inversion por marca.
+    def apply_brand_diff_adjustments(platform_name: str) -> None:
+        brand_diffs: dict[str, int] = defaultdict(int)
+        for invoice in invoices:
+            if str(invoice.get("platform", "")).strip() != platform_name:
+                continue
+            invoice_id = str(invoice.get("id", "")).strip()
+            brand = str(invoice.get("brand", "")).strip()
+            if not invoice_id or not brand:
+                continue
+            invoice_total = int(invoice.get("totalAmount", 0) or 0)
+            mapped_total = sum(
+                int(row.get("amount", 0) or 0)
+                for row in rows
+                if str(row.get("platform", "")).strip() == platform_name
+                and str(row.get("invoiceId", "")).strip() == invoice_id
+            )
+            diff = invoice_total - mapped_total
+            if diff != 0:
+                brand_diffs[brand] += diff
 
-    google_brand_totals: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
-    for row in rows:
-        if str(row.get("platform", "")).strip() != "Google Ads":
-            continue
-        brand = str(row.get("brand", "")).strip()
-        legal_entity = str(row.get("legalEntity", "")).strip()
-        amount = int(row.get("amount", 0) or 0)
-        if not brand or not legal_entity or legal_entity == "Sin asignar":
-            continue
-        google_brand_totals[brand][legal_entity] += amount
+        brand_totals: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
+        for row in rows:
+            if str(row.get("platform", "")).strip() != platform_name:
+                continue
+            brand = str(row.get("brand", "")).strip()
+            legal_entity = str(row.get("legalEntity", "")).strip()
+            amount = int(row.get("amount", 0) or 0)
+            if not brand or not legal_entity or legal_entity == "Sin asignar":
+                continue
+            brand_totals[brand][legal_entity] += amount
 
-    top_google_legal_entity_by_brand: dict[str, str] = {}
-    for brand, totals in google_brand_totals.items():
-        ordered = sorted(totals.items(), key=lambda item: (-item[1], item[0]))
-        if ordered:
-            top_google_legal_entity_by_brand[brand] = ordered[0][0]
+        top_legal_entity_by_brand: dict[str, str] = {}
+        for brand, totals in brand_totals.items():
+            ordered = sorted(totals.items(), key=lambda item: (-item[1], item[0]))
+            if ordered:
+                top_legal_entity_by_brand[brand] = ordered[0][0]
 
-    for brand, diff in brand_google_diffs.items():
-        if diff == 0:
-            continue
-        target_legal_entity = top_google_legal_entity_by_brand.get(brand, "")
-        if not target_legal_entity:
-            continue
+        for brand, diff in brand_diffs.items():
+            if diff == 0:
+                continue
+            target_legal_entity = top_legal_entity_by_brand.get(brand, "")
+            if not target_legal_entity:
+                continue
 
-        candidate_indexes = [
-            idx
-            for idx, row in enumerate(rows)
-            if str(row.get("platform", "")).strip() == "Google Ads"
-            and str(row.get("brand", "")).strip() == brand
-            and str(row.get("legalEntity", "")).strip() == target_legal_entity
-        ]
-        if not candidate_indexes:
-            continue
-
-        target_index = max(candidate_indexes, key=lambda idx: int(rows[idx].get("amount", 0) or 0))
-        rows[target_index]["amount"] = int(rows[target_index].get("amount", 0) or 0) + diff
-
-        split_assignments = rows[target_index].get("splitAssignments", [])
-        if isinstance(split_assignments, list) and split_assignments:
-            matching_splits = [
-                split
-                for split in split_assignments
-                if str(split.get("legalEntity", "")).strip() == target_legal_entity
+            candidate_indexes = [
+                idx
+                for idx, row in enumerate(rows)
+                if str(row.get("platform", "")).strip() == platform_name
+                and str(row.get("brand", "")).strip() == brand
+                and str(row.get("legalEntity", "")).strip() == target_legal_entity
             ]
-            if matching_splits:
-                target_split = max(matching_splits, key=lambda split: int(split.get("amount", 0) or 0))
-            else:
-                target_split = split_assignments[0]
-            target_split["amount"] = int(target_split.get("amount", 0) or 0) + diff
+            if not candidate_indexes:
+                continue
+
+            target_index = max(candidate_indexes, key=lambda idx: int(rows[idx].get("amount", 0) or 0))
+            rows[target_index]["amount"] = int(rows[target_index].get("amount", 0) or 0) + diff
+
+            split_assignments = rows[target_index].get("splitAssignments", [])
+            if isinstance(split_assignments, list) and split_assignments:
+                matching_splits = [
+                    split
+                    for split in split_assignments
+                    if str(split.get("legalEntity", "")).strip() == target_legal_entity
+                ]
+                if matching_splits:
+                    target_split = max(matching_splits, key=lambda split: int(split.get("amount", 0) or 0))
+                else:
+                    target_split = split_assignments[0]
+                target_split["amount"] = int(target_split.get("amount", 0) or 0) + diff
+
+    apply_brand_diff_adjustments("Google Ads")
+    apply_brand_diff_adjustments("Meta")
+
+    def reconcile_invoice_totals(platform_name: str) -> None:
+        brand_top_legal_entity: dict[str, str] = {}
+        for row in rows:
+            if str(row.get("platform", "")).strip() != platform_name:
+                continue
+            brand = str(row.get("brand", "")).strip()
+            legal_entity = str(row.get("legalEntity", "")).strip()
+            if not brand or not legal_entity or legal_entity == "Sin asignar":
+                continue
+            if brand not in brand_top_legal_entity:
+                brand_top_legal_entity[brand] = legal_entity
+
+        for invoice in invoices:
+            if str(invoice.get("platform", "")).strip() != platform_name:
+                continue
+            invoice_id = str(invoice.get("id", "")).strip()
+            brand = str(invoice.get("brand", "")).strip()
+            invoice_total = int(invoice.get("totalAmount", 0) or 0)
+            if not invoice_id or not brand:
+                continue
+
+            invoice_row_indexes = [
+                idx
+                for idx, row in enumerate(rows)
+                if str(row.get("platform", "")).strip() == platform_name
+                and str(row.get("invoiceId", "")).strip() == invoice_id
+            ]
+            mapped_total = sum(int(rows[idx].get("amount", 0) or 0) for idx in invoice_row_indexes)
+            diff = invoice_total - mapped_total
+            if diff == 0:
+                continue
+
+            if invoice_row_indexes:
+                target_idx = max(invoice_row_indexes, key=lambda idx: int(rows[idx].get("amount", 0) or 0))
+                rows[target_idx]["amount"] = int(rows[target_idx].get("amount", 0) or 0) + diff
+                continue
+
+            target_legal_entity = brand_top_legal_entity.get(brand, "Sin asignar")
+            rows.append(
+                {
+                    "invoiceId": invoice_id,
+                    "month": str(invoice.get("month", "")).strip(),
+                    "platform": platform_name,
+                    "brand": brand,
+                    "legalEntity": target_legal_entity,
+                    "comuna": "",
+                    "project": "",
+                    "campaignName": "Ajuste de cuadratura",
+                    "referenceId": f"{invoice_id}-ajuste",
+                    "paymentReference": "",
+                    "paymentMethod": "",
+                    "status": "Pagado",
+                    "chargeCode": "",
+                    "amount": diff,
+                    "chargeAmountOriginal": None,
+                    "chargeTcAmount": None,
+                    "chargeAmountValidation": "",
+                    "sourceInvoice": str(invoice.get("sourceFile", "")).strip(),
+                    "sourceDetail": "",
+                    "splitAssignments": [],
+                }
+            )
+
+    reconcile_invoice_totals("Google Ads")
+    reconcile_invoice_totals("Meta")
 
     return sorted(
         rows,
@@ -2295,7 +2393,7 @@ def parse_zeppelin_excel(path: Path, warnings: list[ParseWarning], document_file
 
     concept_cell = rows.get(3, {}).get("B", "")
     if "Zeppelin" not in concept_cell:
-        warnings.append(ParseWarning(source=path.name, message="Could not find 'Línea de Crédito Zeppelin' section."))
+        warnings.append(ParseWarning(source=path.name, message="Could not find 'LÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea de CrÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©dito Zeppelin' section."))
         return []
 
     invoices: list[dict[str, Any]] = []
@@ -2339,7 +2437,7 @@ def parse_zeppelin_excel(path: Path, warnings: list[ParseWarning], document_file
                 "periodEnd": period_end,
                 "dueDate": "",
                 "currency": "CLP",
-                "accountName": "Línea de Crédito Zeppelin",
+                "accountName": "LÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea de CrÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©dito Zeppelin",
                 "accountId": po_number,
                 "totalAmount": total_with_fee,
                 "summaryBreakdown": [
@@ -2348,7 +2446,7 @@ def parse_zeppelin_excel(path: Path, warnings: list[ParseWarning], document_file
                 ],
                 "details": [
                     {
-                        "concept": "Línea de Crédito Zeppelin",
+                        "concept": "LÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â­nea de CrÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©dito Zeppelin",
                         "purchaseOrder": po_number,
                         "supplierInvoice": supplier_invoice,
                         "amount": investment,
